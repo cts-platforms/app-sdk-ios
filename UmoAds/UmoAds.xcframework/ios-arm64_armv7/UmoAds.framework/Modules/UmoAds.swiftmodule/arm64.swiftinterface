@@ -25,10 +25,6 @@ public enum AdSize : Swift.String {
     get
   }
 }
-public protocol AdListener : AnyObject {
-  func onAdSuccess(adSlotId: Swift.String?, rendered: Swift.Bool)
-  func onAdError(adSlotId: Swift.String?, error: Swift.Error?)
-}
 @objc @_inheritsConvenienceInitializers public class GenericAdView : UmoAds.BaseAdView {
   override public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -46,6 +42,11 @@ public enum LoggingLevel : Swift.Int {
     get
   }
 }
+public protocol AdViewListener {
+  func onAdLoadSuccess(adSlotId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
+  func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
+  func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
+}
 @_inheritsConvenienceInitializers @objc(GPSCoordinates) @objcMembers public class GPSCoordinates : ObjectiveC.NSObject, Swift.Codable {
   @objc public var lat: Swift.Double
   @objc public var lon: Swift.Double
@@ -57,35 +58,13 @@ public enum LoggingLevel : Swift.Int {
   required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-@objc @_inheritsConvenienceInitializers public class ImageAdView : UmoAds.BaseAdView {
-  override public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  override public func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo) -> Swift.Bool
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers public class HTMLAdView : UmoAds.BaseAdView, WebKit.WKUIDelegate, WebKit.WKNavigationDelegate {
-  override public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  override public func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo) -> Swift.Bool
-  @objc public func webView(_ webView: WebKit.WKWebView, createWebViewWith configuration: WebKit.WKWebViewConfiguration, for navigationAction: WebKit.WKNavigationAction, windowFeatures: WebKit.WKWindowFeatures) -> WebKit.WKWebView?
-  @objc public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: Swift.Error)
-  @objc public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: Swift.Error)
-  @objc deinit
-}
-public protocol AdView {
-  func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo) -> Swift.Bool
-  func adWillExpire() -> Swift.Bool
-}
-public protocol AdViewListener {
-  func onAdSuccess(adSlotId: Swift.String?, rendered: Swift.Bool)
-  func onAdError(adSlotId: Swift.String?, error: Swift.Error?)
-}
-@objc @_hasMissingDesignatedInitializers public class BaseAdView : UIKit.UIView, UmoAds.AdView {
+@objc @_hasMissingDesignatedInitializers public class BaseAdView : UIKit.UIView {
   public var adSlotId: Swift.String!
   public var adSize: UmoAds.AdSize
-  public var reserveAdSpace: Swift.Bool
   public var adViewListener: UmoAds.AdViewListener?
   public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
+  @discardableResult
+  public func addAspectRatioConstraints() -> UIKit.NSLayoutConstraint
   public func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo) -> Swift.Bool
   public func adWillExpire() -> Swift.Bool
   @objc deinit
@@ -107,6 +86,11 @@ public enum Environment : Swift.String, Swift.CaseIterable {
 public struct EmptyResponse : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+}
+public protocol AdListener : AnyObject {
+  func onAdLoadSuccess(adSlotId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
+  func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
+  func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(AdPostInteractionResponseInfo) @objcMembers public class AdPostInteractionResponseInfo : ObjectiveC.NSObject, Swift.Codable {
   @objc deinit
@@ -142,14 +126,21 @@ extension NetworkError {
 }
 public typealias EmptyCompletionResult = (Swift.Result<UmoAds.EmptyResponse, Swift.Error>)
 public typealias EmptyCompletion = (UmoAds.EmptyCompletionResult) -> Swift.Void
+public typealias JWTToken = Swift.String
+public typealias JWTRetrievedCompletion = (Swift.Result<UmoAds.JWTToken, Swift.Error>) -> Swift.Void
+public typealias JWTProviderClosure = (@escaping UmoAds.JWTRetrievedCompletion) -> Swift.Void
 @_hasMissingDesignatedInitializers public class Ads {
   public static let shared: UmoAds.Ads
   public static let version: Swift.String
+  public var jwtTokenProvider: UmoAds.JWTProviderClosure? {
+    get
+  }
   @objc deinit
 }
 extension Ads {
   public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
   public func setJWTToken(_ jwtToken: Swift.String)
+  public func setJWTTokenProvider(callProviderImmediately: Swift.Bool, jwtTokenProvider: UmoAds.JWTProviderClosure?)
   public func logout()
   public func isAuthenticated() -> Swift.Bool
   public func setEnvironment(_ environment: UmoAds.Environment)
@@ -162,7 +153,8 @@ extension Ads {
   public func loadAd(adView: UmoAds.BaseAdView, completion: UmoAds.EmptyCompletion? = nil)
   public func setPlaceholderImage(adSize: UmoAds.AdSize, placeholder: UIKit.UIImage)
   public func placeholderImage(adSize: UmoAds.AdSize) -> UIKit.UIImage?
-  public func updateRegionId(_ regionId: Swift.String)
+  public func setUniversalAdListener(_ adListener: UmoAds.AdListener)
+  public func updateRegionId(_ regionId: Swift.String, shouldRefreshAllAds: Swift.Bool = true)
   public func clearCache()
 }
 extension Ads {

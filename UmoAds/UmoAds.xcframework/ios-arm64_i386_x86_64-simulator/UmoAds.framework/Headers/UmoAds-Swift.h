@@ -193,7 +193,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import ObjectiveC;
 @import UIKit;
-@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -262,26 +261,6 @@ SWIFT_CLASS_NAMED("GPSCoordinates")
 
 SWIFT_CLASS("_TtC6UmoAds13GenericAdView")
 @interface GenericAdView : BaseAdView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class WKWebView;
-@class WKWebViewConfiguration;
-@class WKNavigationAction;
-@class WKWindowFeatures;
-@class WKNavigation;
-
-SWIFT_CLASS("_TtC6UmoAds10HTMLAdView")
-@interface HTMLAdView : BaseAdView <WKNavigationDelegate, WKUIDelegate>
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (WKWebView * _Nullable)webView:(WKWebView * _Nonnull)webView createWebViewWithConfiguration:(WKWebViewConfiguration * _Nonnull)configuration forNavigationAction:(WKNavigationAction * _Nonnull)navigationAction windowFeatures:(WKWindowFeatures * _Nonnull)windowFeatures SWIFT_WARN_UNUSED_RESULT;
-- (void)webView:(WKWebView * _Nonnull)webView didFailNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
-- (void)webView:(WKWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
-@end
-
-
-SWIFT_CLASS("_TtC6UmoAds11ImageAdView")
-@interface ImageAdView : BaseAdView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -489,7 +468,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import ObjectiveC;
 @import UIKit;
-@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -558,26 +536,6 @@ SWIFT_CLASS_NAMED("GPSCoordinates")
 
 SWIFT_CLASS("_TtC6UmoAds13GenericAdView")
 @interface GenericAdView : BaseAdView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class WKWebView;
-@class WKWebViewConfiguration;
-@class WKNavigationAction;
-@class WKWindowFeatures;
-@class WKNavigation;
-
-SWIFT_CLASS("_TtC6UmoAds10HTMLAdView")
-@interface HTMLAdView : BaseAdView <WKNavigationDelegate, WKUIDelegate>
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (WKWebView * _Nullable)webView:(WKWebView * _Nonnull)webView createWebViewWithConfiguration:(WKWebViewConfiguration * _Nonnull)configuration forNavigationAction:(WKNavigationAction * _Nonnull)navigationAction windowFeatures:(WKWindowFeatures * _Nonnull)windowFeatures SWIFT_WARN_UNUSED_RESULT;
-- (void)webView:(WKWebView * _Nonnull)webView didFailNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
-- (void)webView:(WKWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
-@end
-
-
-SWIFT_CLASS("_TtC6UmoAds11ImageAdView")
-@interface ImageAdView : BaseAdView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -785,7 +743,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import ObjectiveC;
 @import UIKit;
-@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -854,26 +811,6 @@ SWIFT_CLASS_NAMED("GPSCoordinates")
 
 SWIFT_CLASS("_TtC6UmoAds13GenericAdView")
 @interface GenericAdView : BaseAdView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class WKWebView;
-@class WKWebViewConfiguration;
-@class WKNavigationAction;
-@class WKWindowFeatures;
-@class WKNavigation;
-
-SWIFT_CLASS("_TtC6UmoAds10HTMLAdView")
-@interface HTMLAdView : BaseAdView <WKNavigationDelegate, WKUIDelegate>
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (WKWebView * _Nullable)webView:(WKWebView * _Nonnull)webView createWebViewWithConfiguration:(WKWebViewConfiguration * _Nonnull)configuration forNavigationAction:(WKNavigationAction * _Nonnull)navigationAction windowFeatures:(WKWindowFeatures * _Nonnull)windowFeatures SWIFT_WARN_UNUSED_RESULT;
-- (void)webView:(WKWebView * _Nonnull)webView didFailNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
-- (void)webView:(WKWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
-@end
-
-
-SWIFT_CLASS("_TtC6UmoAds11ImageAdView")
-@interface ImageAdView : BaseAdView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
