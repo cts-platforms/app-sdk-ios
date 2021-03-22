@@ -99,9 +99,8 @@ public protocol AdListener : AnyObject {
 }
 public enum AdsError : Foundation.LocalizedError {
   case consumerNotFound
-  case transitAgencyIdNotFoundForRefresh
-  case consumerIdNotFoundForRefresh
   case clientIdAndSecret
+  case emptyInsertionResponse
   public static func == (a: UmoAds.AdsError, b: UmoAds.AdsError) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
