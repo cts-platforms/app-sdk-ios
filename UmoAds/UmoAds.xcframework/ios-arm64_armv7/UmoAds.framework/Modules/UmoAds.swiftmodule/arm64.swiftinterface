@@ -71,13 +71,15 @@ public protocol AdViewListener {
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 public enum Environment : Swift.String, Swift.CaseIterable {
-  case develop
-  case qa
+  case prod
+  case sandbox
+  case dev
+  case moovit
   public typealias RawValue = Swift.String
-  public init?(rawValue: Swift.String)
   public var rawValue: Swift.String {
     get
   }
+  public init?(rawValue: Swift.String)
   public typealias AllCases = [UmoAds.Environment]
   public static var allCases: [UmoAds.Environment] {
     get
@@ -153,7 +155,7 @@ extension Ads {
   public func setPlaceholderImage(adSize: UmoAds.AdSize, placeholder: UIKit.UIImage)
   public func placeholderImage(adSize: UmoAds.AdSize) -> UIKit.UIImage?
   public func setUniversalAdListener(_ adListener: UmoAds.AdListener)
-  public func updateRegionId(_ regionId: Swift.String, shouldRefreshAllAds: Swift.Bool = true)
+  public func updateRegionId(_ regionId: Swift.UInt64, shouldRefreshAllAds: Swift.Bool = true)
   public func clearCache()
 }
 extension Ads {
