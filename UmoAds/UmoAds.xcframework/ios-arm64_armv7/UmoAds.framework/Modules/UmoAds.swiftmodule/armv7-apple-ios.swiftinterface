@@ -42,7 +42,7 @@ public enum LoggingLevel : Swift.Int {
     get
   }
 }
-public protocol AdViewListener {
+public protocol AdViewListener : AnyObject {
   func onAdLoadSuccess(adSlotId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
   func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
   func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
@@ -61,7 +61,10 @@ public protocol AdViewListener {
 @objc @_hasMissingDesignatedInitializers public class BaseAdView : UIKit.UIView {
   public var adSlotId: Swift.String!
   public var adSize: UmoAds.AdSize
-  public var adViewListener: UmoAds.AdViewListener?
+  weak public var adViewListener: UmoAds.AdViewListener? {
+    get
+    set
+  }
   public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
   @discardableResult
   public func addAspectRatioConstraints() -> UIKit.NSLayoutConstraint
@@ -134,6 +137,9 @@ public typealias JWTProviderClosure = (@escaping UmoAds.JWTRetrievedCompletion) 
   public static let shared: UmoAds.Ads
   public static let version: Swift.String
   public var jwtTokenProvider: UmoAds.JWTProviderClosure? {
+    get
+  }
+  public var adListener: UmoAds.AdListener? {
     get
   }
   @objc deinit
