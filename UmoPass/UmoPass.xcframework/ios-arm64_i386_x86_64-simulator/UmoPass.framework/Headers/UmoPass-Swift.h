@@ -248,6 +248,14 @@ SWIFT_CLASS("_TtC7UmoPass13CodeChunkView")
 @end
 
 
+SWIFT_CLASS("_TtC7UmoPass20DeleteEmptyTextField")
+@interface DeleteEmptyTextField : UITextField
+- (void)deleteBackward;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC7UmoPass9LabelCell")
 @interface LabelCell : UITableViewCell
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
@@ -560,6 +568,14 @@ SWIFT_CLASS("_TtC7UmoPass13CodeChunkView")
 @end
 
 
+SWIFT_CLASS("_TtC7UmoPass20DeleteEmptyTextField")
+@interface DeleteEmptyTextField : UITextField
+- (void)deleteBackward;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC7UmoPass9LabelCell")
 @interface LabelCell : UITableViewCell
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
@@ -869,6 +885,14 @@ SWIFT_CLASS("_TtC7UmoPass13CodeChunkView")
 
 @interface CodeChunkView (SWIFT_EXTENSION(UmoPass)) <UITextFieldDelegate>
 - (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC7UmoPass20DeleteEmptyTextField")
+@interface DeleteEmptyTextField : UITextField
+- (void)deleteBackward;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

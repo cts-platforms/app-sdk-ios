@@ -303,6 +303,7 @@ public protocol RedeemEntryDelegate : AnyObject {
 }
 extension RedeemEntryView : UmoPass.CodeChunkDelegate {
   public func chunkUpdated(_ sender: UmoPass.CodeChunkView, code: Swift.String, isComplete: Swift.Bool)
+  public func chunkBackspacedOnEmptyFirstCharacter(_ sender: UmoPass.CodeChunkView)
 }
 public struct PurchaseValueResult {
   public let transactionId: Swift.String
@@ -397,11 +398,12 @@ extension UIView {
 }
 public protocol CodeChunkDelegate : AnyObject {
   func chunkUpdated(_ sender: UmoPass.CodeChunkView, code: Swift.String, isComplete: Swift.Bool)
+  func chunkBackspacedOnEmptyFirstCharacter(_ sender: UmoPass.CodeChunkView)
 }
 @objc open class CodeChunkView : UIKit.UIStackView {
   final public let characterCount: Swift.Int
   weak public var delegate: UmoPass.CodeChunkDelegate?
-  public var textFields: [UIKit.UITextField]
+  public var textFields: [UmoPass.DeleteEmptyTextField]
   public init(characterCount: Swift.Int)
   @objc required dynamic public init(coder: Foundation.NSCoder)
   public func configureView()
@@ -410,6 +412,7 @@ public protocol CodeChunkDelegate : AnyObject {
   public func getCurrentCode() -> Swift.String
   public func isCompleted() -> Swift.Bool
   public func updateAppearance(invalid: Swift.Bool)
+  public func focusAndClearLastCharacter()
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
 }
@@ -512,6 +515,12 @@ extension PassError {
   public var errorDescription: Swift.String? {
     get
   }
+}
+@objc @_inheritsConvenienceInitializers public class DeleteEmptyTextField : UIKit.UITextField {
+  @objc override dynamic public func deleteBackward()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @objc open class RedemptionSuccessViewController : UIKit.UIViewController {
   final public let checkmarkImageView: UIKit.UIImageView
