@@ -28,7 +28,7 @@ public enum AdSize : Swift.String {
 @objc @_inheritsConvenienceInitializers public class GenericAdView : UmoAds.BaseAdView {
   override public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  override public func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo) -> Swift.Bool
+  override public func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo, adViewToRemove: UmoAds.BaseAdView?) -> Swift.Bool
   override public func adWillExpire() -> Swift.Bool
   @objc deinit
 }
@@ -68,7 +68,7 @@ public protocol AdViewListener : AnyObject {
   public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
   @discardableResult
   public func addAspectRatioConstraints() -> UIKit.NSLayoutConstraint
-  public func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo) -> Swift.Bool
+  public func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo, adViewToRemove: UmoAds.BaseAdView?) -> Swift.Bool
   public func adWillExpire() -> Swift.Bool
   @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
