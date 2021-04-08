@@ -43,7 +43,7 @@ public enum LoggingLevel : Swift.Int {
   }
 }
 public protocol AdViewListener : AnyObject {
-  func onAdLoadSuccess(adSlotId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
+  func onAdLoadSuccess(adSlotId: Swift.String, adInsertionId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
   func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
   func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
 }
@@ -93,7 +93,7 @@ public struct EmptyResponse : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
 }
 public protocol AdListener : AnyObject {
-  func onAdLoadSuccess(adSlotId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
+  func onAdLoadSuccess(adSlotId: Swift.String, adInsertionId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
   func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
   func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
 }
@@ -133,6 +133,9 @@ public typealias EmptyCompletion = (UmoAds.EmptyCompletionResult) -> Swift.Void
 public typealias JWTToken = Swift.String
 public typealias JWTRetrievedCompletion = (Swift.Result<UmoAds.JWTToken, Swift.Error>) -> Swift.Void
 public typealias JWTProviderClosure = (@escaping UmoAds.JWTRetrievedCompletion) -> Swift.Void
+public typealias AdInsertionId = Swift.String
+public typealias LoadAdResult = (Swift.Result<UmoAds.AdInsertionId, Swift.Error>)
+public typealias LoadAdCompletion = (UmoAds.LoadAdResult) -> Swift.Void
 @_hasMissingDesignatedInitializers public class Ads {
   public static let shared: UmoAds.Ads
   public static let version: Swift.String
@@ -157,7 +160,7 @@ extension Ads {
   public func updateLastKnownLocation(_ location: CoreLocation.CLLocation)
 }
 extension Ads {
-  public func loadAd(adView: UmoAds.BaseAdView, completion: UmoAds.EmptyCompletion? = nil)
+  public func loadAd(adView: UmoAds.BaseAdView, completion: UmoAds.LoadAdCompletion? = nil)
   public func setPlaceholderImage(adSize: UmoAds.AdSize, placeholder: UIKit.UIImage)
   public func placeholderImage(adSize: UmoAds.AdSize) -> UIKit.UIImage?
   public func setUniversalAdListener(_ adListener: UmoAds.AdListener)
