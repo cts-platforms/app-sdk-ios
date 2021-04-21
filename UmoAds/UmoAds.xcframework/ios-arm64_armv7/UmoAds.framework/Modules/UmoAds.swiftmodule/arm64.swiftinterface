@@ -106,6 +106,7 @@ public enum AdsError : Foundation.LocalizedError {
   case consumerNotFound
   case clientIdAndSecret
   case emptyInsertionResponse
+  case noNamedSession
   public static func == (a: UmoAds.AdsError, b: UmoAds.AdsError) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
@@ -149,8 +150,7 @@ public typealias LoadAdCompletion = (UmoAds.LoadAdResult) -> Swift.Void
 }
 extension Ads {
   public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
-  public func setJWTToken(_ jwtToken: Swift.String)
-  public func setJWTTokenProvider(callProviderImmediately: Swift.Bool, jwtTokenProvider: UmoAds.JWTProviderClosure?)
+  public func setJWTTokenProvider(jwtTokenProvider: UmoAds.JWTProviderClosure?)
   public func logout()
   public func isAuthenticated() -> Swift.Bool
   public func setEnvironment(_ environment: UmoAds.Environment)
