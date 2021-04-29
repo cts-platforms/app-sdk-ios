@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
   spec.name         = 'UmoAds'
-  spec.version      = '0.1.0-beta24'
+  spec.version      = '1.0.0-beta1'
   spec.license      = { :type => 'GPL3' }
   spec.homepage     = 'https://github.com/cts-platforms/app-sdk-ios'
   spec.authors      = { 'Cubic' => 'CTSPlatformsMobileSupport@cubic.com' }
   spec.summary      = 'UmoAds'
-  spec.source       = { :git => 'https://github.com/cts-platforms/app-sdk-ios.git', :tag => 'UmoAds-0.1.0-beta24' }
+  spec.source       = { :git => 'https://github.com/cts-platforms/app-sdk-ios.git', :tag => 'UmoAds-1.0.0-beta1' }
   spec.vendored_frameworks = 'UmoAds/UmoAds.xcframework'
   spec.framework    = 'SystemConfiguration'
   spec.swift_version = '5.0'
