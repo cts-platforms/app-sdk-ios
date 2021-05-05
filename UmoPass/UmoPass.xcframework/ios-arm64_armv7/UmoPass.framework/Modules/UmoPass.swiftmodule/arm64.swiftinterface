@@ -29,6 +29,7 @@ public typealias PassPurchaseCompletion = (Swift.Result<UmoPass.PurchasePassResu
 public typealias TransactionCompletion = (Swift.Result<[UmoPass.Transaction], Swift.Error>) -> Swift.Void
 public typealias WalletsCompletion = (Swift.Result<[UmoPass.Wallet], Swift.Error>) -> Swift.Void
 public typealias RedemptionCompletion = (Swift.Result<UmoPass.RedeemBenefitResponse, Swift.Error>) -> Swift.Void
+public typealias VisValValidCompletion = (Swift.Result<Swift.Bool, Swift.Error>) -> Swift.Void
 extension NSNotification.Name {
   public static let PassUserUpdated: Foundation.Notification.Name
   public static let PassProductsShouldBeRefetched: Foundation.Notification.Name
@@ -98,6 +99,7 @@ extension Pass {
   public func generateQRCode(mediaId: Swift.Int64? = nil, key: Swift.String? = nil, location: CoreLocation.CLLocationCoordinate2D?) -> UIKit.UIImage?
   public func generateRetailBarcode(cardNumber: Swift.String? = nil) -> UIKit.UIImage?
   public func scannerView(delegate: UmoPass.ScannerDelegate?) -> UmoPass.ScannerView
+  public func verifyVisualValidationCode(_ code: Swift.String, completion: @escaping UmoPass.VisValValidCompletion)
 }
 extension Pass {
   public func redeemBenefit(code: Swift.String, shouldRefreshUser: Swift.Bool = true, completion: @escaping UmoPass.RedemptionCompletion)
@@ -112,10 +114,12 @@ extension Pass {
 }
 @objc @_inheritsConvenienceInitializers open class ScannerView : UIKit.UIView, AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
   public var captureSession: AVFoundation.AVCaptureSession!
-  public var previewLayer: AVFoundation.AVCaptureVideoPreviewLayer!
+  public var previewLayer: AVFoundation.AVCaptureVideoPreviewLayer?
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc override dynamic public func layoutSubviews()
+  public func startCapture()
+  public func stopCapture()
   @objc public func metadataOutput(_ output: AVFoundation.AVCaptureMetadataOutput, didOutput metadataObjects: [AVFoundation.AVMetadataObject], from connection: AVFoundation.AVCaptureConnection)
   @objc deinit
 }
@@ -454,7 +458,7 @@ extension PassProduct {
 }
 public protocol ScannerDelegate : AnyObject {
   func failed(error: Swift.Error)
-  func found(code: Swift.String)
+  func foundValidCode(_ code: Swift.String)
 }
 public enum NetworkError : Foundation.LocalizedError {
   case invalidCode(response: Foundation.HTTPURLResponse, responseText: Swift.String)
@@ -505,6 +509,8 @@ public enum PassError : Foundation.LocalizedError {
   case notAuthenticated
   case scannerError
   case deviceChangeRequired
+  case codeFoundButInvalid
+  case memoryReferenceLost
   public static func == (a: UmoPass.PassError, b: UmoPass.PassError) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
