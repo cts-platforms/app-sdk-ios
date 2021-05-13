@@ -29,7 +29,8 @@ public typealias PassPurchaseCompletion = (Swift.Result<UmoPass.PurchasePassResu
 public typealias TransactionCompletion = (Swift.Result<[UmoPass.Transaction], Swift.Error>) -> Swift.Void
 public typealias WalletsCompletion = (Swift.Result<[UmoPass.Wallet], Swift.Error>) -> Swift.Void
 public typealias RedemptionCompletion = (Swift.Result<UmoPass.RedeemBenefitResponse, Swift.Error>) -> Swift.Void
-public typealias VisValValidCompletion = (Swift.Result<Swift.Bool, Swift.Error>) -> Swift.Void
+public typealias VisValValidCompletion = (Swift.Result<UmoPass.VehicleData, Swift.Error>) -> Swift.Void
+public typealias VisValTransactionCompletion = (Swift.Result<UmoPass.VisValResponseModel, Swift.Error>) -> Swift.Void
 extension NSNotification.Name {
   public static let PassUserUpdated: Foundation.Notification.Name
   public static let PassProductsShouldBeRefetched: Foundation.Notification.Name
@@ -100,6 +101,8 @@ extension Pass {
   public func generateRetailBarcode(cardNumber: Swift.String? = nil) -> UIKit.UIImage?
   public func scannerView(delegate: UmoPass.ScannerDelegate?) -> UmoPass.ScannerView
   public func verifyVisualValidationCode(_ code: Swift.String, completion: @escaping UmoPass.VisValValidCompletion)
+  public func purchaseVisualValidationRide(code: Swift.String, currentLocation: CoreLocation.CLLocationCoordinate2D?, completion: @escaping UmoPass.VisValTransactionCompletion)
+  public func parseVehicleData(code: Swift.String) -> UmoPass.VehicleData?
 }
 extension Pass {
   public func redeemBenefit(code: Swift.String, shouldRefreshUser: Swift.Bool = true, completion: @escaping UmoPass.RedemptionCompletion)
@@ -309,6 +312,16 @@ extension RedeemEntryView : UmoPass.CodeChunkDelegate {
   public func chunkUpdated(_ sender: UmoPass.CodeChunkView, code: Swift.String, isComplete: Swift.Bool)
   public func chunkBackspacedOnEmptyFirstCharacter(_ sender: UmoPass.CodeChunkView)
 }
+public struct VehicleData {
+  public let vehicleId: Swift.Int
+  public let vehicleName: Swift.String
+  public let routeId: Swift.Int
+  public let routeName: Swift.String
+  public let agencyId: Swift.Int
+  public let validThroughYear: Swift.Int
+  public let validThroughMonth: Swift.Int
+  public let validThroughDay: Swift.Int
+}
 public struct PurchaseValueResult {
   public let transactionId: Swift.String
   public let valueAddedInCents: Swift.Int
@@ -373,6 +386,23 @@ public struct RedeemBenefitResponse {
 public struct PurchasePassResult {
   public let transactionId: Swift.String
   public let passes: [UmoPass.PurchasedPass]
+}
+public struct VisValResponseModel : Swift.Codable {
+  public let transactionType: Swift.String
+  public let fare: UmoPass.Money?
+  public let balance: UmoPass.Money?
+  public let passUsed: UmoPass.Money?
+  public let passExpireMinutes: Swift.Int32?
+  public let transferTimeRemaining: Swift.Int32?
+  public let numberOfTripsLeft: Swift.Int32?
+  public let specialFareUsed: Swift.Bool?
+  public let lowBalanceWarning: Swift.Bool
+  public let doubleDenied: Swift.Bool
+  public let languageCode: Swift.String
+  public let transferCredits: Swift.Int32?
+  public let eventId: Swift.String
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 @objc @_inheritsConvenienceInitializers open class ActivityButton : UIKit.UIButton {
   public var originalButtonText: Swift.String?
@@ -511,6 +541,7 @@ public enum PassError : Foundation.LocalizedError {
   case deviceChangeRequired
   case codeFoundButInvalid
   case memoryReferenceLost
+  case vehicleCodeInvalid
   public static func == (a: UmoPass.PassError, b: UmoPass.PassError) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
