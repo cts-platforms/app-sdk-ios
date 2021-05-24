@@ -78,6 +78,7 @@ extension Pass {
   public func reloginCachedUserIfFound() -> UmoPass.PassError?
   public func userHasPaymentMethod() -> Swift.Bool
   public func convertCardAccountToMobileAccount(username: Swift.String, password: Swift.String, completion: @escaping UmoPass.EmptyCompletion)
+  public func getUserKey() -> Swift.String?
 }
 extension Pass {
   public func addBalance(agencyPublicId: Swift.String? = nil, amount: Swift.Int, completion: @escaping UmoPass.BalancePurchaseCompletion)
