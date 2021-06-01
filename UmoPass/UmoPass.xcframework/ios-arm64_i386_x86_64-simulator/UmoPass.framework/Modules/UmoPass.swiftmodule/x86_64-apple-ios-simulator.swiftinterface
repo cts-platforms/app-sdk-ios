@@ -31,6 +31,10 @@ public typealias WalletsCompletion = (Swift.Result<[UmoPass.Wallet], Swift.Error
 public typealias RedemptionCompletion = (Swift.Result<UmoPass.RedeemBenefitResponse, Swift.Error>) -> Swift.Void
 public typealias VisValValidCompletion = (Swift.Result<UmoPass.VehicleData, Swift.Error>) -> Swift.Void
 public typealias VisValTransactionCompletion = (Swift.Result<UmoPass.VisValResponseModel, Swift.Error>) -> Swift.Void
+public typealias DeviceIdCompletion = (Swift.Int) -> Swift.Void
+public typealias LegacyUsernameCompletion = (Swift.String?) -> Swift.Void
+public typealias LegacyPasswordCompletion = (Swift.String?) -> Swift.Void
+public typealias QRGenerationCompletion = (UIKit.UIImage?) -> Swift.Void
 extension NSNotification.Name {
   public static let PassUserUpdated: Foundation.Notification.Name
   public static let PassProductsShouldBeRefetched: Foundation.Notification.Name
@@ -98,7 +102,7 @@ extension Pass {
 }
 extension Pass {
   public func shoudShowQRCode(accountBalance: Swift.Double? = nil, accountPassCount: Swift.Int? = nil, transferEndDate: Foundation.Date? = nil) -> Swift.Bool
-  public func generateQRCode(mediaId: Swift.Int64? = nil, key: Swift.String? = nil, location: CoreLocation.CLLocationCoordinate2D?) -> UIKit.UIImage?
+  public func generateQRCode(mediaId: Swift.Int64? = nil, key: Swift.String? = nil, location: CoreLocation.CLLocationCoordinate2D?, completion: @escaping UmoPass.QRGenerationCompletion)
   public func generateRetailBarcode(cardNumber: Swift.String? = nil) -> UIKit.UIImage?
   public func scannerView(delegate: UmoPass.ScannerDelegate?) -> UmoPass.ScannerView
   public func verifyVisualValidationCode(_ code: Swift.String, completion: @escaping UmoPass.VisValValidCompletion)
@@ -109,10 +113,15 @@ extension Pass {
   public func redeemBenefit(code: Swift.String, shouldRefreshUser: Swift.Bool = true, completion: @escaping UmoPass.RedemptionCompletion)
 }
 extension Pass {
+  @available(*, deprecated, message: "Use legacyUsername(completion:) instead.")
   public func legacyUsername() -> Swift.String?
+  @available(*, deprecated, message: "Use legacyPassword(completion:) instead.")
   public func legacyPassword() -> Swift.String?
   public func deleteLegacyUsername()
   public func deleteLegacyPassword()
+  public func legacyUsername(completion: @escaping UmoPass.LegacyUsernameCompletion)
+  public func legacyPassword(completion: @escaping UmoPass.LegacyPasswordCompletion)
+  public func deviceId(completion: @escaping UmoPass.DeviceIdCompletion)
   public func deviceId() -> Swift.Int
   public func useKeychainAccessGroup(_ useAccessGroup: Swift.Bool)
 }
