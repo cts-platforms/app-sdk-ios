@@ -1,0 +1,74 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CubicAuth
+import AuthenticationServices
+@_exported import CubicAuth
+import Foundation
+import Swift
+import UIKit
+public typealias JWTToken = Swift.String
+public typealias AuthenticationCompletion = (Swift.Result<CubicAuth.JWTToken, Swift.Error>) -> Swift.Void
+public typealias AuthSessionGenerationCompletion = (AuthenticationServices.ASWebAuthenticationSession) -> Swift.Void
+public typealias DeviceIdCompletion = (Swift.Int) -> Swift.Void
+@_hasMissingDesignatedInitializers public class CubicAuth {
+  public static let shared: CubicAuth.CubicAuth
+  public var clientId: Swift.String
+  public var authSession: AuthenticationServices.ASWebAuthenticationSession?
+  public func setEnvironment(_ environment: CubicAuth.Environment)
+  public func setClientId(_ clientId: Swift.String)
+  @available(iOS 13.0, *)
+  public func createLogin(presentationContextProvider: AuthenticationServices.ASWebAuthenticationPresentationContextProviding?, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
+  public func createLogin(authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
+  @available(iOS 13.0, *)
+  public func createRegistration(presentationContextProvider: AuthenticationServices.ASWebAuthenticationPresentationContextProviding?, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
+  public func createRegistration(authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
+  public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
+  @objc deinit
+}
+public enum LoggingLevel : Swift.Int {
+  case none
+  case error
+  case info
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum CubicAuthError : Foundation.LocalizedError {
+  case authFailedWithoutOSError
+  case authReturnedWithoutJWT
+  public static func == (a: CubicAuth.CubicAuthError, b: CubicAuth.CubicAuthError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension CubicAuthError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum Environment : Swift.String, Swift.CaseIterable {
+  case prod
+  case sandbox
+  case dev
+  case moovit
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public typealias AllCases = [CubicAuth.Environment]
+  public static var allCases: [CubicAuth.Environment] {
+    get
+  }
+}
+extension CubicAuth.LoggingLevel : Swift.Equatable {}
+extension CubicAuth.LoggingLevel : Swift.Hashable {}
+extension CubicAuth.LoggingLevel : Swift.RawRepresentable {}
+extension CubicAuth.CubicAuthError : Swift.Equatable {}
+extension CubicAuth.CubicAuthError : Swift.Hashable {}
+extension CubicAuth.Environment : Swift.Equatable {}
+extension CubicAuth.Environment : Swift.Hashable {}
+extension CubicAuth.Environment : Swift.RawRepresentable {}
