@@ -31,7 +31,7 @@ public typealias WalletsCompletion = (Swift.Result<[UmoPass.Wallet], Swift.Error
 public typealias RedemptionCompletion = (Swift.Result<UmoPass.RedeemBenefitResponse, Swift.Error>) -> Swift.Void
 public typealias VisValValidCompletion = (Swift.Result<UmoPass.VehicleData, Swift.Error>) -> Swift.Void
 public typealias VisValTransactionCompletion = (Swift.Result<UmoPass.VisValResponseModel, Swift.Error>) -> Swift.Void
-public typealias DeviceIdCompletion = (Swift.Int) -> Swift.Void
+public typealias DeviceIdCompletion = (Swift.Int, [Swift.Error]) -> Swift.Void
 public typealias LegacyUsernameCompletion = (Swift.String?) -> Swift.Void
 public typealias LegacyPasswordCompletion = (Swift.String?) -> Swift.Void
 public typealias QRGenerationCompletion = (UIKit.UIImage?) -> Swift.Void
@@ -123,6 +123,8 @@ extension Pass {
   public func legacyPassword(completion: @escaping UmoPass.LegacyPasswordCompletion)
   public func deviceId(completion: @escaping UmoPass.DeviceIdCompletion)
   public func deviceId() -> Swift.Int
+  public func deviceIdWithError() -> (deviceId: Swift.Int, errors: [Swift.Error])
+  public func updateDeviceId(_ deviceId: Swift.Int) -> Swift.Error?
   public func useKeychainAccessGroup(_ useAccessGroup: Swift.Bool)
 }
 @objc @_inheritsConvenienceInitializers open class ScannerView : UIKit.UIView, AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
