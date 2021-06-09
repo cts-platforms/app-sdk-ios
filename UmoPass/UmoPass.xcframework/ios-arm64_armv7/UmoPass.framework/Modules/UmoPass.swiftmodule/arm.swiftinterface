@@ -34,7 +34,7 @@ public typealias VisValTransactionCompletion = (Swift.Result<UmoPass.VisValRespo
 public typealias DeviceIdCompletion = (Swift.Int, [Swift.Error]) -> Swift.Void
 public typealias LegacyUsernameCompletion = (Swift.String?) -> Swift.Void
 public typealias LegacyPasswordCompletion = (Swift.String?) -> Swift.Void
-public typealias QRGenerationCompletion = (UIKit.UIImage?) -> Swift.Void
+public typealias QRGenerationCompletion = (UIKit.UIImage?, [Swift.Error]) -> Swift.Void
 extension NSNotification.Name {
   public static let PassUserUpdated: Foundation.Notification.Name
   public static let PassProductsShouldBeRefetched: Foundation.Notification.Name
@@ -554,6 +554,7 @@ public enum PassError : Foundation.LocalizedError {
   case codeFoundButInvalid
   case memoryReferenceLost
   case vehicleCodeInvalid
+  case keyOrMediaIdMissing
   public static func == (a: UmoPass.PassError, b: UmoPass.PassError) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
