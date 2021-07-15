@@ -13,9 +13,10 @@ public typealias DeviceIdCompletion = (Swift.Int) -> Swift.Void
 @_hasMissingDesignatedInitializers public class CubicAuth {
   public static let shared: CubicAuth.CubicAuth
   public var clientId: Swift.String
+  public var clientSecret: Swift.String
   public var authSession: AuthenticationServices.ASWebAuthenticationSession?
   public func setEnvironment(_ environment: CubicAuth.Environment)
-  public func setClientId(_ clientId: Swift.String)
+  public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
   @available(iOS 13.0, *)
   public func createLogin(presentationContextProvider: AuthenticationServices.ASWebAuthenticationPresentationContextProviding?, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
   public func createLogin(authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
