@@ -18,7 +18,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		xO9Hgbti4L+SHVJD92h6MxyYUCM=
+		s9kXBtzLoQ6EQRomy9tklB6wXV8=
 		</data>
 		<key>Dev.xcconfig</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Qx+I3qewH7OFkhA5FRAjFHAsUqo=
+		gwZBkkmUoJutOiIxSFf+UajCxjI=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>UmoAds</key>
 		<data>
-		CXaLOXYNEgxtfyFM+svYWgwHzLQ=
+		Szag1qn3wc29sFuY9dTLp8TC9G8=
 		</data>
 		<key>UmoAds.podspec</key>
 		<data>
@@ -144,11 +144,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xO9Hgbti4L+SHVJD92h6MxyYUCM=
+			s9kXBtzLoQ6EQRomy9tklB6wXV8=
 			</data>
 			<key>hash2</key>
 			<data>
-			1gP2KIejRCZ58ugS+xVnXu1YOn21R8gn6Qf2xzyZ3HQ=
+			Ne6PfvHo33vGE4XEVIB/B6Wmhu2PR5HhMe10nrF4hj0=
 			</data>
 		</dict>
 		<key>Dev.xcconfig</key>
@@ -353,11 +353,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CXaLOXYNEgxtfyFM+svYWgwHzLQ=
+			Szag1qn3wc29sFuY9dTLp8TC9G8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ofx3H6YnoB5N0iY5hCKsOOaGpPCpRoEtogQ8u63FKok=
+			qgBs2zhk3GF/stg3pe+LYpUnKZR8lf7fSdg5e0IULLI=
 			</data>
 		</dict>
 		<key>UmoAds.podspec</key>
