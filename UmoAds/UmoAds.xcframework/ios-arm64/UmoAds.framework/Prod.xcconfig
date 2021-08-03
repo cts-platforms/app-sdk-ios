@@ -10,4 +10,4 @@
 
 UMOADKIT_VERSION_NAME_SUFFIX =
 
-UMOADKIT_HOSTED_CONFIG_JSON_NAME = prod_umo_ad_kit_params.json
+UMOADKIT_HOSTED_CONFIG_JSON_NAME = umo_ad_kit_params.json
