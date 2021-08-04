@@ -2017,6 +2017,8 @@ extension Ads {
   public func showAd(spotId: Swift.String, bannerView: UmoAds.UMOAdKitBannerView, assignHostedParams: Swift.Bool = true, bannerType: UmoAds.UMOAdKitBannerType? = nil, completion: @escaping UmoAds.EmptyCompletion)
   public func generateHostedBannerParams(spotId: Swift.String, bannerType: UmoAds.UMOAdKitBannerType?) -> UmoAds.UMOAdKitBannerParams
   public func getOrGenerateBannerAd(spotId: Swift.String) -> UmoAds.UMOAdKitBannerView
+  public func parentViewControllerDeinitializingFor(adView: UmoAds.UMOAdKitBannerView, completion: UmoAds.EmptyCompletion? = nil)
+  public func parentViewControllerAppearingFor(adView: UmoAds.UMOAdKitBannerView, completion: UmoAds.EmptyCompletion? = nil)
   public func loadAd(adView: UmoAds.BaseAdView, completion: UmoAds.LoadAdCompletion? = nil)
   public func setPlaceholderImage(adSize: UmoAds.AdSize, placeholder: UIKit.UIImage)
   public func placeholderImage(adSize: UmoAds.AdSize) -> UIKit.UIImage?
