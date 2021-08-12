@@ -7,16 +7,38 @@ import Foundation
 import Swift
 import UIKit
 public typealias JWTToken = Swift.String
-public typealias AuthenticationCompletion = (Swift.Result<CubicAuth.JWTToken, Swift.Error>) -> Swift.Void
+public typealias AuthenticationCompletion = (Swift.Result<CubicAuth.AuthInfo, Swift.Error>) -> Swift.Void
 public typealias AuthSessionGenerationCompletion = (AuthenticationServices.ASWebAuthenticationSession) -> Swift.Void
 public typealias DeviceIdCompletion = (Swift.Int) -> Swift.Void
+public typealias EmptyCompletionResult = (Swift.Result<CubicAuth.EmptyNetworkResponse, Swift.Error>)
+public typealias EmptyCompletion = (CubicAuth.EmptyCompletionResult) -> Swift.Void
+public typealias JWTRetrievedCompletion = (Swift.Result<CubicAuth.JWTToken, Swift.Error>) -> Swift.Void
+public typealias AuthInfoCompletion = (Swift.Result<CubicAuth.AuthInfo, Swift.Error>) -> Swift.Void
+public typealias JWTProviderCompletion = (Swift.Result<(accessToken: CubicAuth.JWTToken, refreshToken: CubicAuth.JWTToken?), Swift.Error>) -> Swift.Void
+public typealias JWTProviderClosure = (@escaping CubicAuth.JWTProviderCompletion) -> Swift.Void
+public typealias AuthenticatedCompletion = (Swift.Bool) -> Swift.Void
+public typealias JWTInfoCompletion = (CubicAuth.JWTInfo?) -> Swift.Void
 @_hasMissingDesignatedInitializers public class CubicAuth {
   public static let shared: CubicAuth.CubicAuth
+  public var jwtInfoUpdateClosure: CubicAuth.JWTInfoCompletion? {
+    get
+  }
+  public var jwtProviderClosure: CubicAuth.JWTProviderClosure? {
+    get
+  }
+  public var currentEnvironment: CubicAuth.Environment {
+    get
+  }
   public var clientId: Swift.String
   public var clientSecret: Swift.String
   public var authSession: AuthenticationServices.ASWebAuthenticationSession?
   public func setEnvironment(_ environment: CubicAuth.Environment)
   public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
+  public func updateJWTInfoUpdateClosure(_ jwtInfoUpdateClosure: @escaping CubicAuth.JWTInfoCompletion)
+  public func updateJWTProviderClosure(_ jwtProviderClosure: @escaping CubicAuth.JWTProviderClosure)
+  public func logout()
+  public func retrieveAndRefreshTokenIfNeeded(canUseAnonymous: Swift.Bool, completion: @escaping CubicAuth.JWTRetrievedCompletion)
+  public func requestJWTInfoUpdate()
   @available(iOS 13.0, *)
   public func createLogin(presentationContextProvider: AuthenticationServices.ASWebAuthenticationPresentationContextProviding?, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
   public func createLogin(authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
@@ -25,6 +47,27 @@ public typealias DeviceIdCompletion = (Swift.Int) -> Swift.Void
   public func createRegistration(authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
   public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
   @objc deinit
+}
+public struct EmptyNetworkResponse : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct AuthInfo : Swift.Codable {
+  public var accessToken: Swift.String?
+  public let expiresIn: Swift.Int?
+  public let refreshExpiresIn: Swift.Int?
+  public var refreshToken: Swift.String?
+  public let tokenType: Swift.String?
+  public let idToken: Swift.String?
+  public let notBeforePolicy: Swift.Int?
+  public let sessionState: Swift.String?
+  public let scope: Swift.String?
+  public let isAnonymous: Swift.Bool
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension AuthInfo {
+  public init(accessToken: Swift.String, refreshToken: Swift.String?)
 }
 public enum LoggingLevel : Swift.Int {
   case none
@@ -39,6 +82,10 @@ public enum LoggingLevel : Swift.Int {
 public enum CubicAuthError : Foundation.LocalizedError {
   case authFailedWithoutOSError
   case authReturnedWithoutJWT
+  case clientIdAndSecret
+  case memoryReferenceLost
+  case refreshTokenMissing
+  case noAnonymousAndNoProvider
   public static func == (a: CubicAuth.CubicAuthError, b: CubicAuth.CubicAuthError) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
@@ -56,14 +103,30 @@ public enum Environment : Swift.String, Swift.CaseIterable {
   case dev
   case moovit
   public typealias RawValue = Swift.String
-  public init?(rawValue: Swift.String)
   public var rawValue: Swift.String {
     get
   }
+  public init?(rawValue: Swift.String)
   public typealias AllCases = [CubicAuth.Environment]
   public static var allCases: [CubicAuth.Environment] {
     get
   }
+}
+public enum NetworkError : Foundation.LocalizedError {
+  case invalidCode(response: Foundation.HTTPURLResponse, responseText: Swift.String)
+  case osError(Swift.Error)
+  case dataParseFailure(Foundation.Data?)
+  case unknownError
+}
+extension NetworkError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public struct JWTInfo {
+  public let cubicId: Swift.String?
+  public let preferredUsername: Swift.String?
+  public let isAnonymous: Swift.Bool?
 }
 extension CubicAuth.LoggingLevel : Swift.Equatable {}
 extension CubicAuth.LoggingLevel : Swift.Hashable {}
