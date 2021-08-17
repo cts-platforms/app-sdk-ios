@@ -240,12 +240,12 @@ SWIFT_CLASS("_TtC6UmoAds9AKWebView")
 - (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
 - (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationResponse:(WKNavigationResponse * _Nonnull)navigationResponse decisionHandler:(void (^ _Nonnull)(WKNavigationResponsePolicy))decisionHandler;
 - (void)webViewWebContentProcessDidTerminate:(WKWebView * _Nonnull)webView;
-- (void)webView:(WKWebView * _Nonnull)webView didCommitNavigation:(WKNavigation * _Null_unspecified)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView didStartProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView didFailNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
-- (void)webView:(WKWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
+- (void)webView:(WKWebView * _Nonnull)webView didCommitNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didStartProvisionalNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didFailNavigation:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
+- (void)webView:(WKWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
 - (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
 - (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration SWIFT_UNAVAILABLE;
 @end
@@ -322,6 +322,29 @@ SWIFT_CLASS("_TtC6UmoAds17AKSessionDelegate")
 @end
 
 
+SWIFT_CLASS("_TtC6UmoAds13AKVPaidBridge")
+@interface AKVPaidBridge : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC6UmoAds16AKVPaidConstants")
+@interface AKVPaidConstants : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC6UmoAds14AKVPaidWebView")
+@interface AKVPaidWebView : AKWebView
+- (void)webView:(WKWebView * _Nonnull)webView didCommitNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
+@end
+
+
 
 SWIFT_CLASS_NAMED("AdInsertionInfo")
 @interface AdInsertionInfo : NSObject
@@ -362,6 +385,7 @@ SWIFT_CLASS("_TtC6UmoAds10BaseAdView")
 
 
 
+
 SWIFT_CLASS_NAMED("GPSCoordinates")
 @interface GPSCoordinates : NSObject
 @property (nonatomic) double lat;
@@ -376,6 +400,9 @@ SWIFT_CLASS("_TtC6UmoAds13GenericAdView")
 @interface GenericAdView : BaseAdView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
 
 
 
@@ -426,11 +453,35 @@ SWIFT_CLASS("_TtC6UmoAds20UMOAdKitBannerParams")
 /// when the application calls umoAdKitShowBanner()
 /// 3. Refreshes a banner ad when the application calls umoAdKitRefreshBanner()
 /// 4. Removes a banner ad when the application calls umoAdKitRemoveBanner()
+/// NOTE: The Application should make a note of the following:
+/// 1. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE & bannerType is not CUSTOM_GWxGH:
+/// - The BannerView’s layout params would be set by the Ad Kit based on the bannerType
+/// opted by the application, whenever umoAdKitFetchBanner (or) umoAdKitShowBanner gets called.
+/// 2. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE & bannerType is CUSTOM_GWxGH:
+/// - The BannerView’s layout params should be set by the application prior to calling
+/// umoAdKitFetchBanner (or) umoAdKitShowBanner.
+/// - Valid values for WIDTH & HEIGHT: Any non-negative Width & Height, as required
+/// by the application (or) WRAP_CONTENT
+/// 3. (YET TO BE SUPPORTED IN AD KIT) When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE &
+/// bannerType is not ADAPTIVE_GWxAH:
+/// - The application is expected to obtain the bannerview height from the Ad Kit
+/// by providing the required width as input to the corresponding Ad Kit API.
+/// - The BannerView’s layout params should be set by the application prior to calling
+/// umoAdKitFetchBanner (or) umoAdKitShowBanner.
+/// 4. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is VIDEO:
+/// - The BannerView’s layout params should be set by the application prior to calling
+/// umoAdKitFetchBanner (or) umoAdKitShowBanner.
+/// - Valid values for WIDTH & HEIGHT: Any non-negative Width & Height, as required
+/// by the application (or) WRAP_CONTENT
+/// - The Ad Kit would ignore the banner type in this case, even if set by the application.
 SWIFT_CLASS("_TtC6UmoAds18UMOAdKitBannerView")
-@interface UMOAdKitBannerView : UIView
+@interface UMOAdKitBannerView : UIView <UIGestureRecognizerDelegate>
 - (void)awakeFromNib;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic) CGRect frame;
+@property (nonatomic) CGRect bounds;
+- (void)didMoveToWindow;
 @end
 
 
@@ -694,12 +745,12 @@ SWIFT_CLASS("_TtC6UmoAds9AKWebView")
 - (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
 - (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationResponse:(WKNavigationResponse * _Nonnull)navigationResponse decisionHandler:(void (^ _Nonnull)(WKNavigationResponsePolicy))decisionHandler;
 - (void)webViewWebContentProcessDidTerminate:(WKWebView * _Nonnull)webView;
-- (void)webView:(WKWebView * _Nonnull)webView didCommitNavigation:(WKNavigation * _Null_unspecified)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView didStartProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView didFailNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
-- (void)webView:(WKWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
+- (void)webView:(WKWebView * _Nonnull)webView didCommitNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didStartProvisionalNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didFailNavigation:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
+- (void)webView:(WKWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
 - (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
 - (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration SWIFT_UNAVAILABLE;
 @end
@@ -776,6 +827,29 @@ SWIFT_CLASS("_TtC6UmoAds17AKSessionDelegate")
 @end
 
 
+SWIFT_CLASS("_TtC6UmoAds13AKVPaidBridge")
+@interface AKVPaidBridge : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC6UmoAds16AKVPaidConstants")
+@interface AKVPaidConstants : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC6UmoAds14AKVPaidWebView")
+@interface AKVPaidWebView : AKWebView
+- (void)webView:(WKWebView * _Nonnull)webView didCommitNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Nonnull)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
+@end
+
+
 
 SWIFT_CLASS_NAMED("AdInsertionInfo")
 @interface AdInsertionInfo : NSObject
@@ -816,6 +890,7 @@ SWIFT_CLASS("_TtC6UmoAds10BaseAdView")
 
 
 
+
 SWIFT_CLASS_NAMED("GPSCoordinates")
 @interface GPSCoordinates : NSObject
 @property (nonatomic) double lat;
@@ -830,6 +905,9 @@ SWIFT_CLASS("_TtC6UmoAds13GenericAdView")
 @interface GenericAdView : BaseAdView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
 
 
 
@@ -880,11 +958,35 @@ SWIFT_CLASS("_TtC6UmoAds20UMOAdKitBannerParams")
 /// when the application calls umoAdKitShowBanner()
 /// 3. Refreshes a banner ad when the application calls umoAdKitRefreshBanner()
 /// 4. Removes a banner ad when the application calls umoAdKitRemoveBanner()
+/// NOTE: The Application should make a note of the following:
+/// 1. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE & bannerType is not CUSTOM_GWxGH:
+/// - The BannerView’s layout params would be set by the Ad Kit based on the bannerType
+/// opted by the application, whenever umoAdKitFetchBanner (or) umoAdKitShowBanner gets called.
+/// 2. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE & bannerType is CUSTOM_GWxGH:
+/// - The BannerView’s layout params should be set by the application prior to calling
+/// umoAdKitFetchBanner (or) umoAdKitShowBanner.
+/// - Valid values for WIDTH & HEIGHT: Any non-negative Width & Height, as required
+/// by the application (or) WRAP_CONTENT
+/// 3. (YET TO BE SUPPORTED IN AD KIT) When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE &
+/// bannerType is not ADAPTIVE_GWxAH:
+/// - The application is expected to obtain the bannerview height from the Ad Kit
+/// by providing the required width as input to the corresponding Ad Kit API.
+/// - The BannerView’s layout params should be set by the application prior to calling
+/// umoAdKitFetchBanner (or) umoAdKitShowBanner.
+/// 4. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is VIDEO:
+/// - The BannerView’s layout params should be set by the application prior to calling
+/// umoAdKitFetchBanner (or) umoAdKitShowBanner.
+/// - Valid values for WIDTH & HEIGHT: Any non-negative Width & Height, as required
+/// by the application (or) WRAP_CONTENT
+/// - The Ad Kit would ignore the banner type in this case, even if set by the application.
 SWIFT_CLASS("_TtC6UmoAds18UMOAdKitBannerView")
-@interface UMOAdKitBannerView : UIView
+@interface UMOAdKitBannerView : UIView <UIGestureRecognizerDelegate>
 - (void)awakeFromNib;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic) CGRect frame;
+@property (nonatomic) CGRect bounds;
+- (void)didMoveToWindow;
 @end
 
 
