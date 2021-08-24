@@ -1,9 +1,11 @@
-//
-//  UmoAds.h
-//  UmoAds
-//
-//  Created by Dunshee, Patrick (US) on 1/20/21.
-//
+/*
+ * COPYRIGHT - CUBIC TRANSPORTATION SYSTEMS, INC ("CUBIC"). ALL RIGHTS RESERVED.
+ *
+ * Information Contained Herein is Proprietary and Confidential.
+ * The document is the property of "CUBIC" and may not be disclosed
+ * distributed, or reproduced  without the express written permission of
+ * "CUBIC".
+ */
 
 #import <Foundation/Foundation.h>
 

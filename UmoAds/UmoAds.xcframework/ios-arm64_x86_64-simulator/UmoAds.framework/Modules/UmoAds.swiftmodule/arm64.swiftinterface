@@ -48,7 +48,7 @@ open class AKXMLHexColorTransform : UmoAds.AKXMLTransformType {
   open func transformToXML(_ value: UmoAds.AKXMLHexColorTransform.Object?) -> UmoAds.AKXMLHexColorTransform.XML?
   @objc deinit
 }
-public enum AdSize : Swift.String {
+@objc public enum AdSize : Swift.Int {
   case mobileBanner
   case largeMobileBanner
   case mediumRectangle
@@ -57,9 +57,9 @@ public enum AdSize : Swift.String {
   public var size: CoreGraphics.CGSize {
     get
   }
-  public typealias RawValue = Swift.String
-  public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -144,7 +144,7 @@ public enum UMOAdKitLogLevel : Swift.String {
     get
   }
 }
-public enum UMOAdKitBannerType : Swift.String, Swift.CaseIterable {
+@objc public enum UMOAdKitBannerType : Swift.Int, Swift.CaseIterable {
   case NONE
   case MEDRECT_300x250_1x1
   case LEADERBOARD_300x50_6x1
@@ -165,9 +165,9 @@ public enum UMOAdKitBannerType : Swift.String, Swift.CaseIterable {
   case INTERSTITIAL_640x1136
   case INTERSTITIAL_750x1334
   case INTERSTITIAL_1080x1920
-  public typealias RawValue = Swift.String
-  public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
     get
   }
   public typealias AllCases = [UmoAds.UMOAdKitBannerType]
@@ -542,8 +542,8 @@ open class AKSOAPMessage : UmoAds.AKXMLMappable {
   open func mapping(map: UmoAds.AKXMLMap)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class GenericAdView : UmoAds.BaseAdView {
-  override public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
+@_inheritsConvenienceInitializers @objc public class GenericAdView : UmoAds.BaseAdView {
+  @objc override public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   override public func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo, adViewToRemove: UmoAds.BaseAdView?) -> Swift.Bool
   override public func adWillExpire() -> Swift.Bool
@@ -558,8 +558,8 @@ open class AKXMLDateFormatterTransform : UmoAds.AKXMLTransformType {
   open func transformToXML(_ value: Foundation.Date?) -> Swift.String?
   @objc deinit
 }
-public enum LoggingLevel : Swift.Int {
-  case none
+@objc public enum LoggingLevel : Swift.Int {
+  case none = 0
   case error
   case info
   public typealias RawValue = Swift.Int
@@ -1611,7 +1611,7 @@ open class AKXMLDateTransform : UmoAds.AKXMLTransformType {
   open func transformToXML(_ value: Foundation.Date?) -> Swift.Double?
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers public class BaseAdView : UIKit.UIView {
+@_hasMissingDesignatedInitializers @objc public class BaseAdView : UIKit.UIView {
   public var adSlotId: Swift.String!
   public var adSize: UmoAds.AdSize
   weak public var adViewListener: UmoAds.AdViewListener? {
@@ -1620,7 +1620,7 @@ open class AKXMLDateTransform : UmoAds.AKXMLTransformType {
   }
   public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
   @discardableResult
-  public func addAspectRatioConstraints() -> UIKit.NSLayoutConstraint
+  @objc public func addAspectRatioConstraints() -> UIKit.NSLayoutConstraint
   public func renderAd(adInsertionInfo: UmoAds.AdInsertionInfo, adViewToRemove: UmoAds.BaseAdView?) -> Swift.Bool
   public func adWillExpire() -> Swift.Bool
   @objc deinit
@@ -2299,16 +2299,16 @@ extension AKArchive {
   final public func extract(_ entry: UmoAds.AKEntry, to url: Foundation.URL, bufferSize: Swift.UInt32 = defaultReadChunkSize, skipCRC32: Swift.Bool = false, progress: Foundation.Progress? = nil) throws -> UmoAds.CRC32
   final public func extract(_ entry: UmoAds.AKEntry, bufferSize: Swift.UInt32 = defaultReadChunkSize, skipCRC32: Swift.Bool = false, progress: Foundation.Progress? = nil, consumer: (Foundation.Data) throws -> Swift.Void) throws -> UmoAds.CRC32
 }
-public enum Environment : Swift.String, Swift.CaseIterable {
+@objc public enum Environment : Swift.Int, Swift.CaseIterable {
   case prod
   case sandbox
   case dev
   case moovit
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.String)
   public typealias AllCases = [UmoAds.Environment]
   public static var allCases: [UmoAds.Environment] {
     get
@@ -2345,10 +2345,10 @@ public struct EmptyNetworkResponse : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
 }
-public protocol AdListener : AnyObject {
-  func onAdLoadSuccess(adSlotId: Swift.String, adInsertionId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
-  func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
-  func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
+@objc public protocol AdListener : AnyObject {
+  @objc func onAdLoadSuccess(adSlotId: Swift.String, adInsertionId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
+  @objc func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
+  @objc func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
 }
 public typealias AFDataResponse<Success> = UmoAds.DataResponse<Success, UmoAds.AKAFError>
 public typealias AFDownloadResponse<Success> = UmoAds.DownloadResponse<Success, UmoAds.AKAFError>
@@ -2576,52 +2576,62 @@ public typealias EmptyCompletion = (UmoAds.EmptyCompletionResult) -> Swift.Void
 public typealias JWTToken = Swift.String
 public typealias JWTRetrievedCompletion = (Swift.Result<UmoAds.JWTToken, Swift.Error>) -> Swift.Void
 public typealias JWTProviderClosure = (@escaping UmoAds.JWTRetrievedCompletion) -> Swift.Void
+public typealias JWTProviderClosureObjC = ((UmoAds.JWTToken?, Swift.Error?) -> Swift.Void) -> Swift.Void
 public typealias AdInsertionId = Swift.String
 public typealias LoadAdResult = (Swift.Result<UmoAds.AdInsertionId, Swift.Error>)
 public typealias LoadAdCompletion = (UmoAds.LoadAdResult) -> Swift.Void
 public typealias AuthenticatedCompletion = (Swift.Bool) -> Swift.Void
-@_hasMissingDesignatedInitializers public class Ads {
-  public static let shared: UmoAds.Ads
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Ads : ObjectiveC.NSObject {
+  @objc public static let shared: UmoAds.Ads
   public static let version: Swift.String
   public var jwtTokenProvider: UmoAds.JWTProviderClosure? {
     get
   }
-  public var adListener: UmoAds.AdListener? {
-    get
+  @objc public var jwtTokenProviderObjC: UmoAds.JWTProviderClosureObjC? {
+    @objc get
   }
-  public var umoAdKit: UmoAds.UMOAdKit?
-  public var umoAdKitParams: UmoAds.UMOAdKitParams
+  @objc public var adListener: UmoAds.AdListener? {
+    @objc get
+  }
+  @objc public var umoAdKit: UmoAds.UMOAdKit?
+  @objc public var umoAdKitParams: UmoAds.UMOAdKitParams
   @objc deinit
 }
 extension Ads {
-  public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
+  @objc dynamic public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
   public func setJWTTokenProvider(jwtTokenProvider: UmoAds.JWTProviderClosure?)
-  public func logout()
-  public func isAuthenticated(completion: @escaping UmoAds.AuthenticatedCompletion)
-  public func setEnvironment(_ environment: UmoAds.Environment)
-  public func getAnonymousId() -> Swift.String?
+  @objc dynamic public func setJWTTokenProviderObjC(jwtTokenProvider: UmoAds.JWTProviderClosureObjC?)
+  @objc dynamic public func logout()
+  @objc dynamic public func isAuthenticated(completion: @escaping UmoAds.AuthenticatedCompletion)
+  @objc dynamic public func setEnvironment(_ environment: UmoAds.Environment)
+  @objc dynamic public func getAnonymousId() -> Swift.String?
 }
 extension Ads {
-  public func updateLastKnownLocation(_ location: CoreLocation.CLLocation)
+  @objc dynamic public func updateLastKnownLocation(_ location: CoreLocation.CLLocation)
 }
 extension Ads {
   public func fetchInitializationParameters(completion: UmoAds.EmptyCompletion?)
-  public func configureConfigName(_ configName: Swift.String)
+  @objc dynamic public func fetchInitializationParametersObjC(completion: ((Swift.Error?) -> Swift.Void)?)
+  @objc dynamic public func configureConfigName(_ configName: Swift.String)
   public func prefetchAd(spotId: Swift.String, hostedParamsOverride: UmoAds.UMOAdKitBannerParams?, bannerType: UmoAds.UMOAdKitBannerType, completion: @escaping UmoAds.EmptyCompletion)
-  public func showAd(spotId: Swift.String, bannerView: UmoAds.UMOAdKitBannerView, assignHostedParams: Swift.Bool = true, bannerType: UmoAds.UMOAdKitBannerType? = nil, completion: @escaping UmoAds.EmptyCompletion)
-  public func generateHostedBannerParams(spotId: Swift.String, bannerType: UmoAds.UMOAdKitBannerType?) -> UmoAds.UMOAdKitBannerParams
-  public func getOrGenerateBannerAd(spotId: Swift.String) -> UmoAds.UMOAdKitBannerView
+  @objc dynamic public func prefetchAdObjC(spotId: Swift.String, hostedParamsOverride: UmoAds.UMOAdKitBannerParams?, bannerType: UmoAds.UMOAdKitBannerType, completion: @escaping ((Swift.Error?) -> Swift.Void))
+  public func showAd(spotId: Swift.String, bannerView: UmoAds.UMOAdKitBannerView, assignHostedParams: Swift.Bool = true, bannerType: UmoAds.UMOAdKitBannerType, completion: @escaping UmoAds.EmptyCompletion)
+  @objc dynamic public func generateHostedBannerParams(spotId: Swift.String, bannerType: UmoAds.UMOAdKitBannerType) -> UmoAds.UMOAdKitBannerParams
+  @objc dynamic public func getOrGenerateBannerAd(spotId: Swift.String) -> UmoAds.UMOAdKitBannerView
   public func parentViewControllerDeinitializingFor(adView: UmoAds.UMOAdKitBannerView, completion: UmoAds.EmptyCompletion? = nil)
+  @objc dynamic public func parentViewControllerDeinitializingForObjC(adView: UmoAds.UMOAdKitBannerView, completion: ((Swift.Error?) -> Swift.Void)? = nil)
   public func parentViewControllerAppearingFor(adView: UmoAds.UMOAdKitBannerView, completion: UmoAds.EmptyCompletion? = nil)
+  @objc dynamic public func parentViewControllerAppearingForObjC(adView: UmoAds.UMOAdKitBannerView, completion: ((Swift.Error?) -> Swift.Void)? = nil)
   public func loadAd(adView: UmoAds.BaseAdView, completion: UmoAds.LoadAdCompletion? = nil)
-  public func setPlaceholderImage(adSize: UmoAds.AdSize, placeholder: UIKit.UIImage)
-  public func placeholderImage(adSize: UmoAds.AdSize) -> UIKit.UIImage?
-  public func setUniversalAdListener(_ adListener: UmoAds.AdListener)
-  public func updateRegionId(_ regionId: Swift.UInt64, shouldRefreshAllAds: Swift.Bool = true)
-  public func clearCache()
+  @objc dynamic public func loadAd(adView: UmoAds.BaseAdView, completion: ((UmoAds.AdInsertionId?, Swift.Error?) -> Swift.Void)?)
+  @objc dynamic public func setPlaceholderImage(adSize: UmoAds.AdSize, placeholder: UIKit.UIImage)
+  @objc dynamic public func placeholderImage(adSize: UmoAds.AdSize) -> UIKit.UIImage?
+  @objc dynamic public func setUniversalAdListener(_ adListener: UmoAds.AdListener)
+  @objc dynamic public func updateRegionId(_ regionId: Swift.UInt64, shouldRefreshAllAds: Swift.Bool = true)
+  @objc dynamic public func clearCache()
 }
 extension Ads {
-  public func setLoggerLevel(_ level: UmoAds.LoggingLevel)
+  @objc dynamic public func setLoggerLevel(_ level: UmoAds.LoggingLevel)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(AdInsertionInfo) @objcMembers public class AdInsertionInfo : ObjectiveC.NSObject, Swift.Codable {
   required public init(from decoder: Swift.Decoder)
