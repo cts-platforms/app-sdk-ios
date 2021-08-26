@@ -36,22 +36,6 @@
 		<data>
 		N+SzdyevBTGqiGEaT8CxvEaq/yk=
 		</data>
-		<key>Info-iOS.plist</key>
-		<data>
-		tfMnIXWMKvGgHWFU1AIl8lGZzZo=
-		</data>
-		<key>Info-macOS.plist</key>
-		<data>
-		tfMnIXWMKvGgHWFU1AIl8lGZzZo=
-		</data>
-		<key>Info-tvOS.plist</key>
-		<data>
-		tfMnIXWMKvGgHWFU1AIl8lGZzZo=
-		</data>
-		<key>Info-watchOS.plist</key>
-		<data>
-		tfMnIXWMKvGgHWFU1AIl8lGZzZo=
-		</data>
 		<key>Info.plist</key>
 		<data>
 		gwZBkkmUoJutOiIxSFf+UajCxjI=
@@ -96,10 +80,6 @@
 		<data>
 		NVUL9L0Z2xBdwalq5SZUskwBqCk=
 		</data>
-		<key>UmoAds</key>
-		<data>
-		uzXLLYTmtQ6KIMY29unw1fdWAEE=
-		</data>
 		<key>UmoAds.podspec</key>
 		<data>
 		maFLte3MNqFHqJcind40CWzvpgg=
@@ -109,10 +89,6 @@
 	<dict>
 		<key>AKMRAIDController.js</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			YOgEvcDPx3eXpfzwbBMQ8Cz/wj4=
-			</data>
 			<key>hash2</key>
 			<data>
 			vDhl71qhyTPXAhMJMvERutW03cAAt8H21aXf/0jSDuQ=
@@ -120,10 +96,6 @@
 		</dict>
 		<key>AKMRaidVPaidController.js</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			LLt4TWJI2ZO0nnPsEFGj0jXDI3Y=
-			</data>
 			<key>hash2</key>
 			<data>
 			933rP2H2rl0+iaOWDgxC2pUYUTC44eQ0NdBnpHtZARU=
@@ -131,10 +103,6 @@
 		</dict>
 		<key>AKVPaidController_2_0.js</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			J7o/k4hRAmRXjcS62qv5Swp5chY=
-			</data>
 			<key>hash2</key>
 			<data>
 			Ch4dpCA5HPpZ2e17t0S865SyzowC1oElfx0EFetV9kY=
@@ -142,10 +110,6 @@
 		</dict>
 		<key>Assets.car</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			M9NjJG/M4+UXPAhyHpa1U8Ezo2k=
-			</data>
 			<key>hash2</key>
 			<data>
 			oliRlfJ7r6BW/kTSjROMztj+L0bTBN6AhNDCm9+LhdM=
@@ -153,10 +117,6 @@
 		</dict>
 		<key>Dev.xcconfig</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			6Av3FEpd9PmYOF0B/xcJh3R8U78=
-			</data>
 			<key>hash2</key>
 			<data>
 			B687RoxMr5zYHGmbPTli8OKxL8kosO1oC6NHxobRAJk=
@@ -164,10 +124,6 @@
 		</dict>
 		<key>DevLocal.xcconfig</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			DL+X2p8N1VVty8XzVH4reJN/gaQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			ug9atBWrZz5oMbb2rxdvKOcroXCgHqbn7UX6/qZHMyY=
@@ -175,10 +131,6 @@
 		</dict>
 		<key>Headers/UmoAds-Swift.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			4SUbj057PZ7Z+n4yqvrW1euMXpY=
-			</data>
 			<key>hash2</key>
 			<data>
 			kJy29/sjW/Sr55aivAb1TsdY7W1lnWLadWLcHwLsOv4=
@@ -186,65 +138,13 @@
 		</dict>
 		<key>Headers/UmoAds.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			N+SzdyevBTGqiGEaT8CxvEaq/yk=
-			</data>
 			<key>hash2</key>
 			<data>
 			+McKXel0oN1xwMLamMgh8NpPtXcGaDL9AGmax/2Cl0g=
 			</data>
 		</dict>
-		<key>Info-iOS.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tfMnIXWMKvGgHWFU1AIl8lGZzZo=
-			</data>
-			<key>hash2</key>
-			<data>
-			+Vgxa6fkf8+JM6aa/BmmlG65FcpQ49n/8aFgqixpW+Q=
-			</data>
-		</dict>
-		<key>Info-macOS.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tfMnIXWMKvGgHWFU1AIl8lGZzZo=
-			</data>
-			<key>hash2</key>
-			<data>
-			+Vgxa6fkf8+JM6aa/BmmlG65FcpQ49n/8aFgqixpW+Q=
-			</data>
-		</dict>
-		<key>Info-tvOS.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tfMnIXWMKvGgHWFU1AIl8lGZzZo=
-			</data>
-			<key>hash2</key>
-			<data>
-			+Vgxa6fkf8+JM6aa/BmmlG65FcpQ49n/8aFgqixpW+Q=
-			</data>
-		</dict>
-		<key>Info-watchOS.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tfMnIXWMKvGgHWFU1AIl8lGZzZo=
-			</data>
-			<key>hash2</key>
-			<data>
-			+Vgxa6fkf8+JM6aa/BmmlG65FcpQ49n/8aFgqixpW+Q=
-			</data>
-		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			IdiqJ/MvDifzLoT6Mh4fTLfP/6g=
-			</data>
 			<key>hash2</key>
 			<data>
 			yRZXwOTx7hyHtxodoQBpKQG6dYKQ4DIsDJwHGYRrtLc=
@@ -252,10 +152,6 @@
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			IdiqJ/MvDifzLoT6Mh4fTLfP/6g=
-			</data>
 			<key>hash2</key>
 			<data>
 			yRZXwOTx7hyHtxodoQBpKQG6dYKQ4DIsDJwHGYRrtLc=
@@ -263,10 +159,6 @@
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Ytx+XkhaPlkRJcv38rwzfMA4dd0=
-			</data>
 			<key>hash2</key>
 			<data>
 			kdkzmkuLSynTxuyhmMkO7PqTpw2A9MGFP6ylLOeOQa0=
@@ -274,10 +166,6 @@
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Ird2rqwa8ia9MRuoxFzNT/1zXuk=
-			</data>
 			<key>hash2</key>
 			<data>
 			98tClfmZHPyEEYcg8MP0d/8Fzz04pE4qyhxSV5u6h6U=
@@ -285,10 +173,6 @@
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			br1dCXUiUWcat2Pcny5wp50CCCM=
-			</data>
 			<key>hash2</key>
 			<data>
 			u33m0LDZ6DilkqTYbcppAUHDV35BF/B0EJ8Y/CvoLRY=
@@ -296,10 +180,6 @@
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Ytx+XkhaPlkRJcv38rwzfMA4dd0=
-			</data>
 			<key>hash2</key>
 			<data>
 			kdkzmkuLSynTxuyhmMkO7PqTpw2A9MGFP6ylLOeOQa0=
@@ -307,10 +187,6 @@
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Ird2rqwa8ia9MRuoxFzNT/1zXuk=
-			</data>
 			<key>hash2</key>
 			<data>
 			98tClfmZHPyEEYcg8MP0d/8Fzz04pE4qyhxSV5u6h6U=
@@ -318,10 +194,6 @@
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			br1dCXUiUWcat2Pcny5wp50CCCM=
-			</data>
 			<key>hash2</key>
 			<data>
 			u33m0LDZ6DilkqTYbcppAUHDV35BF/B0EJ8Y/CvoLRY=
@@ -329,10 +201,6 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			1awnd6UmxFNTf1VkdQpYIlkUcmc=
-			</data>
 			<key>hash2</key>
 			<data>
 			Vc00fi/LdQQqkj226OS5jLh14y2r2LhQ+/76goAl880=
@@ -340,32 +208,13 @@
 		</dict>
 		<key>Prod.xcconfig</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			NVUL9L0Z2xBdwalq5SZUskwBqCk=
-			</data>
 			<key>hash2</key>
 			<data>
 			jhqoMj9YoPXXr3+HgT2Wo9wb6dbLunuL83fztiXnrGI=
 			</data>
 		</dict>
-		<key>UmoAds</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			uzXLLYTmtQ6KIMY29unw1fdWAEE=
-			</data>
-			<key>hash2</key>
-			<data>
-			PU+gWthR86w0Smu0d6lnbfdV2BEc7nS7M5MsOsL2oRI=
-			</data>
-		</dict>
 		<key>UmoAds.podspec</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			maFLte3MNqFHqJcind40CWzvpgg=
-			</data>
 			<key>hash2</key>
 			<data>
 			yx2HkNi6hx663Y34RaOEK2DAY7k2WL2WjOnHHX6iFug=
