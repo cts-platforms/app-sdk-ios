@@ -16,6 +16,7 @@ public typealias JWTRetrievedCompletion = (Swift.Result<CubicAuth.JWTToken, Swif
 public typealias AuthInfoCompletion = (Swift.Result<CubicAuth.AuthInfo, Swift.Error>) -> Swift.Void
 public typealias JWTProviderCompletion = (Swift.Result<(accessToken: CubicAuth.JWTToken, refreshToken: CubicAuth.JWTToken?), Swift.Error>) -> Swift.Void
 public typealias JWTProviderClosure = (@escaping CubicAuth.JWTProviderCompletion) -> Swift.Void
+public typealias JWTProviderClosureObjC = ((CubicAuth.JWTToken?, Swift.Error?) -> Swift.Void) -> Swift.Void
 public typealias AuthenticatedCompletion = (Swift.Bool) -> Swift.Void
 public typealias JWTInfoCompletion = (CubicAuth.JWTInfo?) -> Swift.Void
 @_hasMissingDesignatedInitializers public class CubicAuth {
@@ -26,25 +27,39 @@ public typealias JWTInfoCompletion = (CubicAuth.JWTInfo?) -> Swift.Void
   public var jwtProviderClosure: CubicAuth.JWTProviderClosure? {
     get
   }
+  public var jwtProviderClosureObjC: CubicAuth.JWTProviderClosureObjC? {
+    get
+  }
   public var currentEnvironment: CubicAuth.Environment {
     get
   }
-  public var clientId: Swift.String
-  public var clientSecret: Swift.String
+  public var clientId: Swift.String {
+    get
+  }
+  public var clientSecret: Swift.String {
+    get
+  }
   public var authSession: AuthenticationServices.ASWebAuthenticationSession?
+  public var realmName: Swift.String
   public func setEnvironment(_ environment: CubicAuth.Environment)
   public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
   public func updateJWTInfoUpdateClosure(_ jwtInfoUpdateClosure: @escaping CubicAuth.JWTInfoCompletion)
-  public func updateJWTProviderClosure(_ jwtProviderClosure: @escaping CubicAuth.JWTProviderClosure)
+  public func updateJWTProviderClosure(_ jwtProviderClosure: CubicAuth.JWTProviderClosure?)
+  public func updateJWTProviderClosureObjC(_ jwtProviderClosureObjC: CubicAuth.JWTProviderClosureObjC?)
+  public func isAuthenticated(completion: @escaping CubicAuth.AuthenticatedCompletion)
+  public func fetchLocalJWTInfo(completion: @escaping CubicAuth.JWTInfoCompletion)
   public func logout()
   public func retrieveAndRefreshTokenIfNeeded(canUseAnonymous: Swift.Bool, completion: @escaping CubicAuth.JWTRetrievedCompletion)
   public func requestJWTInfoUpdate()
+  public func getAnonymousId() -> Swift.String?
+  public func handleNetworkResponse(_ response: Foundation.HTTPURLResponse?)
+  public func handleRefreshReseponse(_ response: Foundation.HTTPURLResponse)
   @available(iOS 13.0, *)
-  public func createLogin(presentationContextProvider: AuthenticationServices.ASWebAuthenticationPresentationContextProviding?, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
-  public func createLogin(authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
+  public func createLogin(presentationContextProvider: AuthenticationServices.ASWebAuthenticationPresentationContextProviding?, prefersEphemeralWebBrowserSession: Swift.Bool, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
+  public func createLogin(prefersEphemeralWebBrowserSession: Swift.Bool, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
   @available(iOS 13.0, *)
-  public func createRegistration(presentationContextProvider: AuthenticationServices.ASWebAuthenticationPresentationContextProviding?, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
-  public func createRegistration(authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
+  public func createRegistration(presentationContextProvider: AuthenticationServices.ASWebAuthenticationPresentationContextProviding?, prefersEphemeralWebBrowserSession: Swift.Bool, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
+  public func createRegistration(prefersEphemeralWebBrowserSession: Swift.Bool, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
   public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
   @objc deinit
 }
