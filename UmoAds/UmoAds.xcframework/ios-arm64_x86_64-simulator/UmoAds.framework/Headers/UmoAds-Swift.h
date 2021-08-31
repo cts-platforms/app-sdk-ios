@@ -425,6 +425,49 @@ typedef SWIFT_ENUM(NSInteger, AdSize, open) {
   AdSizeNone = 4,
 };
 
+
+/// Listener for individual ad views.
+SWIFT_PROTOCOL("_TtP6UmoAds14AdViewListener_")
+@protocol AdViewListener
+/// Callback for when an ad is loaded successfully.
+/// \param adSlotId The ad slot identifier that was loaded successfully.
+///
+/// \param adInsertionId The ad insertion identifier that was returned.
+///
+/// \param rendered Indicates whether the ad was rendered successfully or not.
+///
+/// \param adView The <code>AdView</code> instance that loaded successfully.
+///
+- (void)onAdLoadSuccessWithAdSlotId:(NSString * _Nonnull)adSlotId adInsertionId:(NSString * _Nonnull)adInsertionId rendered:(BOOL)rendered adView:(BaseAdView * _Nonnull)adView;
+/// Callback for when an Ad fails to load.
+/// \param adSlotId The ad slot identifier that failed to load.
+///
+/// \param error The reason for the failure of the ad to load.
+///
+/// \param adView The <code>AdView</code> instance that failed to load.
+///
+- (void)onAdLoadErrorWithAdSlotId:(NSString * _Nonnull)adSlotId error:(NSError * _Nonnull)error adView:(BaseAdView * _Nonnull)adView;
+/// Callback for when an ad is clicked.
+/// If an <code>AdViewListener</code> is implemented, that callback’s return value will be prioritized over this callback’s return value.
+/// \param adSlotId The ad slot identifier that was clicked.
+///
+/// \param url The <code>URL</code> that the ad links to. Will only be nil if the URL string could not be composed into a <code>URL</code> instance.
+///
+/// \param urlString The URL string to be opened upon ad click.
+///
+/// \param adView The <code>AdView</code> instance that was clicked.
+///
+///
+/// returns:
+///
+/// <ul>
+///   <li>
+///     True if the SDK should handle opening the <code>URL</code> in the default web browser via <code>UIApplication.shared</code>, false if the application will handle the opening of the <code>URL</code>.
+///   </li>
+/// </ul>
+- (BOOL)onAdClickShouldOpenLinkWithAdSlotId:(NSString * _Nonnull)adSlotId url:(NSURL * _Nullable)url urlString:(NSString * _Nonnull)urlString adView:(BaseAdView * _Nonnull)adView SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class UMOAdKit;
 @class UMOAdKitParams;
 
@@ -538,6 +581,7 @@ enum UMOAdKitBannerType : NSInteger;
 
 SWIFT_CLASS("_TtC6UmoAds10BaseAdView")
 @interface BaseAdView : UIView
+@property (nonatomic, weak) id <AdViewListener> _Nullable adViewListener;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 /// Add a width constraint with multiplier against height anchor in the ratio defined by the <code>AdSize</code> specified upon initialization.
 /// Creation code: <code>widthAnchor.constraint(equalTo: heightAnchor, multiplier: adSize.size.width / adSize.size.height)</code>
@@ -1142,6 +1186,49 @@ typedef SWIFT_ENUM(NSInteger, AdSize, open) {
   AdSizeNone = 4,
 };
 
+
+/// Listener for individual ad views.
+SWIFT_PROTOCOL("_TtP6UmoAds14AdViewListener_")
+@protocol AdViewListener
+/// Callback for when an ad is loaded successfully.
+/// \param adSlotId The ad slot identifier that was loaded successfully.
+///
+/// \param adInsertionId The ad insertion identifier that was returned.
+///
+/// \param rendered Indicates whether the ad was rendered successfully or not.
+///
+/// \param adView The <code>AdView</code> instance that loaded successfully.
+///
+- (void)onAdLoadSuccessWithAdSlotId:(NSString * _Nonnull)adSlotId adInsertionId:(NSString * _Nonnull)adInsertionId rendered:(BOOL)rendered adView:(BaseAdView * _Nonnull)adView;
+/// Callback for when an Ad fails to load.
+/// \param adSlotId The ad slot identifier that failed to load.
+///
+/// \param error The reason for the failure of the ad to load.
+///
+/// \param adView The <code>AdView</code> instance that failed to load.
+///
+- (void)onAdLoadErrorWithAdSlotId:(NSString * _Nonnull)adSlotId error:(NSError * _Nonnull)error adView:(BaseAdView * _Nonnull)adView;
+/// Callback for when an ad is clicked.
+/// If an <code>AdViewListener</code> is implemented, that callback’s return value will be prioritized over this callback’s return value.
+/// \param adSlotId The ad slot identifier that was clicked.
+///
+/// \param url The <code>URL</code> that the ad links to. Will only be nil if the URL string could not be composed into a <code>URL</code> instance.
+///
+/// \param urlString The URL string to be opened upon ad click.
+///
+/// \param adView The <code>AdView</code> instance that was clicked.
+///
+///
+/// returns:
+///
+/// <ul>
+///   <li>
+///     True if the SDK should handle opening the <code>URL</code> in the default web browser via <code>UIApplication.shared</code>, false if the application will handle the opening of the <code>URL</code>.
+///   </li>
+/// </ul>
+- (BOOL)onAdClickShouldOpenLinkWithAdSlotId:(NSString * _Nonnull)adSlotId url:(NSURL * _Nullable)url urlString:(NSString * _Nonnull)urlString adView:(BaseAdView * _Nonnull)adView SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class UMOAdKit;
 @class UMOAdKitParams;
 
@@ -1255,6 +1342,7 @@ enum UMOAdKitBannerType : NSInteger;
 
 SWIFT_CLASS("_TtC6UmoAds10BaseAdView")
 @interface BaseAdView : UIView
+@property (nonatomic, weak) id <AdViewListener> _Nullable adViewListener;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 /// Add a width constraint with multiplier against height anchor in the ratio defined by the <code>AdSize</code> specified upon initialization.
 /// Creation code: <code>widthAnchor.constraint(equalTo: heightAnchor, multiplier: adSize.size.width / adSize.size.height)</code>

@@ -11,9 +11,10 @@ Pod::Spec.new do |spec|
   spec.source_files = "Ads/**/*.{swift,js}"
   spec.framework    = 'SystemConfiguration'
   spec.swift_version = '5.0'
-  spec.ios.deployment_target = '10.0'
+  spec.ios.deployment_target = '12.0'
   spec.osx.deployment_target = '10.10'
   spec.dependency 'SDWebImage', '~> 5.7'
   spec.dependency 'SSZipArchive', '~> 2.2'
+  spec.dependency 'CubicAuth', '0.1.0-beta6
   spec.resources = 'Ads/**/*.{pfx,png,pdf,json,xcassets}'
 end

@@ -12,6 +12,7 @@ import Compression
 import CoreFoundation
 import CoreLocation
 import CoreTelephony
+import CubicAuth
 import Dispatch
 import EventKit
 import Foundation
@@ -575,10 +576,10 @@ open class AKXMLDateFormatterTransform : UmoAds.AKXMLTransformType {
   @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
-public protocol AdViewListener : AnyObject {
-  func onAdLoadSuccess(adSlotId: Swift.String, adInsertionId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
-  func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
-  func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
+@objc public protocol AdViewListener : AnyObject {
+  @objc func onAdLoadSuccess(adSlotId: Swift.String, adInsertionId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
+  @objc func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
+  @objc func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
 }
 open class AKMultipartFormData {
   public static let encodingMemoryThreshold: Swift.UInt64
@@ -1614,9 +1615,9 @@ open class AKXMLDateTransform : UmoAds.AKXMLTransformType {
 @_hasMissingDesignatedInitializers @objc public class BaseAdView : UIKit.UIView {
   public var adSlotId: Swift.String!
   public var adSize: UmoAds.AdSize
-  weak public var adViewListener: UmoAds.AdViewListener? {
-    get
-    set
+  @objc weak public var adViewListener: UmoAds.AdViewListener? {
+    @objc get
+    @objc set
   }
   public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
   @discardableResult
@@ -2574,8 +2575,8 @@ open class AKXMLDataTransform : UmoAds.AKXMLTransformType {
 public typealias EmptyCompletionResult = (Swift.Result<UmoAds.EmptyNetworkResponse, Swift.Error>)
 public typealias EmptyCompletion = (UmoAds.EmptyCompletionResult) -> Swift.Void
 public typealias JWTToken = Swift.String
-public typealias JWTRetrievedCompletion = (Swift.Result<UmoAds.JWTToken, Swift.Error>) -> Swift.Void
-public typealias JWTProviderClosure = (@escaping UmoAds.JWTRetrievedCompletion) -> Swift.Void
+public typealias JWTProviderCompletion = (Swift.Result<(accessToken: UmoAds.JWTToken, refreshToken: UmoAds.JWTToken?), Swift.Error>) -> Swift.Void
+public typealias JWTProviderClosure = (@escaping UmoAds.JWTProviderCompletion) -> Swift.Void
 public typealias JWTProviderClosureObjC = ((UmoAds.JWTToken?, Swift.Error?) -> Swift.Void) -> Swift.Void
 public typealias AdInsertionId = Swift.String
 public typealias LoadAdResult = (Swift.Result<UmoAds.AdInsertionId, Swift.Error>)
@@ -2595,6 +2596,7 @@ public typealias AuthenticatedCompletion = (Swift.Bool) -> Swift.Void
   }
   @objc public var umoAdKit: UmoAds.UMOAdKit?
   @objc public var umoAdKitParams: UmoAds.UMOAdKitParams
+  public var adKitBannerListener: UmoAds.UMOAdKitBannerAdListener?
   @objc deinit
 }
 extension Ads {
