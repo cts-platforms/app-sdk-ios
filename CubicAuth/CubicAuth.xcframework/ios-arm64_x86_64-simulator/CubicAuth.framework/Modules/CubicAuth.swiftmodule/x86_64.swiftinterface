@@ -19,8 +19,8 @@ public typealias JWTProviderClosure = (@escaping CubicAuth.JWTProviderCompletion
 public typealias JWTProviderClosureObjC = ((CubicAuth.JWTToken?, Swift.Error?) -> Swift.Void) -> Swift.Void
 public typealias AuthenticatedCompletion = (Swift.Bool) -> Swift.Void
 public typealias JWTInfoCompletion = (CubicAuth.JWTInfo?) -> Swift.Void
-@_hasMissingDesignatedInitializers public class CubicAuth {
-  public static let shared: CubicAuth.CubicAuth
+@_hasMissingDesignatedInitializers public class Auth {
+  public static let shared: CubicAuth.Auth
   public var jwtInfoUpdateClosure: CubicAuth.JWTInfoCompletion? {
     get
   }
