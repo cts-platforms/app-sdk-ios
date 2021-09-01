@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
   spec.name         = 'CubicAuth'
-  spec.version      = '0.1.0-beta7'
+  spec.version      = '0.1.0-beta8'
   spec.license      = { :type => 'GPL3' }
   spec.homepage     = 'https://github.com/cts-platforms/app-sdk-ios'
   spec.authors      = { 'Cubic' => 'CTSPlatformsMobileSupport@cubic.com' }
   spec.summary      = 'CubicAuth'
-  spec.source       = { :git => 'https://github.com/cts-platforms/app-sdk-ios.git', :tag => 'CubicAuth-0.1.0-beta7' }
+  spec.source       = { :git => 'https://github.com/cts-platforms/app-sdk-ios.git', :tag => 'CubicAuth-0.1.0-beta8' }
   spec.vendored_frameworks = 'CubicAuth/CubicAuth.xcframework'
   spec.framework    = 'SystemConfiguration'
   spec.swift_version = '5.0'
