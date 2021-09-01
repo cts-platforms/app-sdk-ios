@@ -6,6 +6,86 @@ import AuthenticationServices
 import Foundation
 import Swift
 import UIKit
+public enum NetworkError : Foundation.LocalizedError {
+  case invalidCode(response: Foundation.HTTPURLResponse, responseText: Swift.String)
+  case osError(Swift.Error)
+  case dataParseFailure(Foundation.Data?)
+  case unknownError
+}
+extension NetworkError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public struct JWTInfo {
+  public let cubicId: Swift.String?
+  public let preferredUsername: Swift.String?
+  public let isAnonymous: Swift.Bool?
+}
+public enum LoggingLevel : Swift.Int {
+  case none
+  case error
+  case info
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct AuthInfo : Swift.Codable {
+  public var accessToken: Swift.String?
+  public let expiresIn: Swift.Int?
+  public let refreshExpiresIn: Swift.Int?
+  public var refreshToken: Swift.String?
+  public let tokenType: Swift.String?
+  public let idToken: Swift.String?
+  public let notBeforePolicy: Swift.Int?
+  public let sessionState: Swift.String?
+  public let scope: Swift.String?
+  public let isAnonymous: Swift.Bool
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension AuthInfo {
+  public init(accessToken: Swift.String, refreshToken: Swift.String?)
+}
+public struct EmptyNetworkResponse : Swift.Codable {
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public enum Environment : Swift.String, Swift.CaseIterable {
+  case prod
+  case sandbox
+  case dev
+  case moovit
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [CubicAuth.Environment]
+  public static var allCases: [CubicAuth.Environment] {
+    get
+  }
+}
+public enum CubicAuthError : Foundation.LocalizedError {
+  case authFailedWithoutOSError
+  case authReturnedWithoutJWT
+  case clientIdAndSecret
+  case memoryReferenceLost
+  case refreshTokenMissing
+  case noAnonymousAndNoProvider
+  public static func == (a: CubicAuth.CubicAuthError, b: CubicAuth.CubicAuthError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension CubicAuthError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public typealias JWTToken = Swift.String
 public typealias AuthenticationCompletion = (Swift.Result<CubicAuth.AuthInfo, Swift.Error>) -> Swift.Void
 public typealias AuthSessionGenerationCompletion = (AuthenticationServices.ASWebAuthenticationSession) -> Swift.Void
@@ -63,91 +143,11 @@ public typealias JWTInfoCompletion = (CubicAuth.JWTInfo?) -> Swift.Void
   public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
   @objc deinit
 }
-public struct EmptyNetworkResponse : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
-}
-public struct AuthInfo : Swift.Codable {
-  public var accessToken: Swift.String?
-  public let expiresIn: Swift.Int?
-  public let refreshExpiresIn: Swift.Int?
-  public var refreshToken: Swift.String?
-  public let tokenType: Swift.String?
-  public let idToken: Swift.String?
-  public let notBeforePolicy: Swift.Int?
-  public let sessionState: Swift.String?
-  public let scope: Swift.String?
-  public let isAnonymous: Swift.Bool
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
-}
-extension AuthInfo {
-  public init(accessToken: Swift.String, refreshToken: Swift.String?)
-}
-public enum LoggingLevel : Swift.Int {
-  case none
-  case error
-  case info
-  public typealias RawValue = Swift.Int
-  public init?(rawValue: Swift.Int)
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public enum CubicAuthError : Foundation.LocalizedError {
-  case authFailedWithoutOSError
-  case authReturnedWithoutJWT
-  case clientIdAndSecret
-  case memoryReferenceLost
-  case refreshTokenMissing
-  case noAnonymousAndNoProvider
-  public static func == (a: CubicAuth.CubicAuthError, b: CubicAuth.CubicAuthError) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
-}
-extension CubicAuthError {
-  public var errorDescription: Swift.String? {
-    get
-  }
-}
-public enum Environment : Swift.String, Swift.CaseIterable {
-  case prod
-  case sandbox
-  case dev
-  case moovit
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-  public init?(rawValue: Swift.String)
-  public typealias AllCases = [CubicAuth.Environment]
-  public static var allCases: [CubicAuth.Environment] {
-    get
-  }
-}
-public enum NetworkError : Foundation.LocalizedError {
-  case invalidCode(response: Foundation.HTTPURLResponse, responseText: Swift.String)
-  case osError(Swift.Error)
-  case dataParseFailure(Foundation.Data?)
-  case unknownError
-}
-extension NetworkError {
-  public var errorDescription: Swift.String? {
-    get
-  }
-}
-public struct JWTInfo {
-  public let cubicId: Swift.String?
-  public let preferredUsername: Swift.String?
-  public let isAnonymous: Swift.Bool?
-}
 extension CubicAuth.LoggingLevel : Swift.Equatable {}
 extension CubicAuth.LoggingLevel : Swift.Hashable {}
 extension CubicAuth.LoggingLevel : Swift.RawRepresentable {}
-extension CubicAuth.CubicAuthError : Swift.Equatable {}
-extension CubicAuth.CubicAuthError : Swift.Hashable {}
 extension CubicAuth.Environment : Swift.Equatable {}
 extension CubicAuth.Environment : Swift.Hashable {}
 extension CubicAuth.Environment : Swift.RawRepresentable {}
+extension CubicAuth.CubicAuthError : Swift.Equatable {}
+extension CubicAuth.CubicAuthError : Swift.Hashable {}
