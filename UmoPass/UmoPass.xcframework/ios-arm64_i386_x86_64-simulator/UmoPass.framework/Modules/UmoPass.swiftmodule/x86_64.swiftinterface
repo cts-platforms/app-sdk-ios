@@ -555,11 +555,11 @@ public enum PassError : Foundation.LocalizedError {
   case memoryReferenceLost
   case vehicleCodeInvalid
   case keyOrMediaIdMissing
-  public static func == (a: UmoPass.PassError, b: UmoPass.PassError) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-  public func hash(into hasher: inout Swift.Hasher)
+  case failedToSaveToKeychain(Swift.String?)
+  case failedToParseFromKeychain
+  case failedToFetchFromKeychain(Swift.String?)
+  case failedToDeleteFromKeychain(Swift.String?)
+  case itemNotFoundInKeychain
 }
 extension PassError {
   public var errorDescription: Swift.String? {
@@ -622,8 +622,6 @@ extension UmoPass.RedeemBenefitResponse.RedemptionType : Swift.RawRepresentable 
 extension UmoPass.DurationUnits : Swift.Equatable {}
 extension UmoPass.DurationUnits : Swift.Hashable {}
 extension UmoPass.DurationUnits : Swift.RawRepresentable {}
-extension UmoPass.PassError : Swift.Equatable {}
-extension UmoPass.PassError : Swift.Hashable {}
 extension UmoPass.Environment : Swift.Equatable {}
 extension UmoPass.Environment : Swift.Hashable {}
 extension UmoPass.Environment : Swift.RawRepresentable {}
