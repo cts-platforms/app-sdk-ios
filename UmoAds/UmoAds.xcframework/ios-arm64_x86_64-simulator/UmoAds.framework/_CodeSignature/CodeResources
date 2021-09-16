@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/UmoAds-Swift.h</key>
 		<data>
-		j6FQXwNxDaAOd9BU0D90PoxvBJg=
+		D8MUosr4EeapJCJJirWgG5wgKi0=
 		</data>
 		<key>Headers/UmoAds.h</key>
 		<data>
@@ -38,71 +38,71 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+Po0PLJTSG9zSYclhEcwK+C3hQQ=
+		gHodASEAp1KFo+cGEdULU+YUGR0=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		bTVjn1vngWV7XAtCvNLwP3dAvi0=
+		5yi91Ntvvhzf+IK5Sa1aQtWS7Js=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		bTVjn1vngWV7XAtCvNLwP3dAvi0=
+		5yi91Ntvvhzf+IK5Sa1aQtWS7Js=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		A+fTLCKmSxCkd0G32mD0kXSjrBU=
+		oPJ/KZegs9ioBITCXy8CM0yHo00=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		A+fTLCKmSxCkd0G32mD0kXSjrBU=
+		oPJ/KZegs9ioBITCXy8CM0yHo00=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		1K+LXMK1dhAthctve72uuBLvecY=
+		y5BS8el8ezGWX+dpMF8GuPGMJjA=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		uwro97QDDRauyvSCfuJrxET8tL4=
+		vHTV0HgQJyiUwthlTZj8ntgXikM=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		B+YPokTMGIAujfXHAbnsPO1Owzc=
+		ZH06QfE0aM1TBPWAs1YOuIAP0A4=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		1K+LXMK1dhAthctve72uuBLvecY=
+		y5BS8el8ezGWX+dpMF8GuPGMJjA=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		uwro97QDDRauyvSCfuJrxET8tL4=
+		vHTV0HgQJyiUwthlTZj8ntgXikM=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		B+YPokTMGIAujfXHAbnsPO1Owzc=
+		ZH06QfE0aM1TBPWAs1YOuIAP0A4=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		SWc0JOtqCgQ+FmsjIMDCoRklDJs=
+		DWL18rgtXa5GtBsr+ERSMZsybeU=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		+1SyJHh7e0Uc9Q1svI6Xr2Q04Es=
+		6Ium2OWxr3CmpfCt1kSmVqxkfmU=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		JksUaRJCmMytpB/LoYUBSif8cYw=
+		l6ji0VZHSe3ZFjbGqswHg/jQKZk=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		SWc0JOtqCgQ+FmsjIMDCoRklDJs=
+		DWL18rgtXa5GtBsr+ERSMZsybeU=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		+1SyJHh7e0Uc9Q1svI6Xr2Q04Es=
+		6Ium2OWxr3CmpfCt1kSmVqxkfmU=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		JksUaRJCmMytpB/LoYUBSif8cYw=
+		l6ji0VZHSe3ZFjbGqswHg/jQKZk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>UmoAds.podspec</key>
 		<data>
-		Tt4/z1/00CaFiP4wtLdjoFK1sE0=
+		3LOHdpGzqMCnDEUQxKG0PyLHhsQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -165,7 +165,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TCoQEC+raNhgz+RQv5qVgFWJIRUlXb/V5Q7Lkz1uV08=
+			1AaMemtS0O3oZRpdpIRxG6NgnEHC+ImoOuxeE385Cp4=
 			</data>
 		</dict>
 		<key>Headers/UmoAds.h</key>
@@ -179,112 +179,112 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uXmQuMaDueSJoC0u1SuFkHJZWkydeuZYFLgQnABeZbI=
+			XFs+I4Ftt+9MdvQTWFtYmtpEwQSkeuRcoEVHUxQWNiY=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uXmQuMaDueSJoC0u1SuFkHJZWkydeuZYFLgQnABeZbI=
+			XFs+I4Ftt+9MdvQTWFtYmtpEwQSkeuRcoEVHUxQWNiY=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s9IjYjKdlUe8TciwkepPC2Y2GfcqWZvWCNwBXCkHU8U=
+			jxTD/4O4eMdmuTCVlbTSv8P9eYGQAezbhcRIIUKbxIw=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s9IjYjKdlUe8TciwkepPC2Y2GfcqWZvWCNwBXCkHU8U=
+			jxTD/4O4eMdmuTCVlbTSv8P9eYGQAezbhcRIIUKbxIw=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Px3oOFdREyXHzXpiD1lzt4qbTN1SvNrPIyPziHFgwQo=
+			3dvSR4o9wmbQk8u/LMIy8SqYzy4WQmPAX/5p6ROZX6w=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			emrFjUJdYyx0RQz6hEbLtHjuVxWMcV17i5rrnqS13uM=
+			tNJ/IdbSbQkcrFb7cFBPOYOoJ/8o4ZeFHTde/fJjm84=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r+XC6rGdLAOyu/p4gX1xJeyK2N5H2hoDMF7a0msYB64=
+			9jBZk9Jw/Ha07poCcB19cFQy0hPh2zexVOMNtp9jwbI=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Px3oOFdREyXHzXpiD1lzt4qbTN1SvNrPIyPziHFgwQo=
+			3dvSR4o9wmbQk8u/LMIy8SqYzy4WQmPAX/5p6ROZX6w=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			emrFjUJdYyx0RQz6hEbLtHjuVxWMcV17i5rrnqS13uM=
+			tNJ/IdbSbQkcrFb7cFBPOYOoJ/8o4ZeFHTde/fJjm84=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r+XC6rGdLAOyu/p4gX1xJeyK2N5H2hoDMF7a0msYB64=
+			9jBZk9Jw/Ha07poCcB19cFQy0hPh2zexVOMNtp9jwbI=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l4am4D4QPK1ba/ZkgcuOOGJKFxBpUfzGO7ZuH1m5ydo=
+			y0iricIlPxJv2bVkmxxMavqAm87UkyKqC99GBhshJJc=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4NGt/ZLu0g9R8R3jB8kDzx/0HjNkCIfm1+gjW//nh/o=
+			iBMpatcG0Gv0tmXFZbZxqcXqQNT6j+e2M96QCPmLHsM=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wRQ/FZsGd9aWS/lTroasuRf23htkU1F7MpCVlJujT3s=
+			41ZS63PIrNDKPXUDw/z1Ruit3rM009joVwYSTO/UGEw=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l4am4D4QPK1ba/ZkgcuOOGJKFxBpUfzGO7ZuH1m5ydo=
+			y0iricIlPxJv2bVkmxxMavqAm87UkyKqC99GBhshJJc=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4NGt/ZLu0g9R8R3jB8kDzx/0HjNkCIfm1+gjW//nh/o=
+			iBMpatcG0Gv0tmXFZbZxqcXqQNT6j+e2M96QCPmLHsM=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wRQ/FZsGd9aWS/lTroasuRf23htkU1F7MpCVlJujT3s=
+			41ZS63PIrNDKPXUDw/z1Ruit3rM009joVwYSTO/UGEw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -305,7 +305,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CtYjMTuuCMRkK5rn3FuQja/l/JZvT+XeR6jQ0UOcvh0=
+			bYXq/r4IBmfTG7LGkUtA+2KQb2JZl3nhNI03J5qXitw=
 			</data>
 		</dict>
 	</dict>

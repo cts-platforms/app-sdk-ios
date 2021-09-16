@@ -1,17 +1,17 @@
 Pod::Spec.new do |spec|
   spec.name         = 'UmoAds'
-  spec.version      = '2.0.0-beta12'
+  spec.version      = '2.0.0'
   spec.license      = { :type => 'GPL3' }
   spec.homepage     = 'https://github.com/cts-platforms/app-sdk-ios'
   spec.authors      = { 'Cubic' => 'CTSPlatformsMobileSupport@cubic.com' }
   spec.summary      = 'UmoAds'
-  spec.source       = { :git => 'https://github.com/cts-platforms/app-sdk-ios.git', :tag => 'UmoAds-2.0.0-beta12' }
+  spec.source       = { :git => 'https://github.com/cts-platforms/app-sdk-ios.git', :tag => 'UmoAds-2.0.0' }
   spec.vendored_frameworks = 'UmoAds/UmoAds.xcframework'
   spec.framework    = 'SystemConfiguration'
   spec.swift_version = '5.0'
   spec.ios.deployment_target = '12.1'
   spec.dependency 'SDWebImage', '~> 5.7'
   spec.dependency 'SSZipArchive', '~> 2.2'
-  spec.dependency 'CubicAuth', '>= 0.1.0-beta6'#:path => '../CubicAuth/CubicAuth/CubicAuth.podspec'
+  spec.dependency 'CubicAuth', :path => '../CubicAuth/CubicAuth/CubicAuth.podspec'
 
 end

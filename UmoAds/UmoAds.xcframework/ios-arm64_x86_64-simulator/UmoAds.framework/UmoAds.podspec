@@ -15,6 +15,6 @@ Pod::Spec.new do |spec|
   spec.osx.deployment_target = '10.10'
   spec.dependency 'SDWebImage', '~> 5.7'
   spec.dependency 'SSZipArchive', '~> 2.2'
-  spec.dependency 'CubicAuth', '0.1.0-beta6
+  spec.dependency 'CubicAuth', '1.1.0'
   spec.resources = 'Ads/**/*.{pfx,png,pdf,json,xcassets}'
 end

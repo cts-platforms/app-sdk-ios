@@ -535,6 +535,7 @@ enum UMOAdKitBannerType : NSInteger;
 /// Assign a name of the hosted configuration file if it is unique to your environment. If needed, must be assigned before taking other actions.
 - (void)configureConfigName:(NSString * _Nonnull)configName;
 - (void)prefetchAdObjCWithSpotId:(NSString * _Nonnull)spotId hostedParamsOverride:(UMOAdKitBannerParams * _Nullable)hostedParamsOverride bannerType:(enum UMOAdKitBannerType)bannerType completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+- (void)showAdObjCWithSpotId:(NSString * _Nonnull)spotId bannerView:(UMOAdKitBannerView * _Nonnull)bannerView assignHostedParams:(BOOL)assignHostedParams bannerType:(enum UMOAdKitBannerType)bannerType completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 /// Convenience method to generate default banner parameters for a smart banner. These can be used as-is for a smart banner, but any values can be overwritten as needed.
 /// \param spotId The identifier of the ad for the particular spot this ad is being inserted. Should be unique for each location an ad is displayed in your app.
 ///
@@ -559,11 +560,22 @@ enum UMOAdKitBannerType : NSInteger;
 /// \param adSize The <code>AdSize</code> to retrieve the placeholder image for.
 ///
 - (UIImage * _Nullable)placeholderImageWithAdSize:(enum AdSize)adSize SWIFT_WARN_UNUSED_RESULT;
+/// Assign a placeholder for generic AdKit ads.
+/// \param assetTitle The resource name listed in the xcassets file of the project. Must match exactly to work.
+///
+- (void)setGenericPlaceholderWithAssetTitle:(NSString * _Nonnull)assetTitle;
 /// Set a universal <code>AdListener</code> that will receive success or failure callbacks when any ad is loaded.
 /// Creates a weak reference to the <code>AdListener</code>, and it will receive success or failure calls on both manual loads and automatic refreshes.
 /// \param adListener The <code>AdListener</code> to receive success and failure callbacks.
 ///
 - (void)setUniversalAdListener:(id <AdListener> _Nonnull)adListener;
+/// Updates the Umo region identifier that ads should be retrieved from.
+/// If the region identifier is different from the previously set identifier, all ads still in memory will be reloaded with the new region identifier. This should only be used by the Umo application.
+/// \param regionId The region identifier to update to.
+///
+/// \param shouldRefreshAllAds If <code>true</code>, will reload every ad currently in memory. Default value is <code>true</code>.
+///
+- (void)updateUmoRegionId:(uint64_t)regionId shouldRefreshAllAds:(BOOL)shouldRefreshAllAds;
 /// Updates the region identifier that ads should be retrieved from.
 /// If the region identifier is different from the previously set identifier, all ads still in memory will be reloaded with the new region identifier.
 /// \param regionId The region identifier to update to.
@@ -710,14 +722,14 @@ typedef SWIFT_ENUM(NSInteger, UMOAdKitBannerType, open) {
 /// NOTE: The Application should make a note of the following:
 /// 1. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE & bannerType is not CUSTOM_GWxGH:
 /// - The BannerView’s layout params would be set by the Ad Kit based on the bannerType
-/// opted by the application, whenever umoAdKitFetchBanner (or) umoAdKitShowBanner gets called.
+/// opted by the application, whenever umoAdKitFetchBanner (or) umoAdKitShowBanner gets called.  (NOT SUPPORTED NOW)
 /// 2. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE & bannerType is CUSTOM_GWxGH:
 /// - The BannerView’s layout params should be set by the application prior to calling
 /// umoAdKitFetchBanner (or) umoAdKitShowBanner.
 /// - Valid values for WIDTH & HEIGHT: Any non-negative Width & Height, as required
-/// by the application (or) WRAP_CONTENT
-/// 3. (YET TO BE SUPPORTED IN AD KIT) When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE &
-/// bannerType is not ADAPTIVE_GWxAH:
+/// by the application
+/// 3. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE &
+/// bannerType is ADAPTIVE_GWxAH:
 /// - The application is expected to obtain the bannerview height from the Ad Kit
 /// by providing the required width as input to the corresponding Ad Kit API.
 /// - The BannerView’s layout params should be set by the application prior to calling
@@ -726,16 +738,23 @@ typedef SWIFT_ENUM(NSInteger, UMOAdKitBannerType, open) {
 /// - The BannerView’s layout params should be set by the application prior to calling
 /// umoAdKitFetchBanner (or) umoAdKitShowBanner.
 /// - Valid values for WIDTH & HEIGHT: Any non-negative Width & Height, as required
-/// by the application (or) WRAP_CONTENT
+/// by the application
 /// - The Ad Kit would ignore the banner type in this case, even if set by the application.
 SWIFT_CLASS("_TtC6UmoAds18UMOAdKitBannerView")
-@interface UMOAdKitBannerView : UIView <UIGestureRecognizerDelegate>
+@interface UMOAdKitBannerView : UIView
 - (void)awakeFromNib;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic) CGRect frame;
 @property (nonatomic) CGRect bounds;
 - (void)didMoveToWindow;
+@end
+
+
+@interface UMOAdKitBannerView (SWIFT_EXTENSION(UmoAds))
+/// Add the aspect ratio constraint for adaptive banners.
+/// Internally, simply calls the following code: <code>widthAnchor.constraint(equalTo: heightAnchor, multiplier: 320.0 / 50.0).isActive = true</code>
+- (void)addAdaptiveAspectRatioConstraint;
 @end
 
 
@@ -748,6 +767,13 @@ SWIFT_CLASS("_TtC6UmoAds14UMOAdKitParams")
 SWIFT_CLASS("_TtC6UmoAds20UMOAdKitRollAdParams")
 @interface UMOAdKitRollAdParams : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC6UmoAds12UMOAdKitSize")
+@interface UMOAdKitSize : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
