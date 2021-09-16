@@ -190,6 +190,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -206,6 +207,97 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="CubicAuth",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+enum Environment : NSInteger;
+@class ASWebAuthenticationSession;
+@class JWTInfo;
+@class NSHTTPURLResponse;
+@protocol ASWebAuthenticationPresentationContextProviding;
+@class AuthInfo;
+
+SWIFT_CLASS("_TtC9CubicAuth4Auth")
+@interface Auth : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonnull shared;)
++ (Auth * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) void (^ _Nullable jwtProviderClosureObjC)(SWIFT_NOESCAPE void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable));
+@property (nonatomic, readonly) enum Environment currentEnvironment;
+@property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
+@property (nonatomic, readonly, copy) NSString * _Nonnull clientSecret;
+@property (nonatomic, strong) ASWebAuthenticationSession * _Nullable authSession;
+@property (nonatomic, copy) NSString * _Nonnull realmName;
+@property (nonatomic, copy) NSString * _Nonnull callbackURLScheme;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Set the current environment. Will default to <code>dev</code> if not called.
+- (void)setEnvironment:(enum Environment)environment;
+/// Configure the <code>clientId</code> and <code>clientSecret</code> to be used with the Cubic environment. Please contact Cubic Support if you do not have these.
+- (void)setClientId:(NSString * _Nonnull)clientId clientSecret:(NSString * _Nonnull)clientSecret;
+/// Add a closure to receive updates for when the <code>JWTInfo</code> is updated. Will immediately trigger a request to update all listeners.
+- (void)addJWTInfoUpdateListener:(void (^ _Nonnull)(JWTInfo * _Nullable))jwtInfoUpdateClosure;
+/// Please see documentation for <code>updateJWTProviderClosure</code>
+- (void)updateJWTProviderClosureObjC:(void (^ _Nullable)(SWIFT_NOESCAPE void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable)))jwtProviderClosureObjC;
+/// Returns if there is currently a valid access token or valid refresh token.
+- (void)isAuthenticatedWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+/// Fetch the <code>JWTInfo</code> that is currently stored locally. This is a manual fetch as opposed to configuring a listener with <code>addJWTInfoUpdateListener</code>.
+- (void)fetchLocalJWTInfoWithCompletion:(void (^ _Nonnull)(JWTInfo * _Nullable))completion;
+/// Remove local authentication info stored for current authentication session. Does not affect browser cookies, so an ephemeral login/registration session might be required for fresh session to begin.
+- (void)logout;
+/// See documentation for <code>retrieveAndRefreshTokenIfNeeded</code>
+- (void)retrieveAndRefreshTokenIfNeededObjCWithCanUseAnonymous:(BOOL)canUseAnonymous completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
+/// Update all JWTInfo update closures added by the <code>addJWTInfoUpdateListener()</code> function.
+- (void)requestJWTInfoUpdate;
+/// Retrieve anonymous ID if one is stored locally.
+- (NSString * _Nullable)getAnonymousId SWIFT_WARN_UNUSED_RESULT;
+- (void)handleNetworkResponse:(NSHTTPURLResponse * _Nullable)response;
+- (void)handleRefreshReseponse:(NSHTTPURLResponse * _Nonnull)response;
+/// See documentation for <code>createLogin</code>.
+- (void)createLoginObjCWithPresentationContextProvider:(id <ASWebAuthenticationPresentationContextProviding> _Nullable)presentationContextProvider prefersEphemeralWebBrowserSession:(BOOL)prefersEphemeralWebBrowserSession authSessionGeneration:(void (^ _Nonnull)(ASWebAuthenticationSession * _Nonnull))authSessionGeneration authCompletion:(void (^ _Nonnull)(AuthInfo * _Nullable, NSError * _Nullable))authCompletion SWIFT_AVAILABILITY(ios,introduced=13.0);
+/// See documentation for <code>createLogin</code>.
+- (void)createLoginObjCWithPrefersEphemeralWebBrowserSession:(BOOL)prefersEphemeralWebBrowserSession authSessionGeneration:(void (^ _Nonnull)(ASWebAuthenticationSession * _Nonnull))authSessionGeneration authCompletion:(void (^ _Nonnull)(AuthInfo * _Nullable, NSError * _Nullable))authCompletion;
+/// See documentation for <code>createRegistration</code>.
+- (void)createRegistrationObjCWithPresentationContextProvider:(id <ASWebAuthenticationPresentationContextProviding> _Nullable)presentationContextProvider prefersEphemeralWebBrowserSession:(BOOL)prefersEphemeralWebBrowserSession authSessionGeneration:(void (^ _Nonnull)(ASWebAuthenticationSession * _Nonnull))authSessionGeneration authCompletion:(void (^ _Nonnull)(AuthInfo * _Nullable, NSError * _Nullable))authCompletion SWIFT_AVAILABILITY(ios,introduced=13.0);
+/// See documentation for <code>createRegistration</code>.
+- (void)createRegistrationObjCWithPrefersEphemeralWebBrowserSession:(BOOL)prefersEphemeralWebBrowserSession authSessionGeneration:(void (^ _Nonnull)(ASWebAuthenticationSession * _Nonnull))authSessionGeneration authCompletion:(void (^ _Nonnull)(AuthInfo * _Nullable, NSError * _Nullable))authCompletion;
+/// Retrieve the current deviceId.
+- (void)deviceIdWithCompletion:(void (^ _Nonnull)(NSInteger))completion;
+@end
+
+@class NSNumber;
+
+SWIFT_CLASS("_TtC9CubicAuth8AuthInfo")
+@interface AuthInfo : NSObject
+@property (nonatomic, copy) NSString * _Nullable accessToken;
+@property (nonatomic, copy) NSString * _Nullable refreshToken;
+@property (nonatomic, readonly, copy) NSString * _Nullable tokenType;
+@property (nonatomic, readonly, copy) NSString * _Nullable idToken;
+@property (nonatomic, readonly, strong) NSNumber * _Nullable notBeforePolicyObjC;
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionState;
+@property (nonatomic, readonly, copy) NSString * _Nullable scope;
+@property (nonatomic, readonly) BOOL isAnonymous;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+typedef SWIFT_ENUM(NSInteger, Environment, open) {
+  EnvironmentProd = 0,
+  EnvironmentSandbox = 1,
+  EnvironmentDev = 2,
+  EnvironmentMoovit = 3,
+};
+
+
+SWIFT_CLASS("_TtC9CubicAuth7JWTInfo")
+@interface JWTInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable cubicId;
+@property (nonatomic, readonly, copy) NSString * _Nullable preferredUsername;
+@property (nonatomic, readonly) BOOL isAnonymous;
+@property (nonatomic, readonly) BOOL isTokenValid;
+@property (nonatomic, readonly) BOOL isRefreshTokenValid;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -404,6 +496,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -420,6 +513,97 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="CubicAuth",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+enum Environment : NSInteger;
+@class ASWebAuthenticationSession;
+@class JWTInfo;
+@class NSHTTPURLResponse;
+@protocol ASWebAuthenticationPresentationContextProviding;
+@class AuthInfo;
+
+SWIFT_CLASS("_TtC9CubicAuth4Auth")
+@interface Auth : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonnull shared;)
++ (Auth * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) void (^ _Nullable jwtProviderClosureObjC)(SWIFT_NOESCAPE void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable));
+@property (nonatomic, readonly) enum Environment currentEnvironment;
+@property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
+@property (nonatomic, readonly, copy) NSString * _Nonnull clientSecret;
+@property (nonatomic, strong) ASWebAuthenticationSession * _Nullable authSession;
+@property (nonatomic, copy) NSString * _Nonnull realmName;
+@property (nonatomic, copy) NSString * _Nonnull callbackURLScheme;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Set the current environment. Will default to <code>dev</code> if not called.
+- (void)setEnvironment:(enum Environment)environment;
+/// Configure the <code>clientId</code> and <code>clientSecret</code> to be used with the Cubic environment. Please contact Cubic Support if you do not have these.
+- (void)setClientId:(NSString * _Nonnull)clientId clientSecret:(NSString * _Nonnull)clientSecret;
+/// Add a closure to receive updates for when the <code>JWTInfo</code> is updated. Will immediately trigger a request to update all listeners.
+- (void)addJWTInfoUpdateListener:(void (^ _Nonnull)(JWTInfo * _Nullable))jwtInfoUpdateClosure;
+/// Please see documentation for <code>updateJWTProviderClosure</code>
+- (void)updateJWTProviderClosureObjC:(void (^ _Nullable)(SWIFT_NOESCAPE void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable)))jwtProviderClosureObjC;
+/// Returns if there is currently a valid access token or valid refresh token.
+- (void)isAuthenticatedWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+/// Fetch the <code>JWTInfo</code> that is currently stored locally. This is a manual fetch as opposed to configuring a listener with <code>addJWTInfoUpdateListener</code>.
+- (void)fetchLocalJWTInfoWithCompletion:(void (^ _Nonnull)(JWTInfo * _Nullable))completion;
+/// Remove local authentication info stored for current authentication session. Does not affect browser cookies, so an ephemeral login/registration session might be required for fresh session to begin.
+- (void)logout;
+/// See documentation for <code>retrieveAndRefreshTokenIfNeeded</code>
+- (void)retrieveAndRefreshTokenIfNeededObjCWithCanUseAnonymous:(BOOL)canUseAnonymous completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
+/// Update all JWTInfo update closures added by the <code>addJWTInfoUpdateListener()</code> function.
+- (void)requestJWTInfoUpdate;
+/// Retrieve anonymous ID if one is stored locally.
+- (NSString * _Nullable)getAnonymousId SWIFT_WARN_UNUSED_RESULT;
+- (void)handleNetworkResponse:(NSHTTPURLResponse * _Nullable)response;
+- (void)handleRefreshReseponse:(NSHTTPURLResponse * _Nonnull)response;
+/// See documentation for <code>createLogin</code>.
+- (void)createLoginObjCWithPresentationContextProvider:(id <ASWebAuthenticationPresentationContextProviding> _Nullable)presentationContextProvider prefersEphemeralWebBrowserSession:(BOOL)prefersEphemeralWebBrowserSession authSessionGeneration:(void (^ _Nonnull)(ASWebAuthenticationSession * _Nonnull))authSessionGeneration authCompletion:(void (^ _Nonnull)(AuthInfo * _Nullable, NSError * _Nullable))authCompletion SWIFT_AVAILABILITY(ios,introduced=13.0);
+/// See documentation for <code>createLogin</code>.
+- (void)createLoginObjCWithPrefersEphemeralWebBrowserSession:(BOOL)prefersEphemeralWebBrowserSession authSessionGeneration:(void (^ _Nonnull)(ASWebAuthenticationSession * _Nonnull))authSessionGeneration authCompletion:(void (^ _Nonnull)(AuthInfo * _Nullable, NSError * _Nullable))authCompletion;
+/// See documentation for <code>createRegistration</code>.
+- (void)createRegistrationObjCWithPresentationContextProvider:(id <ASWebAuthenticationPresentationContextProviding> _Nullable)presentationContextProvider prefersEphemeralWebBrowserSession:(BOOL)prefersEphemeralWebBrowserSession authSessionGeneration:(void (^ _Nonnull)(ASWebAuthenticationSession * _Nonnull))authSessionGeneration authCompletion:(void (^ _Nonnull)(AuthInfo * _Nullable, NSError * _Nullable))authCompletion SWIFT_AVAILABILITY(ios,introduced=13.0);
+/// See documentation for <code>createRegistration</code>.
+- (void)createRegistrationObjCWithPrefersEphemeralWebBrowserSession:(BOOL)prefersEphemeralWebBrowserSession authSessionGeneration:(void (^ _Nonnull)(ASWebAuthenticationSession * _Nonnull))authSessionGeneration authCompletion:(void (^ _Nonnull)(AuthInfo * _Nullable, NSError * _Nullable))authCompletion;
+/// Retrieve the current deviceId.
+- (void)deviceIdWithCompletion:(void (^ _Nonnull)(NSInteger))completion;
+@end
+
+@class NSNumber;
+
+SWIFT_CLASS("_TtC9CubicAuth8AuthInfo")
+@interface AuthInfo : NSObject
+@property (nonatomic, copy) NSString * _Nullable accessToken;
+@property (nonatomic, copy) NSString * _Nullable refreshToken;
+@property (nonatomic, readonly, copy) NSString * _Nullable tokenType;
+@property (nonatomic, readonly, copy) NSString * _Nullable idToken;
+@property (nonatomic, readonly, strong) NSNumber * _Nullable notBeforePolicyObjC;
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionState;
+@property (nonatomic, readonly, copy) NSString * _Nullable scope;
+@property (nonatomic, readonly) BOOL isAnonymous;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+typedef SWIFT_ENUM(NSInteger, Environment, open) {
+  EnvironmentProd = 0,
+  EnvironmentSandbox = 1,
+  EnvironmentDev = 2,
+  EnvironmentMoovit = 3,
+};
+
+
+SWIFT_CLASS("_TtC9CubicAuth7JWTInfo")
+@interface JWTInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable cubicId;
+@property (nonatomic, readonly, copy) NSString * _Nullable preferredUsername;
+@property (nonatomic, readonly) BOOL isAnonymous;
+@property (nonatomic, readonly) BOOL isTokenValid;
+@property (nonatomic, readonly) BOOL isRefreshTokenValid;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
