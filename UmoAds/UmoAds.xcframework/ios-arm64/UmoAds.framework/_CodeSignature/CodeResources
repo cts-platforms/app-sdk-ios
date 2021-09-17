@@ -22,11 +22,11 @@
 		</data>
 		<key>Dev.xcconfig</key>
 		<data>
-		6Av3FEpd9PmYOF0B/xcJh3R8U78=
+		VoD/i3oUUT49dEKlogIeEL7cxhM=
 		</data>
 		<key>DevLocal.xcconfig</key>
 		<data>
-		DL+X2p8N1VVty8XzVH4reJN/gaQ=
+		cMfYM8Y4V+7G+r6j36Hx+yKDFM4=
 		</data>
 		<key>Headers/UmoAds-Swift.h</key>
 		<data>
@@ -38,15 +38,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		O6g9gUhOcbtuLVuGshPAaIzYyeA=
+		EKb8HTOEU4nGTPGUGv99Yw0N1Qc=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		UjQgQXJKs3/oUDwDlZfJJyg6qtc=
+		HUVtPKKpKNsq4eOuAUDxnMbiyUk=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		UjQgQXJKs3/oUDwDlZfJJyg6qtc=
+		HUVtPKKpKNsq4eOuAUDxnMbiyUk=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Prod.xcconfig</key>
 		<data>
-		NVUL9L0Z2xBdwalq5SZUskwBqCk=
+		2yCyH1o1HVurjKPB6ZNEUW6qfcE=
 		</data>
 		<key>UmoAds.podspec</key>
 		<data>
@@ -119,14 +119,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			B687RoxMr5zYHGmbPTli8OKxL8kosO1oC6NHxobRAJk=
+			9u79sbCVQ34l2Dd4c8nH0tF/QECO+ZeHIqUSolpG2O8=
 			</data>
 		</dict>
 		<key>DevLocal.xcconfig</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ug9atBWrZz5oMbb2rxdvKOcroXCgHqbn7UX6/qZHMyY=
+			iWuWG4wUVXGgcALJ/XSmcvSfcQO7pje792KOugyLLzE=
 			</data>
 		</dict>
 		<key>Headers/UmoAds-Swift.h</key>
@@ -147,14 +147,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rhQGFLqPow3N5fh7tL+1YtkswjaJRpmGyUMa7y/sWP8=
+			UseGRfd/rfmMMKG7aa9Mv26vTB4/lz/zzKrA+vlin88=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rhQGFLqPow3N5fh7tL+1YtkswjaJRpmGyUMa7y/sWP8=
+			UseGRfd/rfmMMKG7aa9Mv26vTB4/lz/zzKrA+vlin88=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -210,7 +210,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jhqoMj9YoPXXr3+HgT2Wo9wb6dbLunuL83fztiXnrGI=
+			bSEgQXkbHnmPkoNeai7HMVgx7YMPVC8SRqji78QJHlo=
 			</data>
 		</dict>
 		<key>UmoAds.podspec</key>

@@ -2,6 +2,12 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.0.1]
+
+### Changed
+
+* Update copyright headers
+
 ## [2.0.0]
 
 New ads backend and APIs.
