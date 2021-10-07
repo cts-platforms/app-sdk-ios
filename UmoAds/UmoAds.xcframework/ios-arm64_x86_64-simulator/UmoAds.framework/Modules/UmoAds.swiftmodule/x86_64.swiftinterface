@@ -2721,16 +2721,16 @@ public enum UMOAdKitError : Swift.String {
   }
   public init?(rawValue: Swift.String)
 }
-@objc @_inheritsConvenienceInitializers public class UMOAdKitParams : ObjectiveC.NSObject {
-  public var publisherId: Swift.String?
-  public var configFileBasePath: Swift.String?
-  public var regionId: Swift.String?
-  public var umoAppRegionId: Swift.String?
-  public var userId: Swift.String?
+@objc @_inheritsConvenienceInitializers @objcMembers public class UMOAdKitParams : ObjectiveC.NSObject {
+  @objc public var publisherId: Swift.String?
+  @objc public var configFileBasePath: Swift.String?
+  @objc public var regionId: Swift.String?
+  @objc public var umoAppRegionId: Swift.String?
+  @objc public var userId: Swift.String?
   public var appUserType: UmoAds.UMOAdKitAppUserType
-  public var dictStaticAppPlaceholders: [Swift.String : Swift.String]?
-  public var adQueryParams: UmoAds.UMOAdKitAdQueryParams?
-  public func toString() -> Swift.String
+  @objc public var dictStaticAppPlaceholders: [Swift.String : Swift.String]?
+  @objc public var adQueryParams: UmoAds.UMOAdKitAdQueryParams?
+  @objc public func toString() -> Swift.String
   @objc deinit
   @objc override dynamic public init()
 }

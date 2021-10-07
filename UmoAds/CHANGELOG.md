@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.0.2]
+
+* Give UmoAdKitParams Objective-C members
+
 ## [2.0.1]
 
 ### Changed

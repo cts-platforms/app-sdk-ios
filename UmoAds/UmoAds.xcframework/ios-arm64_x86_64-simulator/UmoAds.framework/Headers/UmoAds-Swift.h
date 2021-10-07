@@ -762,6 +762,74 @@ SWIFT_CLASS("_TtC6UmoAds18UMOAdKitBannerView")
 
 SWIFT_CLASS("_TtC6UmoAds14UMOAdKitParams")
 @interface UMOAdKitParams : NSObject
+@property (nonatomic, copy) NSString * _Nullable publisherId;
+@property (nonatomic, copy) NSString * _Nullable configFileBasePath;
+@property (nonatomic, copy) NSString * _Nullable regionId;
+@property (nonatomic, copy) NSString * _Nullable umoAppRegionId;
+@property (nonatomic, copy) NSString * _Nullable userId;
+/// note:
+/// For the Generic Placeholder to be utilized by the Ad Kit, the Key Name should be “GENERIC” and the
+/// <ul>
+///   <li>
+///     (OPTIONAL) Map with the details of the Banner Placeholder images bundled with the application.
+///   </li>
+///   <li>
+///     Key Name: Should be the name of the banner types exposed by UMOAdKitBannerType ()
+///   </li>
+///   <li>
+///     Value: The name of the placeholder drawable bundled with the application.
+///   </li>
+///   <li>
+///     eg., If the application has a drawable named “ic_ph_app_medrect_300x250” for medrect banner, Key Name should be
+///   </li>
+///   <li>
+///     “MEDRECT_300x250_1x1” and the Value should be “ic_ph_app_medrect_300x250”.
+///   </li>
+///   <li>
+///     Value should be the name of the Generic Placeholder image bundled with the application.
+///   </li>
+///   <li>
+///     Here is the order in which the Ad Kit would pick the placeholder creative to be displayed:
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Dynamic Placeholder for the specific Banner size
+///       </li>
+///     </ol>
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Static Placeholder bundled with the application for the specific Banner size
+///       </li>
+///     </ol>
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Dynamic Placeholder (Generic)
+///       </li>
+///     </ol>
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Static Placeholder bundled with the application (Generic)
+///       </li>
+///     </ol>
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Static Placeholder bundled with the Ad Kit (Generic)
+///       </li>
+///     </ol>
+///   </li>
+/// </ul>
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable dictStaticAppPlaceholders;
+@property (nonatomic, strong) UMOAdKitAdQueryParams * _Nullable adQueryParams;
+- (NSString * _Nonnull)toString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1549,6 +1617,74 @@ SWIFT_CLASS("_TtC6UmoAds18UMOAdKitBannerView")
 
 SWIFT_CLASS("_TtC6UmoAds14UMOAdKitParams")
 @interface UMOAdKitParams : NSObject
+@property (nonatomic, copy) NSString * _Nullable publisherId;
+@property (nonatomic, copy) NSString * _Nullable configFileBasePath;
+@property (nonatomic, copy) NSString * _Nullable regionId;
+@property (nonatomic, copy) NSString * _Nullable umoAppRegionId;
+@property (nonatomic, copy) NSString * _Nullable userId;
+/// note:
+/// For the Generic Placeholder to be utilized by the Ad Kit, the Key Name should be “GENERIC” and the
+/// <ul>
+///   <li>
+///     (OPTIONAL) Map with the details of the Banner Placeholder images bundled with the application.
+///   </li>
+///   <li>
+///     Key Name: Should be the name of the banner types exposed by UMOAdKitBannerType ()
+///   </li>
+///   <li>
+///     Value: The name of the placeholder drawable bundled with the application.
+///   </li>
+///   <li>
+///     eg., If the application has a drawable named “ic_ph_app_medrect_300x250” for medrect banner, Key Name should be
+///   </li>
+///   <li>
+///     “MEDRECT_300x250_1x1” and the Value should be “ic_ph_app_medrect_300x250”.
+///   </li>
+///   <li>
+///     Value should be the name of the Generic Placeholder image bundled with the application.
+///   </li>
+///   <li>
+///     Here is the order in which the Ad Kit would pick the placeholder creative to be displayed:
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Dynamic Placeholder for the specific Banner size
+///       </li>
+///     </ol>
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Static Placeholder bundled with the application for the specific Banner size
+///       </li>
+///     </ol>
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Dynamic Placeholder (Generic)
+///       </li>
+///     </ol>
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Static Placeholder bundled with the application (Generic)
+///       </li>
+///     </ol>
+///   </li>
+///   <li>
+///     <ol>
+///       <li>
+///         Static Placeholder bundled with the Ad Kit (Generic)
+///       </li>
+///     </ol>
+///   </li>
+/// </ul>
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable dictStaticAppPlaceholders;
+@property (nonatomic, strong) UMOAdKitAdQueryParams * _Nullable adQueryParams;
+- (NSString * _Nonnull)toString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
