@@ -12,6 +12,6 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '12.0'
   spec.dependency 'SDWebImage', '~> 5.7'
   spec.dependency 'SSZipArchive', '~> 2.2'
-  spec.dependency 'CubicAuth', '1.1.0'
+  spec.dependency 'CubicAuth', '1.1.1'
 
 end
