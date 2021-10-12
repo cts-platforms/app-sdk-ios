@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
-// swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CubicAuth
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CubicAuth
 import AuthenticationServices
 @_exported import CubicAuth
 import Foundation
@@ -34,8 +34,8 @@ public enum LoggingLevel : Swift.Int {
   case none
   case error
   case info
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -56,16 +56,16 @@ public enum LoggingLevel : Swift.Int {
   @objc final public let isAnonymous: Swift.Bool
   public init(accessToken: Swift.String?, expiresIn: Swift.Int?, refreshExpiresIn: Swift.Int?, refreshToken: Swift.String?, tokenType: Swift.String?, idToken: Swift.String?, notBeforePolicy: Swift.Int?, sessionState: Swift.String?, scope: Swift.String?, isAnonymous: Swift.Bool)
   @objc override dynamic public init()
-  required public init(from decoder: Swift.Decoder) throws
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 extension AuthInfo {
   convenience public init(accessToken: Swift.String, refreshToken: Swift.String?)
 }
 public struct EmptyNetworkResponse : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc public enum Environment : Swift.Int, Swift.CaseIterable {
   case prod
@@ -75,13 +75,13 @@ public struct EmptyNetworkResponse : Swift.Codable {
   public var string: Swift.String {
     get
   }
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
   public init?(rawValue: Swift.Int)
   public typealias AllCases = [CubicAuth.Environment]
+  public typealias RawValue = Swift.Int
   public static var allCases: [CubicAuth.Environment] {
+    get
+  }
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -93,10 +93,10 @@ public enum CubicAuthError : Foundation.LocalizedError {
   case refreshTokenMissing
   case noAnonymousAndNoProvider
   public static func == (a: CubicAuth.CubicAuthError, b: CubicAuth.CubicAuthError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 extension CubicAuthError {
   public var errorDescription: Swift.String? {
