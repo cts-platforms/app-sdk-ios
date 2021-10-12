@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name UmoAds
 import AVFoundation
 import AVKit
@@ -248,8 +248,8 @@ extension Ads : UmoAds.UMOAdKitBannerAdListener {
   public var size: CoreGraphics.CGSize {
     get
   }
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -265,19 +265,19 @@ final public class AKURLEncodedFormEncoder {
     case brackets
     case noBrackets
     public static func == (a: UmoAds.AKURLEncodedFormEncoder.ArrayEncoding, b: UmoAds.AKURLEncodedFormEncoder.ArrayEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum BoolEncoding {
     case numeric
     case literal
     public static func == (a: UmoAds.AKURLEncodedFormEncoder.BoolEncoding, b: UmoAds.AKURLEncodedFormEncoder.BoolEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum DataEncoding {
     case deferredToData
@@ -305,10 +305,10 @@ final public class AKURLEncodedFormEncoder {
     case percentEscaped
     case plusReplaced
     public static func == (a: UmoAds.AKURLEncodedFormEncoder.SpaceEncoding, b: UmoAds.AKURLEncodedFormEncoder.SpaceEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum Error : Swift.Error {
     case invalidRootObject(Swift.String)
@@ -498,8 +498,8 @@ extension AKSession : UmoAds.RequestDelegate {
   case none = 0
   case error
   case info
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -572,7 +572,7 @@ extension DownloadRequest {
   @discardableResult
   public func validate() -> Self
 }
-@objc public protocol AdViewListener : AnyObject {
+@objc public protocol AdViewListener {
   @objc func onAdLoadSuccess(adSlotId: Swift.String, adInsertionId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
   @objc func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
   @objc func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
@@ -586,7 +586,7 @@ public protocol AKEventMonitor {
   func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest)
   func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
   func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  @available(macOS 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
   func urlSession(_ session: Foundation.URLSession, taskIsWaitingForConnectivity task: Foundation.URLSessionTask)
   func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
   func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse)
@@ -681,7 +681,7 @@ extension AKEventMonitor {
   final public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest)
   final public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
   final public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  @available(macOS 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
   final public func urlSession(_ session: Foundation.URLSession, taskIsWaitingForConnectivity task: Foundation.URLSessionTask)
   final public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
   final public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, willCacheResponse proposedResponse: Foundation.CachedURLResponse)
@@ -855,9 +855,9 @@ extension AKHTTPHeaders : Swift.Collection {
   public func index(after i: Swift.Int) -> Swift.Int
   public typealias Element = UmoAds.HTTPHeader
   public typealias Index = Swift.Int
+  public typealias Indices = Swift.DefaultIndices<UmoAds.AKHTTPHeaders>
   public typealias Iterator = Swift.IndexingIterator<[UmoAds.HTTPHeader]>
   public typealias SubSequence = Swift.Slice<UmoAds.AKHTTPHeaders>
-  public typealias Indices = Swift.DefaultIndices<UmoAds.AKHTTPHeaders>
 }
 extension AKHTTPHeaders : Swift.CustomStringConvertible {
   public var description: Swift.String {
@@ -868,11 +868,11 @@ public struct HTTPHeader : Swift.Hashable {
   public let name: Swift.String
   public let value: Swift.String
   public init(name: Swift.String, value: Swift.String)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: UmoAds.HTTPHeader, b: UmoAds.HTTPHeader) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: UmoAds.HTTPHeader, b: UmoAds.HTTPHeader) -> Swift.Bool
 }
 extension HTTPHeader : Swift.CustomStringConvertible {
   public var description: Swift.String {
@@ -920,10 +920,10 @@ public enum AKXMLMappingType {
   case fromXML
   case toXML
   public static func == (a: UmoAds.AKXMLMappingType, b: UmoAds.AKXMLMappingType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 final public class AKXMLMap {
   final public var XML: [Swift.String : Any] {
@@ -992,8 +992,8 @@ extension AKXMLSerialization {
     case invalidXMLDocument
     case invalidFoundationObject
     case invalidData
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }
@@ -1024,8 +1024,8 @@ final public class RevocationTrustEvaluator : UmoAds.ServerTrustEvaluating {
     public static let any: UmoAds.RevocationTrustEvaluator.Options
     public let rawValue: CoreFoundation.CFOptionFlags
     public init(rawValue: CoreFoundation.CFOptionFlags)
-    public typealias Element = UmoAds.RevocationTrustEvaluator.Options
     public typealias ArrayLiteralElement = UmoAds.RevocationTrustEvaluator.Options
+    public typealias Element = UmoAds.RevocationTrustEvaluator.Options
     public typealias RawValue = CoreFoundation.CFOptionFlags
   }
   public init(performDefaultValidation: Swift.Bool = true, validateHost: Swift.Bool = true, options: UmoAds.RevocationTrustEvaluator.Options = .any)
@@ -1073,18 +1073,18 @@ extension SecTrust : UmoAds.AlamofireExtended {
   public typealias ExtendedType = Security.SecTrust
 }
 extension AlamofireExtension where ExtendedType == Security.SecTrust {
-  @available(iOS 12, OSX 10.14, tvOS 12, watchOS 5, *)
+  @available(iOS 12, macOS 10.14, tvOS 12, watchOS 5, *)
   public func evaluate(afterApplying policy: Security.SecPolicy) throws
   @available(iOS, introduced: 10, deprecated: 12, renamed: "evaluate(afterApplying:)")
-  @available(OSX, introduced: 10.12, deprecated: 10.14, renamed: "evaluate(afterApplying:)")
+  @available(macOS, introduced: 10.12, deprecated: 10.14, renamed: "evaluate(afterApplying:)")
   @available(tvOS, introduced: 10, deprecated: 12, renamed: "evaluate(afterApplying:)")
   @available(watchOS, introduced: 3, deprecated: 5, renamed: "evaluate(afterApplying:)")
   public func validate(policy: Security.SecPolicy, errorProducer: (Darwin.OSStatus, Security.SecTrustResultType) -> Swift.Error) throws
   public func apply(policy: Security.SecPolicy) throws -> Security.SecTrust
-  @available(iOS 12, OSX 10.14, tvOS 12, watchOS 5, *)
+  @available(iOS 12, macOS 10.14, tvOS 12, watchOS 5, *)
   public func evaluate() throws
   @available(iOS, introduced: 10, deprecated: 12, renamed: "evaluate()")
-  @available(OSX, introduced: 10.12, deprecated: 10.14, renamed: "evaluate()")
+  @available(macOS, introduced: 10.12, deprecated: 10.14, renamed: "evaluate()")
   @available(tvOS, introduced: 10, deprecated: 12, renamed: "evaluate()")
   @available(watchOS, introduced: 3, deprecated: 5, renamed: "evaluate()")
   public func validate(errorProducer: (Darwin.OSStatus, Security.SecTrustResultType) -> Swift.Error) throws
@@ -1167,20 +1167,20 @@ public enum AnimationType {
   case circleRotateChase
   case circleStrokeSpin
   public static func == (a: UmoAds.AnimationType, b: UmoAds.AnimationType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum AnimatedIcon {
   case succeed
   case failed
   case added
   public static func == (a: UmoAds.AnimatedIcon, b: UmoAds.AnimatedIcon) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 extension AKProgressHUD {
   public class var animationType: UmoAds.AnimationType {
@@ -1251,8 +1251,8 @@ public func >>> <T>(left: [Swift.String : T]?, right: UmoAds.AKXMLMap) where T :
   @objc override dynamic public init()
   public init(lat: Swift.Double? = 0.0, lon: Swift.Double? = 0.0, ele: Swift.Double? = 0.0, acc: Swift.Double? = 0.0)
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 extension AKXMLSerialization {
   public struct AKReadingOptions : Swift.OptionSet {
@@ -1274,8 +1274,8 @@ extension AKXMLSerialization {
     public static let neverNodeName: UmoAds.AKXMLSerialization.AKReadingOptions
     public static let cdataAsString: UmoAds.AKXMLSerialization.AKReadingOptions
     public static let `default`: UmoAds.AKXMLSerialization.AKReadingOptions
-    public typealias Element = UmoAds.AKXMLSerialization.AKReadingOptions
     public typealias ArrayLiteralElement = UmoAds.AKXMLSerialization.AKReadingOptions
+    public typealias Element = UmoAds.AKXMLSerialization.AKReadingOptions
     public typealias RawValue = Swift.Int
   }
 }
@@ -1374,8 +1374,8 @@ final public class DataResponseSerializer : UmoAds.ResponseSerializer {
   final public let emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod>
   public init(dataPreprocessor: UmoAds.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods)
   final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) throws -> Foundation.Data
-  @objc deinit
   public typealias SerializedObject = Foundation.Data
+  @objc deinit
 }
 extension AKDataRequest {
   @discardableResult
@@ -1392,8 +1392,8 @@ final public class StringResponseSerializer : UmoAds.ResponseSerializer {
   final public let emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod>
   public init(dataPreprocessor: UmoAds.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods)
   final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) throws -> Swift.String
-  @objc deinit
   public typealias SerializedObject = Swift.String
+  @objc deinit
 }
 extension AKDataRequest {
   @discardableResult
@@ -1410,8 +1410,8 @@ final public class JSONResponseSerializer : UmoAds.ResponseSerializer {
   final public let options: Foundation.JSONSerialization.ReadingOptions
   public init(dataPreprocessor: UmoAds.DataPreprocessor = JSONResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = JSONResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = JSONResponseSerializer.defaultEmptyRequestMethods, options: Foundation.JSONSerialization.ReadingOptions = .allowFragments)
   final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) throws -> Any
-  @objc deinit
   public typealias SerializedObject = Any
+  @objc deinit
 }
 extension AKDataRequest {
   @discardableResult
@@ -1426,8 +1426,8 @@ public protocol EmptyResponse {
 }
 public struct Empty : Swift.Codable {
   public static let value: UmoAds.Empty
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension Empty : UmoAds.EmptyResponse {
   public static func emptyValue() -> UmoAds.Empty
@@ -1446,8 +1446,8 @@ final public class DecodableResponseSerializer<T> : UmoAds.ResponseSerializer wh
   final public let emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod>
   public init(dataPreprocessor: UmoAds.DataPreprocessor = DecodableResponseSerializer.defaultDataPreprocessor, decoder: UmoAds.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = DecodableResponseSerializer.defaultEmptyRequestMethods)
   final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) throws -> T
-  @objc deinit
   public typealias SerializedObject = T
+  @objc deinit
 }
 extension AKDataRequest {
   @discardableResult
@@ -1556,7 +1556,7 @@ open class JSONParameterEncoder : UmoAds.AKParameterEncoder {
   public static var prettyPrinted: UmoAds.JSONParameterEncoder {
     get
   }
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  @available(macOS 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
   public static var sortedKeys: UmoAds.JSONParameterEncoder {
     get
   }
@@ -1571,10 +1571,10 @@ open class URLEncodedFormParameterEncoder : UmoAds.AKParameterEncoder {
     case queryString
     case httpBody
     public static func == (a: UmoAds.URLEncodedFormParameterEncoder.Destination, b: UmoAds.URLEncodedFormParameterEncoder.Destination) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public static var `default`: UmoAds.URLEncodedFormParameterEncoder {
     get
@@ -1655,28 +1655,28 @@ public struct URLEncoding : UmoAds.AKParameterEncoding {
     case queryString
     case httpBody
     public static func == (a: UmoAds.URLEncoding.Destination, b: UmoAds.URLEncoding.Destination) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum ArrayEncoding {
     case brackets
     case noBrackets
     public static func == (a: UmoAds.URLEncoding.ArrayEncoding, b: UmoAds.URLEncoding.ArrayEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum BoolEncoding {
     case numeric
     case literal
     public static func == (a: UmoAds.URLEncoding.BoolEncoding, b: UmoAds.URLEncoding.BoolEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public static var `default`: UmoAds.URLEncoding {
     get
@@ -1708,14 +1708,14 @@ public struct JSONEncoding : UmoAds.AKParameterEncoding {
   public func encode(_ urlRequest: UmoAds.URLRequestConvertible, withJSONObject jsonObject: Any? = nil) throws -> Foundation.URLRequest
 }
 @objc @_inheritsConvenienceInitializers public class AKVPaidConstants : ObjectiveC.NSObject {
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public enum CompressionMethod : Swift.UInt16 {
   case none
   case deflate
-  public typealias RawValue = Swift.UInt16
   public init?(rawValue: Swift.UInt16)
+  public typealias RawValue = Swift.UInt16
   public var rawValue: Swift.UInt16 {
     get
   }
@@ -1814,7 +1814,7 @@ extension DownloadResponse {
   public func mapError<NewFailure>(_ transform: (Failure) -> NewFailure) -> UmoAds.DownloadResponse<Success, NewFailure> where NewFailure : Swift.Error
   public func tryMapError<NewFailure>(_ transform: (Failure) throws -> NewFailure) -> UmoAds.DownloadResponse<Success, Swift.Error> where NewFailure : Swift.Error
 }
-@available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 public struct DataResponsePublisher<Value> : Combine.Publisher {
   public typealias Output = UmoAds.DataResponse<Value, UmoAds.AKAFError>
   public typealias Failure = Swift.Never
@@ -1824,24 +1824,24 @@ public struct DataResponsePublisher<Value> : Combine.Publisher {
   public func value() -> Combine.AnyPublisher<Value, UmoAds.AKAFError>
   public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == UmoAds.DataResponsePublisher<Value>.Failure, S.Input == UmoAds.DataResponsePublisher<Value>.Output
 }
-@available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 extension DataResponsePublisher where Value == Foundation.Data? {
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public init(_ request: UmoAds.AKDataRequest, queue: Dispatch.DispatchQueue)
 }
 extension AKDataRequest {
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishResponse<Serializer, T>(using serializer: Serializer, on queue: Dispatch.DispatchQueue = .main) -> UmoAds.DataResponsePublisher<T> where Serializer : UmoAds.ResponseSerializer, T == Serializer.SerializedObject
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishData(queue: Dispatch.DispatchQueue = .main, preprocessor: UmoAds.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods) -> UmoAds.DataResponsePublisher<Foundation.Data>
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishString(queue: Dispatch.DispatchQueue = .main, preprocessor: UmoAds.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods) -> UmoAds.DataResponsePublisher<Swift.String>
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: UmoAds.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: UmoAds.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyResponseMethods: Swift.Set<UmoAds.AKHTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> UmoAds.DataResponsePublisher<T> where T : Swift.Decodable
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishUnserialized(queue: Dispatch.DispatchQueue = .main) -> UmoAds.DataResponsePublisher<Foundation.Data?>
 }
-@available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 public struct AKDataStreamPublisher<Value> : Combine.Publisher {
   public typealias Output = UmoAds.DataStreamRequest.Stream<Value, UmoAds.AKAFError>
   public typealias Failure = Swift.Never
@@ -1851,47 +1851,47 @@ public struct AKDataStreamPublisher<Value> : Combine.Publisher {
   public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == UmoAds.AKDataStreamPublisher<Value>.Failure, S.Input == UmoAds.AKDataStreamPublisher<Value>.Output
 }
 extension DataStreamRequest {
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   final public func publishStream<Serializer>(using serializer: Serializer, on queue: Dispatch.DispatchQueue = .main) -> UmoAds.AKDataStreamPublisher<Serializer.SerializedObject> where Serializer : UmoAds.DataStreamSerializer
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   final public func publishData(queue: Dispatch.DispatchQueue = .main) -> UmoAds.AKDataStreamPublisher<Foundation.Data>
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   final public func publishString(queue: Dispatch.DispatchQueue = .main) -> UmoAds.AKDataStreamPublisher<Swift.String>
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   final public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, decoder: UmoAds.DataDecoder = JSONDecoder(), preprocessor: UmoAds.DataPreprocessor = PassthroughPreprocessor()) -> UmoAds.AKDataStreamPublisher<T> where T : Swift.Decodable
 }
-@available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 public struct AKDownloadResponsePublisher<Value> : Combine.Publisher {
   public typealias Output = UmoAds.DownloadResponse<Value, UmoAds.AKAFError>
   public typealias Failure = Swift.Never
   public init<Serializer>(_ request: UmoAds.DownloadRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : UmoAds.ResponseSerializer
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public init<Serializer>(_ request: UmoAds.DownloadRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : UmoAds.DownloadResponseSerializerProtocol
   public func result() -> Combine.AnyPublisher<Swift.Result<Value, UmoAds.AKAFError>, Swift.Never>
   public func value() -> Combine.AnyPublisher<Value, UmoAds.AKAFError>
   public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == UmoAds.AKDownloadResponsePublisher<Value>.Failure, S.Input == UmoAds.AKDownloadResponsePublisher<Value>.Output
 }
 extension DownloadRequest {
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishResponse<Serializer, T>(using serializer: Serializer, on queue: Dispatch.DispatchQueue = .main) -> UmoAds.AKDownloadResponsePublisher<T> where Serializer : UmoAds.ResponseSerializer, T == Serializer.SerializedObject
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishResponse<Serializer, T>(using serializer: Serializer, on queue: Dispatch.DispatchQueue = .main) -> UmoAds.AKDownloadResponsePublisher<T> where Serializer : UmoAds.DownloadResponseSerializerProtocol, T == Serializer.SerializedObject
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishURL(queue: Dispatch.DispatchQueue = .main) -> UmoAds.AKDownloadResponsePublisher<Foundation.URL>
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishData(queue: Dispatch.DispatchQueue = .main, preprocessor: UmoAds.DataPreprocessor = DataResponseSerializer.defaultDataPreprocessor, emptyResponseCodes: Swift.Set<Swift.Int> = DataResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = DataResponseSerializer.defaultEmptyRequestMethods) -> UmoAds.AKDownloadResponsePublisher<Foundation.Data>
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishString(queue: Dispatch.DispatchQueue = .main, preprocessor: UmoAds.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods) -> UmoAds.AKDownloadResponsePublisher<Swift.String>
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: UmoAds.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: UmoAds.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyResponseMethods: Swift.Set<UmoAds.AKHTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> UmoAds.AKDownloadResponsePublisher<T> where T : Swift.Decodable
 }
-@available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 extension AKDownloadResponsePublisher where Value == Foundation.URL? {
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public init(_ request: UmoAds.DownloadRequest, queue: Dispatch.DispatchQueue)
 }
 extension DownloadRequest {
-  @available(OSX 10.15, iOS 13, watchOS 6, tvOS 13, *)
+  @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishUnserialized(on queue: Dispatch.DispatchQueue = .main) -> UmoAds.AKDownloadResponsePublisher<Foundation.URL?>
 }
 public class AKSOAPEnvelope : UmoAds.AKXMLMappable {
@@ -1949,8 +1949,8 @@ public struct AKEntry : Swift.Equatable {
     case file
     case directory
     case symlink
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -1995,10 +1995,10 @@ open class AKXMLURLTransform : UmoAds.AKXMLTransformType {
     case cancelled
     case finished
     public static func == (a: UmoAds.AKRequest.State, b: UmoAds.AKRequest.State) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   final public let id: Foundation.UUID
   final public let underlyingQueue: Dispatch.DispatchQueue
@@ -2194,8 +2194,8 @@ extension DataStreamRequest.Stream {
     public static let removePreviousFile: UmoAds.DownloadRequest.Options
     public let rawValue: Swift.Int
     public init(rawValue: Swift.Int)
-    public typealias Element = UmoAds.DownloadRequest.Options
     public typealias ArrayLiteralElement = UmoAds.DownloadRequest.Options
+    public typealias Element = UmoAds.DownloadRequest.Options
     public typealias RawValue = Swift.Int
   }
   public typealias Destination = (Foundation.URL, Foundation.HTTPURLResponse) -> (destinationURL: Foundation.URL, options: UmoAds.DownloadRequest.Options)
@@ -2278,13 +2278,13 @@ extension Set where Element : UmoAds.AKXMLBaseMappable {
   case sandbox
   case dev
   case moovit
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
-  public var rawValue: Swift.Int {
+  public typealias AllCases = [UmoAds.Environment]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [UmoAds.Environment] {
     get
   }
-  public typealias AllCases = [UmoAds.Environment]
-  public static var allCases: [UmoAds.Environment] {
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -2388,17 +2388,17 @@ final public class AKArchive : Swift.Sequence {
     case cancelledOperation
     case invalidBufferSize
     public static func == (a: UmoAds.AKArchive.ArchiveError, b: UmoAds.AKArchive.ArchiveError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum AccessMode : Swift.UInt {
     case create
     case read
     case update
-    public typealias RawValue = Swift.UInt
     public init?(rawValue: Swift.UInt)
+    public typealias RawValue = Swift.UInt
     public var rawValue: Swift.UInt {
       get
     }
@@ -2437,8 +2437,8 @@ open class AKMultipartFormData {
 }
 @objc @_hasMissingDesignatedInitializers public class AKInterstitialView : UIKit.UIView {
   public func onViewShown()
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
 }
 open class AKSOAPMessage : UmoAds.AKXMLMappable {
   public var nodeName: Swift.String!
@@ -2448,8 +2448,8 @@ open class AKSOAPMessage : UmoAds.AKXMLMappable {
   @objc deinit
 }
 public struct EmptyNetworkResponse : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct AKXMLDictionaryTransform<Key, Value> : UmoAds.AKXMLTransformType where Key : Swift.Hashable, Key : Swift.RawRepresentable, Value : UmoAds.AKXMLMappable, Key.RawValue == Swift.String {
   public init()
@@ -2463,7 +2463,7 @@ public struct UMOAdKitException : Swift.Error {
     get
   }
 }
-@objc public protocol AdListener : AnyObject {
+@objc public protocol AdListener {
   @objc func onAdLoadSuccess(adSlotId: Swift.String, adInsertionId: Swift.String, rendered: Swift.Bool, adView: UmoAds.BaseAdView)
   @objc func onAdLoadError(adSlotId: Swift.String, error: Swift.Error, adView: UmoAds.BaseAdView)
   @objc func onAdClickShouldOpenLink(adSlotId: Swift.String, url: Foundation.URL?, urlString: Swift.String, adView: UmoAds.BaseAdView) -> Swift.Bool
@@ -2477,16 +2477,16 @@ extension UIApplication {
 public enum AKSOAPVersion : Swift.String {
   case version1point1
   case version1point2
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(AdPostInteractionResponseInfo) @objcMembers public class AdPostInteractionResponseInfo : ObjectiveC.NSObject, Swift.Codable {
   @objc deinit
-  required public init(from decoder: Swift.Decoder) throws
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 @objc @_hasMissingDesignatedInitializers public class AKWebView : WebKit.WKWebView, WebKit.WKUIDelegate, WebKit.WKNavigationDelegate, UIKit.UIGestureRecognizerDelegate, WebKit.WKScriptMessageHandler {
   @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
@@ -2509,13 +2509,13 @@ public enum UMOAdKitAppUserType : Swift.String, Swift.CaseIterable {
   case NONE
   case LOGGED_IN_USER
   case ANONYMOUS_USER
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
+  public typealias AllCases = [UmoAds.UMOAdKitAppUserType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [UmoAds.UMOAdKitAppUserType] {
     get
   }
-  public typealias AllCases = [UmoAds.UMOAdKitAppUserType]
-  public static var allCases: [UmoAds.UMOAdKitAppUserType] {
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -2527,11 +2527,11 @@ public enum UMOAdKitLogLevel : Swift.Int {
   case DEBUG
   case VERBOSE
   case ALL
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
 @objc public enum UMOAdKitBannerType : Swift.Int, Swift.CaseIterable {
   case NONE
@@ -2554,13 +2554,13 @@ public enum UMOAdKitLogLevel : Swift.Int {
   case INTERSTITIAL_640x1136
   case INTERSTITIAL_750x1334
   case INTERSTITIAL_1080x1920
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
-  public var rawValue: Swift.Int {
+  public typealias AllCases = [UmoAds.UMOAdKitBannerType]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [UmoAds.UMOAdKitBannerType] {
     get
   }
-  public typealias AllCases = [UmoAds.UMOAdKitBannerType]
-  public static var allCases: [UmoAds.UMOAdKitBannerType] {
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -2568,13 +2568,13 @@ public enum UMOAdKitInlineBannerCreativeType : Swift.String, Swift.CaseIterable 
   case NONE
   case IMAGE
   case VIDEO
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
+  public typealias AllCases = [UmoAds.UMOAdKitInlineBannerCreativeType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [UmoAds.UMOAdKitInlineBannerCreativeType] {
     get
   }
-  public typealias AllCases = [UmoAds.UMOAdKitInlineBannerCreativeType]
-  public static var allCases: [UmoAds.UMOAdKitInlineBannerCreativeType] {
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -2584,13 +2584,13 @@ public enum UMOAdKitInlineVideoPlayMode : Swift.String, Swift.CaseIterable {
   case AUTOPLAY_AUDIO_OFF
   case CLICKTOPLAY_AUDIO_ON
   case CLICKTOPLAY_AUDIO_OFF
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
+  public typealias AllCases = [UmoAds.UMOAdKitInlineVideoPlayMode]
+  public typealias RawValue = Swift.String
+  public static var allCases: [UmoAds.UMOAdKitInlineVideoPlayMode] {
     get
   }
-  public typealias AllCases = [UmoAds.UMOAdKitInlineVideoPlayMode]
-  public static var allCases: [UmoAds.UMOAdKitInlineVideoPlayMode] {
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -2614,8 +2614,8 @@ public enum UMOAdKitBannerAdEvent : Swift.String {
   case BANNER_REPLAYING
   case BANNER_COMPLETED
   case BANNER_STOPPED
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -2625,13 +2625,13 @@ public enum UMOAdKitAdSlot : Swift.String, Swift.CaseIterable {
   case PREROLL
   case MIDROLL
   case POSTROLL
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
+  public typealias AllCases = [UmoAds.UMOAdKitAdSlot]
+  public typealias RawValue = Swift.String
+  public static var allCases: [UmoAds.UMOAdKitAdSlot] {
     get
   }
-  public typealias AllCases = [UmoAds.UMOAdKitAdSlot]
-  public static var allCases: [UmoAds.UMOAdKitAdSlot] {
+  public var rawValue: Swift.String {
     get
   }
 }
@@ -2646,8 +2646,8 @@ public enum UMOAdKitRollAdEvent : Swift.String {
   case AD_CLICKED
   case AD_STOPPED
   case AD_EXPIRED
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -2715,11 +2715,11 @@ public enum UMOAdKitError : Swift.String {
   case INVALID_ROLL_PARAMS
   case INVALID_HANDLE
   case UNKNOWN
+  public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
-  public init?(rawValue: Swift.String)
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class UMOAdKitParams : ObjectiveC.NSObject {
   @objc public var publisherId: Swift.String?
@@ -2731,8 +2731,8 @@ public enum UMOAdKitError : Swift.String {
   @objc public var dictStaticAppPlaceholders: [Swift.String : Swift.String]?
   @objc public var adQueryParams: UmoAds.UMOAdKitAdQueryParams?
   @objc public func toString() -> Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class UMOAdKitBannerParams : ObjectiveC.NSObject {
   public var akSpotId: Swift.String
@@ -2753,8 +2753,8 @@ public enum UMOAdKitError : Swift.String {
   public var devLocalBannerSpotId: Swift.String?
   public var devLocalVideoUrl: Swift.String?
   public func toString() -> Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class UMOAdKitRollAdParams : ObjectiveC.NSObject {
   public var adServerUrl: Swift.String?
@@ -2768,8 +2768,8 @@ public enum UMOAdKitError : Swift.String {
   public var devLocalRollAdPlaylist: Swift.String?
   public var devQSParams: Swift.String?
   public func toString() -> Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class UMOAdKitAdQueryParams : ObjectiveC.NSObject {
   public var extraQSParams: Swift.String?
@@ -2962,8 +2962,8 @@ extension Ads {
 }
 open class AKXMLCustomDateFormatTransform : UmoAds.AKXMLDateFormatterTransform {
   public init(formatString: Swift.String, withLocaleIdentifier localeIdentifier: Swift.String = "en_US_POSIX")
-  @objc deinit
   override public init(dateFormatter: Foundation.DateFormatter)
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class AKBrowserView : UIKit.UIView {
   public func didStartLoading()
@@ -2978,10 +2978,10 @@ open class AKXMLCustomDateFormatTransform : UmoAds.AKXMLDateFormatterTransform {
   public func encode(to encoder: Swift.Encoder) throws
 }
 @_inheritsConvenienceInitializers @objc(AdPostInteractionInfo) @objcMembers public class AdPostInteractionInfo : ObjectiveC.NSObject, Swift.Codable {
-  @objc deinit
   @objc override dynamic public init()
-  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 open class AKXMLTransformOf<ObjectType, XMLType> : UmoAds.AKXMLTransformType {
   public typealias Object = ObjectType
@@ -3005,10 +3005,10 @@ public enum AuthenticationError : Swift.Error {
   case missingCredential
   case excessiveRefresh
   public static func == (a: UmoAds.AuthenticationError, b: UmoAds.AuthenticationError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public class AKAuthenticationInterceptor<AuthenticatorType> : UmoAds.AKRequestInterceptor where AuthenticatorType : UmoAds.Authenticator {
   public typealias Credential = AuthenticatorType.Credential
@@ -3058,7 +3058,7 @@ extension AKSessionDelegate : Foundation.URLSessionTaskDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, willPerformHTTPRedirection response: Foundation.HTTPURLResponse, newRequest request: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didFinishCollecting metrics: Foundation.URLSessionTaskMetrics)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: Swift.Error?)
-  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  @available(macOS 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, taskIsWaitingForConnectivity task: Foundation.URLSessionTask)
 }
 extension AKSessionDelegate : Foundation.URLSessionDataDelegate {
@@ -3078,8 +3078,8 @@ extension AKSessionDelegate : Foundation.URLSessionDownloadDelegate {
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class AKVPaidBridge : ObjectiveC.NSObject {
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers open class AKNetworkReachabilityManager {
   public enum NetworkReachabilityStatus {
@@ -3090,10 +3090,10 @@ extension AKSessionDelegate : Foundation.URLSessionDownloadDelegate {
       case ethernetOrWiFi
       case cellular
       public static func == (a: UmoAds.AKNetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType, b: UmoAds.AKNetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType) -> Swift.Bool
+      public func hash(into hasher: inout Swift.Hasher)
       public var hashValue: Swift.Int {
         get
       }
-      public func hash(into hasher: inout Swift.Hasher)
     }
   }
   public typealias Listener = (UmoAds.AKNetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Void
@@ -3125,9 +3125,9 @@ extension AKNetworkReachabilityManager.NetworkReachabilityStatus : Swift.Equatab
   public static func == (a: UmoAds.AKNetworkReachabilityManager.NetworkReachabilityStatus, b: UmoAds.AKNetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Bool
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(AdResponseinfo) @objcMembers public class AdResponseInfo : ObjectiveC.NSObject, Swift.Codable {
-  required public init(from decoder: Swift.Decoder) throws
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 open class AKRetryPolicy : UmoAds.AKRequestInterceptor {
   public static let defaultRetryLimit: Swift.UInt
@@ -3149,8 +3149,8 @@ open class AKRetryPolicy : UmoAds.AKRequestInterceptor {
 }
 open class ConnectionLostRetryPolicy : UmoAds.AKRetryPolicy {
   public init(retryLimit: Swift.UInt = AKRetryPolicy.defaultRetryLimit, exponentialBackoffBase: Swift.UInt = AKRetryPolicy.defaultExponentialBackoffBase, exponentialBackoffScale: Swift.Double = AKRetryPolicy.defaultExponentialBackoffScale, retryableHTTPMethods: Swift.Set<UmoAds.AKHTTPMethod> = AKRetryPolicy.defaultRetryableHTTPMethods)
-  @objc deinit
   override public init(retryLimit: Swift.UInt = super, exponentialBackoffBase: Swift.UInt = super, exponentialBackoffScale: Swift.Double = super, retryableHTTPMethods: Swift.Set<UmoAds.AKHTTPMethod> = super, retryableHTTPStatusCodes: Swift.Set<Swift.Int> = super, retryableURLErrorCodes: Swift.Set<Foundation.URLError.Code> = super)
+  @objc deinit
 }
 open class AKXMLCDATATransform : UmoAds.AKXMLTransformType {
   public typealias Object = Swift.String
