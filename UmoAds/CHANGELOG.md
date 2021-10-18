@@ -2,6 +2,11 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.0.5]
+
+* Add `BANNER_LOAD_STARTED` event
+* Fix overlap of placeholder and ad display
+
 ## [2.0.4]
 
 * Reduce iOS deployment target from 12.1 to 12.0

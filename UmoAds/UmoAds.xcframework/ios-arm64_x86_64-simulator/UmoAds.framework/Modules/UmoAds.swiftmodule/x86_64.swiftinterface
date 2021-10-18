@@ -2596,6 +2596,7 @@ public enum UMOAdKitInlineVideoPlayMode : Swift.String, Swift.CaseIterable {
 }
 public enum UMOAdKitBannerAdEvent : Swift.String {
   case NONE
+  case BANNER_LOAD_STARTED
   case BANNER_DISPLAYED
   case BANNER_FETCHED
   case BANNER_AUTO_FETCHED
