@@ -2,6 +2,12 @@
 
 This document contains all changes made to the _CubicAuth_ for each release along with upgrade steps.
 
+## [1.1.2] - 2021-10-19
+
+### Fixed
+
+* Environment switch issue
+
 ## [1.1.1] - 2021-10-12
 
 ### Changed
