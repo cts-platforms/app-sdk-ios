@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.0.6]
+
+* Fix environment switch issue
+
 ## [2.0.5]
 
 * Add `BANNER_LOAD_STARTED` event
