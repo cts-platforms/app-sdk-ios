@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = 'UmoAds'
-  spec.version      = '2.0.6'
+  spec.version      = '2.0.7'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/cts-platforms/ads-sdk-ios'
   spec.authors      = { 'Patrick Dunshee' => 'patrick.dunshee@cubic.com' }
@@ -15,6 +15,6 @@ Pod::Spec.new do |spec|
   spec.osx.deployment_target = '10.10'
   spec.dependency 'SDWebImage', '~> 5.7'
   spec.dependency 'SSZipArchive', '~> 2.2'
-  spec.dependency 'CubicAuth', '~> 1.1'
+  spec.dependency 'CubicAuth', '~> 1.2'
   spec.resources = 'Ads/**/*.{pfx,png,pdf,json,xcassets}'
 end
