@@ -1,18 +1,20 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CubicAuth
 import AuthenticationServices
 @_exported import CubicAuth
 import Foundation
 import Swift
 import UIKit
+import WebKit
+import _Concurrency
 public enum NetworkError : Foundation.LocalizedError {
   case invalidCode(response: Foundation.HTTPURLResponse, responseText: Swift.String)
   case osError(Swift.Error)
   case dataParseFailure(Foundation.Data?)
   case unknownError
 }
-extension NetworkError {
+extension CubicAuth.NetworkError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -24,10 +26,9 @@ extension NetworkError {
   @objc final public let isTokenValid: Swift.Bool
   @objc final public let isRefreshTokenValid: Swift.Bool
   public init(cubicId: Swift.String?, preferredUsername: Swift.String?, isAnonymous: Swift.Bool, isTokenValid: Swift.Bool, isRefreshTokenValid: Swift.Bool)
-  @objc override dynamic public init()
   @objc deinit
 }
-extension JWTInfo {
+extension CubicAuth.JWTInfo {
   public func requiresFreshLogin() -> Swift.Bool
 }
 public enum LoggingLevel : Swift.Int {
@@ -55,12 +56,11 @@ public enum LoggingLevel : Swift.Int {
   @objc final public let scope: Swift.String?
   @objc final public let isAnonymous: Swift.Bool
   public init(accessToken: Swift.String?, expiresIn: Swift.Int?, refreshExpiresIn: Swift.Int?, refreshToken: Swift.String?, tokenType: Swift.String?, idToken: Swift.String?, notBeforePolicy: Swift.Int?, sessionState: Swift.String?, scope: Swift.String?, isAnonymous: Swift.Bool)
-  @objc override dynamic public init()
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-extension AuthInfo {
+extension CubicAuth.AuthInfo {
   convenience public init(accessToken: Swift.String, refreshToken: Swift.String?)
 }
 public struct EmptyNetworkResponse : Swift.Codable {
@@ -92,13 +92,14 @@ public enum CubicAuthError : Foundation.LocalizedError {
   case memoryReferenceLost
   case refreshTokenMissing
   case noAnonymousAndNoProvider
+  case urlCreationFailed
   public static func == (a: CubicAuth.CubicAuthError, b: CubicAuth.CubicAuthError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
-extension CubicAuthError {
+extension CubicAuth.CubicAuthError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -106,7 +107,7 @@ extension CubicAuthError {
 public typealias JWTToken = Swift.String
 public typealias AuthenticationCompletion = (Swift.Result<CubicAuth.AuthInfo, Swift.Error>) -> Swift.Void
 public typealias AuthSessionGenerationCompletion = (AuthenticationServices.ASWebAuthenticationSession) -> Swift.Void
-public typealias DeviceIdCompletion = (Swift.Int) -> Swift.Void
+public typealias DeviceIdCompletion = (Swift.Int, [Foundation.NSError]) -> Swift.Void
 public typealias EmptyCompletionResult = (Swift.Result<CubicAuth.EmptyNetworkResponse, Swift.Error>)
 public typealias EmptyCompletion = (CubicAuth.EmptyCompletionResult) -> Swift.Void
 public typealias JWTRetrievedCompletion = (Swift.Result<CubicAuth.JWTToken, Swift.Error>) -> Swift.Void
@@ -116,6 +117,8 @@ public typealias JWTProviderClosure = (@escaping CubicAuth.JWTProviderCompletion
 public typealias JWTProviderClosureObjC = ((CubicAuth.JWTToken?, Swift.Error?) -> Swift.Void) -> Swift.Void
 public typealias AuthenticatedCompletion = (Swift.Bool) -> Swift.Void
 public typealias JWTInfoCompletion = (CubicAuth.JWTInfo?) -> Swift.Void
+public typealias AccountViewCompletion = (WebKit.WKWebView?, Foundation.NSError?) -> Swift.Void
+public typealias AccountURLRequestCompletion = (Foundation.URLRequest?, Foundation.NSError?) -> Swift.Void
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Auth : ObjectiveC.NSObject {
   @objc public static let shared: CubicAuth.Auth
   public var jwtInfoUpdateClosures: [CubicAuth.JWTInfoCompletion] {
@@ -165,6 +168,8 @@ public typealias JWTInfoCompletion = (CubicAuth.JWTInfo?) -> Swift.Void
   @objc public func createRegistrationObjC(presentationContextProvider: AuthenticationServices.ASWebAuthenticationPresentationContextProviding?, prefersEphemeralWebBrowserSession: Swift.Bool, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping ((CubicAuth.AuthInfo?, Swift.Error?) -> Swift.Void))
   public func createRegistration(prefersEphemeralWebBrowserSession: Swift.Bool, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping CubicAuth.AuthenticationCompletion)
   @objc public func createRegistrationObjC(prefersEphemeralWebBrowserSession: Swift.Bool, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping ((CubicAuth.AuthInfo?, Swift.Error?) -> Swift.Void))
+  @objc public func accountPageURLRequest(completion: @escaping CubicAuth.AccountURLRequestCompletion)
+  @objc public func accountPage(completion: @escaping CubicAuth.AccountViewCompletion)
   @objc public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
   @objc deinit
 }

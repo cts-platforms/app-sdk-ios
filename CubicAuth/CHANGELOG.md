@@ -2,6 +2,16 @@
 
 This document contains all changes made to the _CubicAuth_ for each release along with upgrade steps.
 
+## [1.2.0] - 2021-10-21
+
+### Added
+
+* Account page web view
+
+### Changed
+
+* Device ID now returns all errors produced along the way
+
 ## [1.1.2] - 2021-10-19
 
 ### Fixed
