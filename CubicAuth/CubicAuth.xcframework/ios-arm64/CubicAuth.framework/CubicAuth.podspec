@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = 'CubicAuth'
-  spec.version      = '1.2.0'
+  spec.version      = '1.2.1'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/cts-platforms/app-sdk-ios'
   spec.authors      = { 'Patrick Dunshee' => 'patrick.dunshee@cubic.com' }

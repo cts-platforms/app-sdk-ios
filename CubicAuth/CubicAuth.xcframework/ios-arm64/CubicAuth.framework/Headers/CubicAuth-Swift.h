@@ -266,6 +266,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 - (void)accountPageURLRequestWithCompletion:(void (^ _Nonnull)(NSURLRequest * _Nullable, NSError * _Nullable))completion;
 /// Create a <code>WKWebView</code> loaded to the currently logged in user’s profile page. Refreshes token if refresh token is available. Returns error if anonymous or no user is authenticated.
 - (void)accountPageWithCompletion:(void (^ _Nonnull)(WKWebView * _Nullable, NSError * _Nullable))completion;
+/// Performs a logout on the backend, and if successful, removes local credentials.
+- (void)logoutFromSessionWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 /// Get the device identifier used by TouchPass, and check for a saved device identifier from the legacy app to use first.
 - (void)deviceIdWithCompletion:(void (^ _Nonnull)(NSInteger, NSArray<NSError *> * _Nonnull))completion;
 @end

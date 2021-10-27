@@ -6,11 +6,11 @@
 	<dict>
 		<key>CubicAuth.podspec</key>
 		<data>
-		hyKiFDtXAOr/qZ64KWfKpc6GCDw=
+		9beJAfUoPr/eRz2WXT1GOfZZEOU=
 		</data>
 		<key>Headers/CubicAuth-Swift.h</key>
 		<data>
-		/2R/CT7az+FoZdo/Ijzh0YWGDfQ=
+		dpXKMGiKGLhvD1T4tTDML+0dFxw=
 		</data>
 		<key>Headers/CubicAuth.h</key>
 		<data>
@@ -18,39 +18,39 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DOi4xGGi3JJ7P1vFsGAg5zMVVSI=
+		s8Yz+WT6bcftdEz++Oq/btnp/iE=
 		</data>
 		<key>Modules/CubicAuth.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		BRuLbmankuKIaGhBhR0CSNU2ZO8=
+		9cKxzbpn5DlWTTRi3RmP9y8LCno=
 		</data>
 		<key>Modules/CubicAuth.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		BRuLbmankuKIaGhBhR0CSNU2ZO8=
+		9cKxzbpn5DlWTTRi3RmP9y8LCno=
 		</data>
 		<key>Modules/CubicAuth.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		JfJtZ/HtziVNlvvSjlONmpxKXWI=
+		rN/eN04/5ybnKfi5r7ujwyVomqk=
 		</data>
 		<key>Modules/CubicAuth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		BbLRQvnXWu0CcZKJUmEiZ1HTg+0=
+		KTmPR61oYg+gIN8w01gj05wSd1k=
 		</data>
 		<key>Modules/CubicAuth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		+BqH16lQQrRRnHehgpX3Ij15VVk=
+		JpITpDAIwKJo71uvlTTH36Tv9rE=
 		</data>
 		<key>Modules/CubicAuth.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		JfJtZ/HtziVNlvvSjlONmpxKXWI=
+		rN/eN04/5ybnKfi5r7ujwyVomqk=
 		</data>
 		<key>Modules/CubicAuth.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		BbLRQvnXWu0CcZKJUmEiZ1HTg+0=
+		KTmPR61oYg+gIN8w01gj05wSd1k=
 		</data>
 		<key>Modules/CubicAuth.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		+BqH16lQQrRRnHehgpX3Ij15VVk=
+		JpITpDAIwKJo71uvlTTH36Tv9rE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,14 +63,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+6sTm9Pvy9WUYhRjlxBP82oaf6/cmUyEZajP+SPBOfA=
+			lUNlMLczZ5E6zWS3t33syiFU1D/vbQX3sW+jnHlOQLs=
 			</data>
 		</dict>
 		<key>Headers/CubicAuth-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ihzu66n3iiA4lbhmaPGMluF+4cfBZn1OHgmgcmeRzT4=
+			iHJVdDWfs95oetRRuSNHccjWPx2+9YhtYqBBuw57JFI=
 			</data>
 		</dict>
 		<key>Headers/CubicAuth.h</key>
@@ -84,56 +84,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			efbxwLn1lq+kHsdvtCesHdAmzGC/LFlNNjiuJjrD05g=
+			M1WSPnxRiMKrnbmOpPAecTca0UCg2O/MCllbOp43mag=
 			</data>
 		</dict>
 		<key>Modules/CubicAuth.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			efbxwLn1lq+kHsdvtCesHdAmzGC/LFlNNjiuJjrD05g=
+			M1WSPnxRiMKrnbmOpPAecTca0UCg2O/MCllbOp43mag=
 			</data>
 		</dict>
 		<key>Modules/CubicAuth.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ap7qr+LfiQG4BFLrRiqKyZiGPBUdVtf72AoSEL21168=
+			REtkEEH2SNciHc1c4lnaXTjMrIO+vi5zFq0aPH4lFRo=
 			</data>
 		</dict>
 		<key>Modules/CubicAuth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m5+2ilRWWjqMwJluZFX4CY5M0YlTIHouYHvBJMjjxW0=
+			SGcdr9p9/GyL/x5YGV28q1E1bnMDsrLt4Muecu+w8AQ=
 			</data>
 		</dict>
 		<key>Modules/CubicAuth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JgG8Wuqtw2FryMNh4TUDu9VoTcAX46AOBrGmbGdFfLw=
+			TMV3dAOevZKHuVo9q4gajyZ2wBz6RpJugkLbiT+zHkw=
 			</data>
 		</dict>
 		<key>Modules/CubicAuth.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ap7qr+LfiQG4BFLrRiqKyZiGPBUdVtf72AoSEL21168=
+			REtkEEH2SNciHc1c4lnaXTjMrIO+vi5zFq0aPH4lFRo=
 			</data>
 		</dict>
 		<key>Modules/CubicAuth.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m5+2ilRWWjqMwJluZFX4CY5M0YlTIHouYHvBJMjjxW0=
+			SGcdr9p9/GyL/x5YGV28q1E1bnMDsrLt4Muecu+w8AQ=
 			</data>
 		</dict>
 		<key>Modules/CubicAuth.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JgG8Wuqtw2FryMNh4TUDu9VoTcAX46AOBrGmbGdFfLw=
+			TMV3dAOevZKHuVo9q4gajyZ2wBz6RpJugkLbiT+zHkw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
