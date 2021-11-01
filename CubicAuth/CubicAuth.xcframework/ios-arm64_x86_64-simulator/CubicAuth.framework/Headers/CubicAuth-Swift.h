@@ -209,9 +209,11 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class Logger;
 @class NSString;
 enum Environment : NSInteger;
 @class ASWebAuthenticationSession;
+enum LoggingLevel : NSInteger;
 @class JWTInfo;
 @class NSNumber;
 @class NSHTTPURLResponse;
@@ -225,6 +227,7 @@ SWIFT_CLASS("_TtC9CubicAuth4Auth")
 @interface Auth : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonnull shared;)
 + (Auth * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, strong) Logger * _Nonnull logger;
 @property (nonatomic, readonly, copy) void (^ _Nullable jwtProviderClosureObjC)(SWIFT_NOESCAPE void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable));
 @property (nonatomic, readonly) enum Environment currentEnvironment;
 @property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
@@ -234,6 +237,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 @property (nonatomic, copy) NSString * _Nonnull callbackURLScheme;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Set the current logging level.
+- (void)setLoggingLevel:(enum LoggingLevel)logLevel;
 /// Set the current environment. Will default to <code>dev</code> if not called.
 - (void)setEnvironment:(enum Environment)environment;
 /// Configure the <code>clientId</code> and <code>clientSecret</code> to be used with the Cubic environment. Please contact Cubic Support if you do not have these.
@@ -315,6 +320,20 @@ SWIFT_CLASS("_TtC9CubicAuth7JWTInfo")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+
+SWIFT_CLASS("_TtC9CubicAuth6Logger")
+@interface Logger : NSObject
+@property (nonatomic) enum LoggingLevel currentLevel;
+- (void)log:(NSString * _Nonnull)message level:(enum LoggingLevel)level;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, LoggingLevel, open) {
+  LoggingLevelNone = 0,
+  LoggingLevelError = 1,
+  LoggingLevelInfo = 2,
+};
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -532,9 +551,11 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class Logger;
 @class NSString;
 enum Environment : NSInteger;
 @class ASWebAuthenticationSession;
+enum LoggingLevel : NSInteger;
 @class JWTInfo;
 @class NSNumber;
 @class NSHTTPURLResponse;
@@ -548,6 +569,7 @@ SWIFT_CLASS("_TtC9CubicAuth4Auth")
 @interface Auth : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonnull shared;)
 + (Auth * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, strong) Logger * _Nonnull logger;
 @property (nonatomic, readonly, copy) void (^ _Nullable jwtProviderClosureObjC)(SWIFT_NOESCAPE void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable));
 @property (nonatomic, readonly) enum Environment currentEnvironment;
 @property (nonatomic, readonly, copy) NSString * _Nonnull clientId;
@@ -557,6 +579,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 @property (nonatomic, copy) NSString * _Nonnull callbackURLScheme;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Set the current logging level.
+- (void)setLoggingLevel:(enum LoggingLevel)logLevel;
 /// Set the current environment. Will default to <code>dev</code> if not called.
 - (void)setEnvironment:(enum Environment)environment;
 /// Configure the <code>clientId</code> and <code>clientSecret</code> to be used with the Cubic environment. Please contact Cubic Support if you do not have these.
@@ -638,6 +662,20 @@ SWIFT_CLASS("_TtC9CubicAuth7JWTInfo")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+
+SWIFT_CLASS("_TtC9CubicAuth6Logger")
+@interface Logger : NSObject
+@property (nonatomic) enum LoggingLevel currentLevel;
+- (void)log:(NSString * _Nonnull)message level:(enum LoggingLevel)level;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, LoggingLevel, open) {
+  LoggingLevelNone = 0,
+  LoggingLevelError = 1,
+  LoggingLevelInfo = 2,
+};
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

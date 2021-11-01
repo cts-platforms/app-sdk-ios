@@ -31,8 +31,8 @@ extension CubicAuth.NetworkError {
 extension CubicAuth.JWTInfo {
   public func requiresFreshLogin() -> Swift.Bool
 }
-public enum LoggingLevel : Swift.Int {
-  case none
+@objc public enum LoggingLevel : Swift.Int {
+  case none = 0
   case error
   case info
   public init?(rawValue: Swift.Int)
@@ -40,6 +40,12 @@ public enum LoggingLevel : Swift.Int {
   public var rawValue: Swift.Int {
     get
   }
+}
+@_inheritsConvenienceInitializers @objc open class Logger : ObjectiveC.NSObject {
+  @objc public var currentLevel: CubicAuth.LoggingLevel
+  @objc public func log(_ message: Swift.String, level: CubicAuth.LoggingLevel = .info)
+  @objc override dynamic public init()
+  @objc deinit
 }
 @objc public class AuthInfo : ObjectiveC.NSObject, Swift.Codable {
   @objc public var accessToken: Swift.String?
@@ -122,6 +128,7 @@ public typealias URLRequestCompletion = (Foundation.URLRequest?, Foundation.NSEr
 public typealias ErrorCompletion = (Foundation.NSError?) -> Swift.Void
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class Auth : ObjectiveC.NSObject {
   @objc public static let shared: CubicAuth.Auth
+  @objc public var logger: CubicAuth.Logger
   public var jwtInfoUpdateClosures: [CubicAuth.JWTInfoCompletion] {
     get
   }
@@ -146,6 +153,7 @@ public typealias ErrorCompletion = (Foundation.NSError?) -> Swift.Void
     @objc set
   }
   @objc public var callbackURLScheme: Swift.String
+  @objc public func setLoggingLevel(_ logLevel: CubicAuth.LoggingLevel)
   @objc public func setEnvironment(_ environment: CubicAuth.Environment)
   @objc public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
   @objc public func addJWTInfoUpdateListener(_ jwtInfoUpdateClosure: @escaping CubicAuth.JWTInfoCompletion)
