@@ -273,6 +273,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 @end
 
 
+@interface Auth (SWIFT_EXTENSION(CubicAuth))
+- (NSString * _Nonnull)idPrefixWithEnvironment:(enum Environment)environment SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)apiPrefixWithEnvironment:(enum Environment)environment SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 SWIFT_CLASS("_TtC9CubicAuth8AuthInfo")
 @interface AuthInfo : NSObject
 @property (nonatomic, copy) NSString * _Nullable accessToken;

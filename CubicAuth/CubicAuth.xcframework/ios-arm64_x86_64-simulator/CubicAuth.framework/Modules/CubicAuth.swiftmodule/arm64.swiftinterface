@@ -178,6 +178,10 @@ public typealias ErrorCompletion = (Foundation.NSError?) -> Swift.Void
   @objc public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
   @objc deinit
 }
+extension CubicAuth.Auth {
+  @objc dynamic public func idPrefix(environment: CubicAuth.Environment) -> Swift.String
+  @objc dynamic public func apiPrefix(environment: CubicAuth.Environment) -> Swift.String
+}
 extension CubicAuth.LoggingLevel : Swift.Equatable {}
 extension CubicAuth.LoggingLevel : Swift.Hashable {}
 extension CubicAuth.LoggingLevel : Swift.RawRepresentable {}

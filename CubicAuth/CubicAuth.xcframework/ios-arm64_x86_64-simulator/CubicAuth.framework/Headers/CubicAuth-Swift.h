@@ -275,6 +275,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 @end
 
 
+@interface Auth (SWIFT_EXTENSION(CubicAuth))
+- (NSString * _Nonnull)idPrefixWithEnvironment:(enum Environment)environment SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)apiPrefixWithEnvironment:(enum Environment)environment SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 SWIFT_CLASS("_TtC9CubicAuth8AuthInfo")
 @interface AuthInfo : NSObject
 @property (nonatomic, copy) NSString * _Nullable accessToken;
@@ -589,6 +595,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 - (void)logoutFromSessionWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 /// Get the device identifier used by TouchPass, and check for a saved device identifier from the legacy app to use first.
 - (void)deviceIdWithCompletion:(void (^ _Nonnull)(NSInteger, NSArray<NSError *> * _Nonnull))completion;
+@end
+
+
+@interface Auth (SWIFT_EXTENSION(CubicAuth))
+- (NSString * _Nonnull)idPrefixWithEnvironment:(enum Environment)environment SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)apiPrefixWithEnvironment:(enum Environment)environment SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

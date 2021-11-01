@@ -2,6 +2,18 @@
 
 This document contains all changes made to the _CubicAuth_ for each release along with upgrade steps.
 
+## [1.2.1] - 2021-11-01
+
+### Added
+
+* Logging around account page URLRequest
+
+## [1.2.1] - 2021-10-27
+
+### Fixed
+
+* Login/registration flow
+
 ## [1.2.0] - 2021-10-21
 
 ### Added
