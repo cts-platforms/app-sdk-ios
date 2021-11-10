@@ -18,7 +18,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		awGJ9Sai1Z0Y7QbbGFidGoAgaus=
+		O4LhIc3BjyaLqGN1dctMhnmlPag=
 		</data>
 		<key>Dev.xcconfig</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/UmoAds-Swift.h</key>
 		<data>
-		jDdfW0vnyY3CzAukFHCe+Nvurnk=
+		NVaNoQR3mereavuXWC4wTuu+IuE=
 		</data>
 		<key>Headers/UmoAds.h</key>
 		<data>
@@ -38,39 +38,39 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IH2Dsdy0j/6k5Jct/iKgL25lzL8=
+		4u4zz22tMbMbHTbCsrsTvmQu5Q0=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		B03TH1u5WLLbZ+x7EQFIvQxzFzI=
+		VTeeZRLs18mVOmaN+KRBOpRF2gc=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		B03TH1u5WLLbZ+x7EQFIvQxzFzI=
+		VTeeZRLs18mVOmaN+KRBOpRF2gc=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		KYmrfiuGHpcHXTKK58y8UsjpYQc=
+		nljtEbcUjI51gfKVHVHsC0doj2A=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		jtNueU8TbN8IwqujXKoBVrqPXlI=
+		znQkb+yHtJYNBXRoxUD5hvmfnvw=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		XLokQS6JQ4eLKCQelZM1DhB+CT8=
+		efv8sPfqD2kQ4UkxyVN7TrzieIg=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		KYmrfiuGHpcHXTKK58y8UsjpYQc=
+		nljtEbcUjI51gfKVHVHsC0doj2A=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		jtNueU8TbN8IwqujXKoBVrqPXlI=
+		znQkb+yHtJYNBXRoxUD5hvmfnvw=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		XLokQS6JQ4eLKCQelZM1DhB+CT8=
+		efv8sPfqD2kQ4UkxyVN7TrzieIg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>UmoAds.podspec</key>
 		<data>
-		2ch6ZrbDIq/TA38/zdCvT/22/Ok=
+		xUC/q4qDVK7RZlKkUezQ+fppEmE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -112,7 +112,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XUF0SGEoG5aYeLj1iQsVjgb0riFQ0MLz9Sr/WoxbLCs=
+			w5SflkJ0bsJ1K9lM6XdGmCOk+wRhUCYqjyeRPBXVS7Q=
 			</data>
 		</dict>
 		<key>Dev.xcconfig</key>
@@ -133,7 +133,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GSabG14wC9o2axzL37yvgMylpE7fmQft0/qI0lk49UU=
+			Iq6w9i2J+RjDu6nkCMZaf7NAEurzkRw716ZzUsJ0VuA=
 			</data>
 		</dict>
 		<key>Headers/UmoAds.h</key>
@@ -147,56 +147,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rl3Dmut7FWbUD7o9RBlR8Iy1Gu1JROykfbCyz1abMfg=
+			wSLGKcRgORF5FZy0bnKrmKl4p4pU8Q3U9RZZ3Z5TsW0=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rl3Dmut7FWbUD7o9RBlR8Iy1Gu1JROykfbCyz1abMfg=
+			wSLGKcRgORF5FZy0bnKrmKl4p4pU8Q3U9RZZ3Z5TsW0=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Qfu2TozBiITwAzC2RX3VJp+jM23vy/QaIydlH3dwpo=
+			kyypxSfbdEz7LZkwhgiz6wFQLhvfrZfupZiqMmsr3/w=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SoW/eKClJx55TddZfwwGSLwsVo8XaX5pvWQlzg2O+Mc=
+			JE9hOFn3DjS3hly82MM54+iHlIrNTM6rW1iCveq//Ko=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wgsIaHuTg01aK/JxkhZqT7rZX7dlXDffb1ji4vSWAhk=
+			3GK+1IyHwHv4S/W0y03vvNWUCHqm4+MVbjiFzMiQ8Lg=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Qfu2TozBiITwAzC2RX3VJp+jM23vy/QaIydlH3dwpo=
+			kyypxSfbdEz7LZkwhgiz6wFQLhvfrZfupZiqMmsr3/w=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SoW/eKClJx55TddZfwwGSLwsVo8XaX5pvWQlzg2O+Mc=
+			JE9hOFn3DjS3hly82MM54+iHlIrNTM6rW1iCveq//Ko=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wgsIaHuTg01aK/JxkhZqT7rZX7dlXDffb1ji4vSWAhk=
+			3GK+1IyHwHv4S/W0y03vvNWUCHqm4+MVbjiFzMiQ8Lg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -217,7 +217,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wSGsmDsE6qR2nN6RuXsFXqRMt85yWt5l4YvJw/6r81k=
+			OKgTKTqryoSXcGOY4C0to4GhNI5JY2iaDJojyqvYLC4=
 			</data>
 		</dict>
 	</dict>

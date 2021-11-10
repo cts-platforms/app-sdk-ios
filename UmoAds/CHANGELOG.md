@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.0.8] - 2021-11-10
+
+* Compile with Xcode 12
+
 ## [2.0.7]
 
 * Update CubicAuth dependency to ~> 1.2
