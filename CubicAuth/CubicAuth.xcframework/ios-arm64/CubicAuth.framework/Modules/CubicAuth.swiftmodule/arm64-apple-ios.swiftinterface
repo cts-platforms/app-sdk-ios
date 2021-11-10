@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CubicAuth
 import AuthenticationServices
 @_exported import CubicAuth
@@ -7,14 +7,13 @@ import Foundation
 import Swift
 import UIKit
 import WebKit
-import _Concurrency
 public enum NetworkError : Foundation.LocalizedError {
   case invalidCode(response: Foundation.HTTPURLResponse, responseText: Swift.String)
   case osError(Swift.Error)
   case dataParseFailure(Foundation.Data?)
   case unknownError
 }
-extension CubicAuth.NetworkError {
+extension NetworkError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -26,9 +25,10 @@ extension CubicAuth.NetworkError {
   @objc final public let isTokenValid: Swift.Bool
   @objc final public let isRefreshTokenValid: Swift.Bool
   public init(cubicId: Swift.String?, preferredUsername: Swift.String?, isAnonymous: Swift.Bool, isTokenValid: Swift.Bool, isRefreshTokenValid: Swift.Bool)
+  @objc override dynamic public init()
   @objc deinit
 }
-extension CubicAuth.JWTInfo {
+extension JWTInfo {
   public func requiresFreshLogin() -> Swift.Bool
 }
 @objc public enum LoggingLevel : Swift.Int {
@@ -62,11 +62,12 @@ extension CubicAuth.JWTInfo {
   @objc final public let scope: Swift.String?
   @objc final public let isAnonymous: Swift.Bool
   public init(accessToken: Swift.String?, expiresIn: Swift.Int?, refreshExpiresIn: Swift.Int?, refreshToken: Swift.String?, tokenType: Swift.String?, idToken: Swift.String?, notBeforePolicy: Swift.Int?, sessionState: Swift.String?, scope: Swift.String?, isAnonymous: Swift.Bool)
+  @objc override dynamic public init()
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-extension CubicAuth.AuthInfo {
+extension AuthInfo {
   convenience public init(accessToken: Swift.String, refreshToken: Swift.String?)
 }
 public struct EmptyNetworkResponse : Swift.Codable {
@@ -105,7 +106,7 @@ public enum CubicAuthError : Foundation.LocalizedError {
     get
   }
 }
-extension CubicAuth.CubicAuthError {
+extension CubicAuthError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -186,7 +187,7 @@ public typealias ErrorCompletion = (Foundation.NSError?) -> Swift.Void
   @objc public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
   @objc deinit
 }
-extension CubicAuth.Auth {
+extension Auth {
   @objc dynamic public func idPrefix(environment: CubicAuth.Environment) -> Swift.String
   @objc dynamic public func apiPrefix(environment: CubicAuth.Environment) -> Swift.String
 }
