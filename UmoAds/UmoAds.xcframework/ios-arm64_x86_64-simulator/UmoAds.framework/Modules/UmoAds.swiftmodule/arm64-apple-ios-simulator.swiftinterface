@@ -2953,6 +2953,7 @@ extension Ads {
   @objc dynamic public func setPlaceholderImage(adSize: UmoAds.AdSize, placeholder: UIKit.UIImage)
   @objc dynamic public func placeholderImage(adSize: UmoAds.AdSize) -> UIKit.UIImage?
   @objc dynamic public func setGenericPlaceholder(assetTitle: Swift.String)
+  @objc dynamic public func setGenericPlaceholderClickURL(_ clickURL: Swift.String)
   @objc dynamic public func setUniversalAdListener(_ adListener: UmoAds.AdListener)
   @objc dynamic public func updateUmoRegionId(_ regionId: Swift.UInt64, shouldRefreshAllAds: Swift.Bool = true)
   @objc dynamic public func updateRegionId(_ regionId: Swift.UInt64, shouldRefreshAllAds: Swift.Bool = true)

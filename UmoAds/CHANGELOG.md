@@ -2,6 +2,12 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.1.0] - 2021-11-16
+
+* Update dev-2 environment to demo
+* Display placeholder image faster
+* Add API to `Ads` to set placeholder URL: `setGenericPlaceholderClickURL` 
+
 ## [2.0.8] - 2021-11-10
 
 * Compile with Xcode 12

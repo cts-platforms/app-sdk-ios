@@ -571,6 +571,10 @@ enum UMOAdKitBannerType : NSInteger;
 /// \param assetTitle The resource name listed in the xcassets file of the project. Must match exactly to work.
 ///
 - (void)setGenericPlaceholderWithAssetTitle:(NSString * _Nonnull)assetTitle;
+/// Assign a URL to open when the placeholder ad is clicked.
+/// \param clickURL The string of the URL to open.
+///
+- (void)setGenericPlaceholderClickURL:(NSString * _Nonnull)clickURL;
 /// Set a universal <code>AdListener</code> that will receive success or failure callbacks when any ad is loaded.
 /// Creates a weak reference to the <code>AdListener</code>, and it will receive success or failure calls on both manual loads and automatic refreshes.
 /// \param adListener The <code>AdListener</code> to receive success and failure callbacks.
@@ -1431,6 +1435,10 @@ enum UMOAdKitBannerType : NSInteger;
 /// \param assetTitle The resource name listed in the xcassets file of the project. Must match exactly to work.
 ///
 - (void)setGenericPlaceholderWithAssetTitle:(NSString * _Nonnull)assetTitle;
+/// Assign a URL to open when the placeholder ad is clicked.
+/// \param clickURL The string of the URL to open.
+///
+- (void)setGenericPlaceholderClickURL:(NSString * _Nonnull)clickURL;
 /// Set a universal <code>AdListener</code> that will receive success or failure callbacks when any ad is loaded.
 /// Creates a weak reference to the <code>AdListener</code>, and it will receive success or failure calls on both manual loads and automatic refreshes.
 /// \param adListener The <code>AdListener</code> to receive success and failure callbacks.
