@@ -2,6 +2,12 @@
 
 This document contains all changes made to the _CubicAuth_ for each release along with upgrade steps.
 
+## [1.3.0] - 2021-11-16
+
+### Changed
+
+* Update dev-2 environment to demo
+
 ## [1.2.4] - 2021-11-10
 
 ### Changed
