@@ -2919,6 +2919,9 @@ public typealias AuthenticatedCompletion = (Swift.Bool) -> Swift.Void
   }
   @objc public var umoAdKit: UmoAds.UMOAdKit?
   @objc public var umoAdKitParams: UmoAds.UMOAdKitParams
+  @objc public var currentEnvironment: UmoAds.Environment {
+    @objc get
+  }
   public var adKitBannerListener: UmoAds.UMOAdKitBannerAdListener?
   @objc deinit
 }

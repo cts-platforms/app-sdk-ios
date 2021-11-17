@@ -475,6 +475,7 @@ SWIFT_PROTOCOL("_TtP6UmoAds14AdViewListener_")
 
 @class UMOAdKit;
 @class UMOAdKitParams;
+enum Environment : NSInteger;
 
 SWIFT_CLASS("_TtC6UmoAds3Ads")
 @interface Ads : NSObject
@@ -484,6 +485,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Ads * _Nonnu
 @property (nonatomic, readonly, strong) id <AdListener> _Nullable adListener;
 @property (nonatomic, strong) UMOAdKit * _Nullable umoAdKit;
 @property (nonatomic, strong) UMOAdKitParams * _Nonnull umoAdKitParams;
+@property (nonatomic, readonly) enum Environment currentEnvironment;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -511,8 +513,6 @@ enum LoggingLevel : NSInteger;
 
 
 
-enum Environment : NSInteger;
-
 @interface Ads (SWIFT_EXTENSION(UmoAds))
 /// Set identifiers provided by Cubic in order to use the SDK. Please contact Cubic support if you do not have these values.
 - (void)setClientId:(NSString * _Nonnull)clientId clientSecret:(NSString * _Nonnull)clientSecret;
@@ -531,6 +531,7 @@ enum Environment : NSInteger;
 /// If the user has been logged in anonymously, there will be an anonymousId assigned by server. An anonymous login occurs when an ad was request to load, the client ID and client secret were set, and the JWT token was not set manually.
 - (NSString * _Nullable)getAnonymousId SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 @class UMOAdKitBannerParams;
 enum UMOAdKitBannerType : NSInteger;
@@ -1339,6 +1340,7 @@ SWIFT_PROTOCOL("_TtP6UmoAds14AdViewListener_")
 
 @class UMOAdKit;
 @class UMOAdKitParams;
+enum Environment : NSInteger;
 
 SWIFT_CLASS("_TtC6UmoAds3Ads")
 @interface Ads : NSObject
@@ -1348,6 +1350,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Ads * _Nonnu
 @property (nonatomic, readonly, strong) id <AdListener> _Nullable adListener;
 @property (nonatomic, strong) UMOAdKit * _Nullable umoAdKit;
 @property (nonatomic, strong) UMOAdKitParams * _Nonnull umoAdKitParams;
+@property (nonatomic, readonly) enum Environment currentEnvironment;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1375,8 +1378,6 @@ enum LoggingLevel : NSInteger;
 
 
 
-enum Environment : NSInteger;
-
 @interface Ads (SWIFT_EXTENSION(UmoAds))
 /// Set identifiers provided by Cubic in order to use the SDK. Please contact Cubic support if you do not have these values.
 - (void)setClientId:(NSString * _Nonnull)clientId clientSecret:(NSString * _Nonnull)clientSecret;
@@ -1395,6 +1396,7 @@ enum Environment : NSInteger;
 /// If the user has been logged in anonymously, there will be an anonymousId assigned by server. An anonymous login occurs when an ad was request to load, the client ID and client secret were set, and the JWT token was not set manually.
 - (NSString * _Nullable)getAnonymousId SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 @class UMOAdKitBannerParams;
 enum UMOAdKitBannerType : NSInteger;
