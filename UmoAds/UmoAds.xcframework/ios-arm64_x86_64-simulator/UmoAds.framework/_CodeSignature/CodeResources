@@ -38,23 +38,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5qK7ZjOFIJ/gjD2PasTYSuaPCoc=
+		n/B8y7R2xouyKs/BotYPnd/nRMA=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		qPZRTQlfgZLzkRi9Veb/o/slu8A=
+		Z0UBuuJTwiSEI9CDNnWJCX+1lWQ=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		qPZRTQlfgZLzkRi9Veb/o/slu8A=
+		Z0UBuuJTwiSEI9CDNnWJCX+1lWQ=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		xkWRPQ7hDSRWbnqq8jxdUgDobMM=
+		qQvDgO9yYNGdSkSP8MNf653qH9w=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		xkWRPQ7hDSRWbnqq8jxdUgDobMM=
+		qQvDgO9yYNGdSkSP8MNf653qH9w=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>UmoAds.podspec</key>
 		<data>
-		FSBUFfgO0/KKxBMad83gbBbXNYA=
+		CkXtCnGv/AO5xVZh4a82Yudf4aw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -179,28 +179,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FbxvBh828ZXvUPkpQaDFx7XPmYqTOZcM7Y8x8SMhkt0=
+			Vo8/JPD5KFAr5iGOLKYlY0NU4jGs9oeHIypoomQ2FLg=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FbxvBh828ZXvUPkpQaDFx7XPmYqTOZcM7Y8x8SMhkt0=
+			Vo8/JPD5KFAr5iGOLKYlY0NU4jGs9oeHIypoomQ2FLg=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PWZleW4YPwiSifYAl/za+1VH80ztEfQkTRABQN0sZVI=
+			Ybj5gYG9DdG04zg+g2q1YlcZHydDxVhgLJbGVXcB3lk=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PWZleW4YPwiSifYAl/za+1VH80ztEfQkTRABQN0sZVI=
+			Ybj5gYG9DdG04zg+g2q1YlcZHydDxVhgLJbGVXcB3lk=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -305,7 +305,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TVA7gxfYmLxy/bpre25fPaq7cA0m5dY4usYR38TwRWY=
+			1ZOpqqWBmcdck3iJG09iohgtCeXNlFTwma3TFdXF1dc=
 			</data>
 		</dict>
 	</dict>
