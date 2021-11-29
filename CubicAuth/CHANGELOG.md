@@ -2,6 +2,12 @@
 
 This document contains all changes made to the _CubicAuth_ for each release along with upgrade steps.
 
+## [1.3.1] - 2021-11-29
+
+### Fixed
+
+* Bundle compilation issue related to coverage
+
 ## [1.3.0] - 2021-11-16
 
 ### Changed
