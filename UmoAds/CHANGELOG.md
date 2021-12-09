@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.2.2] - 2021-12-9
+
+* Fit ad content to full area
+
 ## [2.2.1] - 2021-11-29
 
 * Fix banner prefetch and show race condition
