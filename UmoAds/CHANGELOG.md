@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.2.4] - 2022-1-21
+
+* Revert to placeholder when new ad is not returned from server
+
 ## [2.2.3] - 2021-12-16
 
 * Fix display of programmatic ads
@@ -22,7 +26,7 @@ This document contains all changes made to the _UmoAds_ for each release along w
 
 * Update dev-2 environment to demo
 * Display placeholder image faster
-* Add API to `Ads` to set placeholder URL: `setGenericPlaceholderClickURL` 
+* Add API to `Ads` to set placeholder URL: `setGenericPlaceholderClickURL`
 
 ## [2.0.8] - 2021-11-10
 
