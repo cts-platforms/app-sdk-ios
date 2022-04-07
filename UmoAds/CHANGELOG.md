@@ -2,6 +2,21 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.3.0] - 2022-4-7
+
+### Changed
+
+* Fix rendering issue of programmatic ads
+* Externalize HTML template file to adapt to new programmatic ad types
+
+### Migration Steps
+
+* Rename AKBannerState to UMOAdKitBannerState (if used)
+* Update UMOAdKitBannerAdListener (if used) function names:
+* onUMOAdKitBannerEvent to onBannerEvent
+* onUMOAdKitAppGetUpdatedQSParams to getQSParams
+* Replace AKBannerState with UMOAdKitBannerState (if used)
+
 ## [2.2.4] - 2022-1-21
 
 * Revert to placeholder when new ad is not returned from server

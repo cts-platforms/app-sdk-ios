@@ -10,6 +10,7 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-UMOADKIT_VERSION_NAME_SUFFIX = .dev.local
+UMOADKIT_HOSTED_CONFIG_JSON_NAME = umo_ad_kit_params.json
 
-UMOADKIT_HOSTED_CONFIG_JSON_NAME = dev_local_umo_ad_kit_params.json
+UMOADKIT_AD_TEMPLATES_JSON = ad_templates/umo_ad_kit_ad_templates_ios.json
+

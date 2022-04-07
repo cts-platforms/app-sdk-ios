@@ -1,8 +1,5 @@
-// JavaScript Document
-
 console = {};
-console.log = function(log)
-{
+console.log = function(log) {
     var iframe = document.createElement("IFRAME");
     iframe.setAttribute("src", "console://localhost?" + log);
     document.documentElement.appendChild(iframe);
@@ -95,8 +92,7 @@ function mraidNativeInvoke(comment) {
      window.mraid.nativeInvoke(invoke);
 }
 
-if(window['getVPAIDAd'])
-{
+if(window['getVPAIDAd']) {
     var adEvents = window['getVPAIDAd']();
     adEvents.subscribe(AdImpression, 'AdImpression');
     adEvents.subscribe(AdClickThru, 'AdClickThru');
@@ -113,5 +109,4 @@ if(window['getVPAIDAd'])
     adEvents.subscribe(AdSizeChange, 'AdSizeChange');
     adEvents.subscribe(AdDurationChange, 'AdDurationChange');
     adEvents.subscribe(AdInteraction, 'AdInteraction');
-
 }

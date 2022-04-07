@@ -257,13 +257,6 @@ SWIFT_CLASS("_TtC6UmoAds12AKHtmlAdView")
 @end
 
 
-SWIFT_CLASS("_TtC6UmoAds18AKInterstitialView")
-@interface AKInterstitialView : UIView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
-
 SWIFT_CLASS("_TtC6UmoAds13AKProgressHUD")
 @interface AKProgressHUD : UIView
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -340,11 +333,6 @@ SWIFT_CLASS("_TtC6UmoAds16AKVPaidConstants")
 
 SWIFT_CLASS("_TtC6UmoAds14AKVPaidWebView")
 @interface AKVPaidWebView : AKWebView
-- (void)webView:(WKWebView * _Nonnull)webView didCommitNavigation:(WKNavigation * _Nonnull)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Nonnull)navigation;
-- (void)webView:(WKWebView * _Nonnull)webView decidePolicyForNavigationAction:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
-- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
-- (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
 @end
 
 
@@ -538,8 +526,6 @@ enum UMOAdKitBannerType : NSInteger;
 
 @interface Ads (SWIFT_EXTENSION(UmoAds))
 - (void)fetchInitializationParametersObjCWithCompletion:(void (^ _Nullable)(NSError * _Nullable))completion;
-/// Assign a name of the hosted configuration file if it is unique to your environment. If needed, must be assigned before taking other actions.
-- (void)configureConfigName:(NSString * _Nonnull)configName;
 - (void)prefetchAdObjCWithSpotId:(NSString * _Nonnull)spotId hostedParamsOverride:(UMOAdKitBannerParams * _Nullable)hostedParamsOverride bannerType:(enum UMOAdKitBannerType)bannerType completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (void)showAdObjCWithSpotId:(NSString * _Nonnull)spotId bannerView:(UMOAdKitBannerView * _Nonnull)bannerView assignHostedParams:(BOOL)assignHostedParams bannerType:(enum UMOAdKitBannerType)bannerType completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 /// Convenience method to generate default banner parameters for a smart banner. These can be used as-is for a smart banner, but any values can be overwritten as needed.
@@ -570,7 +556,7 @@ enum UMOAdKitBannerType : NSInteger;
 /// \param assetTitle The resource name listed in the xcassets file of the project. Must match exactly to work.
 ///
 - (void)setGenericPlaceholderWithAssetTitle:(NSString * _Nonnull)assetTitle;
-/// Assign a URL to open when the placeholder ad is clicked.
+/// Assign a URL to open when the placeholder ad is clicked. Must be set before initialization is called.
 /// \param clickURL The string of the URL to open.
 ///
 - (void)setGenericPlaceholderClickURL:(NSString * _Nonnull)clickURL;
@@ -670,13 +656,10 @@ typedef SWIFT_ENUM(NSInteger, LoggingLevel, open) {
 
 
 
-/// Singleton class that implements the APIs that can be called by the application.
-/// These are the set of functions (APIs) that are exposed by the UMO Ad Kit
-/// for use by the Mobile Application that integrates the Ad Kit.
+
 SWIFT_CLASS_NAMED("UMOAdKit")
 @interface UMOAdKit : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -688,11 +671,10 @@ SWIFT_CLASS("_TtC6UmoAds21UMOAdKitAdQueryParams")
 
 SWIFT_CLASS("_TtC6UmoAds20UMOAdKitBannerParams")
 @interface UMOAdKitBannerParams : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-/// Enumerations specifying various banner types supported by the UMO Ad Kit.
-/// Naming convention: BANNERNAME_WxH_IABNewAdPortfolioAdUnitName
 typedef SWIFT_ENUM(NSInteger, UMOAdKitBannerType, open) {
   UMOAdKitBannerTypeNONE = 0,
   UMOAdKitBannerTypeMEDRECT_300x250_1x1 = 1,
@@ -717,39 +699,6 @@ typedef SWIFT_ENUM(NSInteger, UMOAdKitBannerType, open) {
 };
 
 
-/// UI View that displays a single Banner ad.
-/// The application need to perform the following for displaying a banner:
-/// 1. Create an instance of UMOAdKitBannerView
-/// 2. Add it appropriately to the view hierarchy, where it expects the banner to be displayed
-/// 3. Set the banner parameters, as required.
-/// 4. Call appropriate APIs exposed by UMOAdKitBannerView, as required.
-/// The UMO Ad Kit would perform the following:
-/// 1. Fetches a banner ad, when the application calls umoAdKitFetchBanner (doesn’t display it after fetching)
-/// 2. Display a banner ad, if prefetched banner is available. Else, fetches and displays a banner ad
-/// when the application calls umoAdKitShowBanner()
-/// 3. Refreshes a banner ad when the application calls umoAdKitRefreshBanner()
-/// 4. Removes a banner ad when the application calls umoAdKitRemoveBanner()
-/// NOTE: The Application should make a note of the following:
-/// 1. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE & bannerType is not CUSTOM_GWxGH:
-/// - The BannerView’s layout params would be set by the Ad Kit based on the bannerType
-/// opted by the application, whenever umoAdKitFetchBanner (or) umoAdKitShowBanner gets called.  (NOT SUPPORTED NOW)
-/// 2. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE & bannerType is CUSTOM_GWxGH:
-/// - The BannerView’s layout params should be set by the application prior to calling
-/// umoAdKitFetchBanner (or) umoAdKitShowBanner.
-/// - Valid values for WIDTH & HEIGHT: Any non-negative Width & Height, as required
-/// by the application
-/// 3. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is IMAGE &
-/// bannerType is ADAPTIVE_GWxAH:
-/// - The application is expected to obtain the bannerview height from the Ad Kit
-/// by providing the required width as input to the corresponding Ad Kit API.
-/// - The BannerView’s layout params should be set by the application prior to calling
-/// umoAdKitFetchBanner (or) umoAdKitShowBanner.
-/// 4. When bannerCreativeType is UMOAdKitInlineBannerCreativeType is VIDEO:
-/// - The BannerView’s layout params should be set by the application prior to calling
-/// umoAdKitFetchBanner (or) umoAdKitShowBanner.
-/// - Valid values for WIDTH & HEIGHT: Any non-negative Width & Height, as required
-/// by the application
-/// - The Ad Kit would ignore the banner type in this case, even if set by the application.
 SWIFT_CLASS("_TtC6UmoAds18UMOAdKitBannerView")
 @interface UMOAdKitBannerView : UIView
 - (void)awakeFromNib;
@@ -770,80 +719,22 @@ SWIFT_CLASS("_TtC6UmoAds18UMOAdKitBannerView")
 
 SWIFT_CLASS("_TtC6UmoAds14UMOAdKitParams")
 @interface UMOAdKitParams : NSObject
-@property (nonatomic, copy) NSString * _Nullable publisherId;
-@property (nonatomic, copy) NSString * _Nullable configFileBasePath;
+@property (nonatomic, copy) NSString * _Nonnull publisherId;
+@property (nonatomic, copy) NSString * _Nonnull configFileBasePath;
 @property (nonatomic, copy) NSString * _Nullable regionId;
 @property (nonatomic, copy) NSString * _Nullable umoAppRegionId;
 @property (nonatomic, copy) NSString * _Nullable userId;
-/// note:
-/// For the Generic Placeholder to be utilized by the Ad Kit, the Key Name should be “GENERIC” and the
-/// <ul>
-///   <li>
-///     (OPTIONAL) Map with the details of the Banner Placeholder images bundled with the application.
-///   </li>
-///   <li>
-///     Key Name: Should be the name of the banner types exposed by UMOAdKitBannerType ()
-///   </li>
-///   <li>
-///     Value: The name of the placeholder drawable bundled with the application.
-///   </li>
-///   <li>
-///     eg., If the application has a drawable named “ic_ph_app_medrect_300x250” for medrect banner, Key Name should be
-///   </li>
-///   <li>
-///     “MEDRECT_300x250_1x1” and the Value should be “ic_ph_app_medrect_300x250”.
-///   </li>
-///   <li>
-///     Value should be the name of the Generic Placeholder image bundled with the application.
-///   </li>
-///   <li>
-///     Here is the order in which the Ad Kit would pick the placeholder creative to be displayed:
-///   </li>
-///   <li>
-///     <ol>
-///       <li>
-///         Dynamic Placeholder for the specific Banner size
-///       </li>
-///     </ol>
-///   </li>
-///   <li>
-///     <ol>
-///       <li>
-///         Static Placeholder bundled with the application for the specific Banner size
-///       </li>
-///     </ol>
-///   </li>
-///   <li>
-///     <ol>
-///       <li>
-///         Dynamic Placeholder (Generic)
-///       </li>
-///     </ol>
-///   </li>
-///   <li>
-///     <ol>
-///       <li>
-///         Static Placeholder bundled with the application (Generic)
-///       </li>
-///     </ol>
-///   </li>
-///   <li>
-///     <ol>
-///       <li>
-///         Static Placeholder bundled with the Ad Kit (Generic)
-///       </li>
-///     </ol>
-///   </li>
-/// </ul>
+@property (nonatomic, copy) NSString * _Nullable placeholderClickUrl;
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable dictStaticAppPlaceholders;
 @property (nonatomic, strong) UMOAdKitAdQueryParams * _Nullable adQueryParams;
-- (NSString * _Nonnull)toString SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 SWIFT_CLASS("_TtC6UmoAds20UMOAdKitRollAdParams")
 @interface UMOAdKitRollAdParams : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

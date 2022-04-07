@@ -18,8 +18,7 @@ _creative = {};
 window.VPAIDWrapper_Init = function(VPAIDCreative) {
     _creative = VPAIDCreative;
 
-    if(!this.checkVPAIDInterface(VPAIDCreative))
-    {
+    if(!this.checkVPAIDInterface(VPAIDCreative)) {
         console.log("Invalid VPAID Interface");
         //The VPAIDCreative doesn't conform to the VPAID spec
         var invoke = "VPAID://AdError?msg=" + "InvalidCreative";
@@ -229,12 +228,12 @@ VPAIDWrapper.onAdImpression = function() {
 // Callback for AdClickThru
 VPAIDWrapper.onAdClickThru = function(data, id, playerHandles) {
     var invoke = "VPAID://AdClickThru";
-    if(typeof data === 'object'){
+    if(typeof data === 'object') {
         console.log("Clickthrough portion of the ad was clicked : url=" + data.url + ", id=" + data.id + ", player=" + data.playerHandles);
-        if(data.playerHandles){
+        if(data.playerHandles) {
             invoke = invoke + "?url=" + data.url + "&id=" + data.id;
         }
-    }else{
+    } else {
         console.log("Click-through portion of the ad was clicked : url=" + data + ", id=" + id + ", player=" + playerHandles);
         if(playerHandles){
             invoke = invoke + "?url=" + data + "&id=" + id;

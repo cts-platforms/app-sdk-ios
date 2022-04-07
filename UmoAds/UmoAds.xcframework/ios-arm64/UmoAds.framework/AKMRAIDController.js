@@ -1,7 +1,5 @@
-
 console = {};
-console.log = function(log)
-{
+console.log = function(log) {
     var iframe = document.createElement("IFRAME");
     iframe.setAttribute("src", "console://localhost?" + log);
     document.documentElement.appendChild(iframe);
@@ -14,41 +12,31 @@ console.info = console.log;
 console.warn = console.log;
 console.error = console.log;
 
-
-window.mraid_init = function()
-{
+window.mraid_init = function() {
     console.log("mraid_init");
     
     var mraid = window.mraid = {};
     
-    // UMOAdKit SDK
-    mraid.returnResult = function(call)
-    {
+    //UMOAdKit
+    mraid.returnResult = function(call) {
         return call().toString();
     };
     
-    // UMOAdKit SDK
-    mraid.returnInfo = function(call)
-    {
+    //UMOAdKit
+    mraid.returnInfo = function(call) {
         var info = '';
-        
         var result = call();
-        for (property in result)
-        {
-            if (info)
-            {
+        for (property in result) {
+            if (info) {
                 info += '&';
             }
-            
             info += encodeURIComponent(property) + '=' + encodeURIComponent(result[property]);
         }
-        
         return info;
     };
     
-    // UMOAdKit SDK
-    mraid.nativeInvoke = function(call)
-    {
+    //UMOAdKit
+    mraid.nativeInvoke = function(call) {
         var iframe = document.createElement("IFRAME");
         iframe.setAttribute("src", call);
         document.documentElement.appendChild(iframe);
@@ -62,34 +50,28 @@ window.mraid_init = function()
     //
     
     var EVENTS = mraid.EVENTS = {
-        READY                   :"ready",
-        ERROR                   :"error",
-        STATE_CHANGE            :"stateChange",
-        VIEWABLE_CHANGE         :"viewableChange",
-        SIZE_CHANGE             :"sizeChange"
+        READY                   : "ready",
+        ERROR                   : "error",
+        STATE_CHANGE            : "stateChange",
+        VIEWABLE_CHANGE         : "viewableChange",
+        SIZE_CHANGE             : "sizeChange"
     };
     
     var listeners = {};
 
     // MRAID
-    mraid.addEventListener = function(event, listener)
-    {
+    mraid.addEventListener = function(event, listener) {
         console.log("addEventListener");
-        
         var handlers = listeners[event];
-        
         // Create the listeners for the event if not already created
-        if (!handlers)
-        {
+        if (!handlers) {
             listeners[event] = [];
             handlers = listeners[event];
         }
         
         // Don't add the same listener twice
-        for (var i = 0; i < handlers.length; ++i)
-        {
-            if (listener === handlers[i])
-            {
+        for (var i = 0; i < handlers.length; ++i) {
+            if (listener === handlers[i]) {
                 return;
             }
         }
@@ -99,66 +81,47 @@ window.mraid_init = function()
     };
     
     // MRAID
-    mraid.removeEventListener = function(event, listener)
-    {
+    mraid.removeEventListener = function(event, listener) {
         console.log("removeEventListener");
-        
         var handlers = listeners[event];
-        if (handlers)
-        {
-            if (listener)
-            {
+        if (handlers) {
+            if (listener) {
                 delete handlers[listener];
-            }
-            else
-            {
+            } else {
                 listeners[event] = null;
             }
         }
     };
     
-    // UMOAdKit SDK
-    mraid.fireChangeEvent = function(event, newValue)
-    {
-        console.log("fireChangeEvent handler:" + event + " with:" + newValue);
-        
+    //UMOAdKit
+    mraid.fireChangeEvent = function(event, newValue) {
+        console.log("fireChangeEvent handler: " + event + " with: " + newValue);
         var handlers = listeners[event];
-        if (handlers)
-        {
-            for (var i = 0; i < handlers.length; ++i)
-            {
+        if (handlers) {
+            for (var i = 0; i < handlers.length; ++i) {
                 console.log("fireChangeEvent invoked handler");
-                
                 handlers[i](newValue);
             }
         }
     };
     
-    // UMOAdKit SDK
-    mraid.fireErrorEvent = function(message, action)
-    {
-        console.log("fireErrorEvent handler:" + message + " action:" + action);
-        
+    //UMOAdKit
+    mraid.fireErrorEvent = function(message, action) {
+        console.log("fireErrorEvent handler: " + message + " action: " + action);
         var handlers = listeners[EVENTS.ERROR];
-        if (handlers)
-        {
-            for (var i = 0; i < handlers.length; ++i)
-            {
+        if (handlers) {
+            for (var i = 0; i < handlers.length; ++i) {
                 handlers[i](message, action);
             }
         }
     };
     
-    // UMOAdKit SDK
-    mraid.fireEvent = function(event)
-    {
-        console.log("fireEvent handler:" + event);
-        
+    //UMOAdKit
+    mraid.fireEvent = function(event) {
+        console.log("fireEvent handler: " + event);
         var handlers = listeners[event];
-        if (handlers)
-        {
-            for (var i = 0; i < handlers.length; ++i)
-            {
+        if (handlers) {
+            for (var i = 0; i < handlers.length; ++i) {
                 handlers[i]();
             }
         }
@@ -171,10 +134,8 @@ window.mraid_init = function()
     //
     
     // MRAID
-    mraid.getVersion = function()
-    {
+    mraid.getVersion = function(){
         console.log("getVersion");
-        
         return ("2.0");
     };
     
@@ -185,26 +146,23 @@ window.mraid_init = function()
     //
     
     var FEATURES = mraid.FEATURES = {
-        SMS             :"sms",
-        TEL             :"tel",
-        CALENDAR        :"calendar",
-        STORE_PICTURE   :"storePicture",
-        INLINE_VIDEO    :"inlineVideo"
+        SMS             : "sms",
+        TEL             : "tel",
+        CALENDAR        : "calendar",
+        STORE_PICTURE   : "storePicture",
+        INLINE_VIDEO    : "inlineVideo"
     };
     
     var supportedFeatures = {};
     
-    // UMOAdKit SDK
-    mraid.setSupports = function(feature, supported)
-    {
+    //UMOAdKit
+    mraid.setSupports = function(feature, supported) {
         supportedFeatures[feature] = supported;
     };
     
     // MRAID
-    mraid.supports = function(feature)
-    {
+    mraid.supports = function(feature) {
         console.log("supports");
-        
         return supportedFeatures[feature];
     };
     
@@ -215,38 +173,30 @@ window.mraid_init = function()
     //
     
     var STATES = mraid.STATES = {
-        LOADING     :"loading",
-        DEFAULT     :"default",
-        EXPANDED    :"expanded",
-        RESIZED     :"resized",
-        HIDDEN      :"hidden"
+        LOADING     : "loading",
+        DEFAULT     : "default",
+        EXPANDED    : "expanded",
+        RESIZED     : "resized",
+        HIDDEN      : "hidden"
     };
     
     var state = STATES.LOADING;
     
-    // UMOAdKit SDK
-    mraid.setState = function(newState)
-    {
+    //UMOAdKit
+    mraid.setState = function(newState) {
         var diff = state != newState;
-        
         state = newState;
-        
-        if (diff)
-        {
+        if (diff) {
             mraid.fireChangeEvent(EVENTS.STATE_CHANGE, state);
-        }
-        else if (state === STATES.RESIZED)
-        {
+        } else if (state === STATES.RESIZED) {
             // spec says resized -> resized fires an event
             mraid.fireChangeEvent(EVENTS.STATE_CHANGE, state);
         }
     };
  
-    // MRAID
-    mraid.getState = function()
-    {
+    //MRAID
+    mraid.getState = function() {
         console.log("getState");
-        
         return state;
     };
     
@@ -257,23 +207,20 @@ window.mraid_init = function()
     //
     
     var PLACEMENT_TYPES = mraid.PLACEMENT_TYPES = {
-        INLINE          :"inline",
-        INTERSTITIAL    :"interstitial"
+        INLINE          : "inline",
+        INTERSTITIAL    : "interstitial"
     };
     
     var placementType = PLACEMENT_TYPES.INLINE;
     
-    // UMOAdKit SDK
-    mraid.setPlacementType = function(newPlacementType)
-    {
+    //UMOAdKit
+    mraid.setPlacementType = function(newPlacementType) {
         placementType = newPlacementType;
     };
     
     // MRAID
-    mraid.getPlacementType = function()
-    {
+    mraid.getPlacementType = function() {
         console.log("getPlacementType");
-        
         return placementType;
     };
     
@@ -285,24 +232,18 @@ window.mraid_init = function()
     
     var isViewable = false;
     
-    // UMOAdKit SDK
-    mraid.setViewable = function(viewable)
-    {
+    //UMOAdKit
+    mraid.setViewable = function(viewable) {
         var diff = isViewable != viewable;
-        
         isViewable = viewable;
-        
-        if (diff)
-        {
+        if (diff) {
             mraid.fireChangeEvent(EVENTS.VIEWABLE_CHANGE, isViewable);
         }
     };
     
     // MRAID
-    mraid.isViewable = function()
-    {
+    mraid.isViewable = function() {
         console.log("isViewable");
-        
         return isViewable;
     };
     
@@ -313,10 +254,8 @@ window.mraid_init = function()
     //
     
     // MRAID
-    mraid.open = function(url)
-    {
+    mraid.open = function(url) {
         console.log("open");
-        
         var invoke = "mraid://open?url=" + encodeURIComponent(url);
         mraid.nativeInvoke(invoke);
     };
@@ -328,10 +267,8 @@ window.mraid_init = function()
     //
     
     // MRAID
-    mraid.close = function()
-    {
+    mraid.close = function() {
         console.log("close");
-        
         var invoke = "mraid://close";
         mraid.nativeInvoke(invoke);
     };
@@ -343,10 +280,8 @@ window.mraid_init = function()
     //
     
     // MRAID
-    mraid.playVideo = function(url)
-    {
+    mraid.playVideo = function(url) {
         console.log("playVideo");
-        
         var invoke = "mraid://playVideo?url=" + encodeURIComponent(url);
         mraid.nativeInvoke(invoke);
     };
@@ -365,55 +300,39 @@ window.mraid_init = function()
     };
     
     // MRAID
-    mraid.setExpandProperties = function(properties)
-    {
+    mraid.setExpandProperties = function(properties) {
         console.log("setExpandProperties");
-        
         var writableFields = ["width", "height", "useCustomClose"];
-        
-        for (wf in writableFields)
-        {
+        for (wf in writableFields) {
             var field = writableFields[wf];
-            if (properties[field] !== undefined)
-            {
+            if (properties[field] !== undefined) {
                 expandProperties[field] = properties[field];
             }
         }
-        
         var invoke = "mraid://setExpandProperties?" + mraid.returnInfo(mraid.getExpandProperties);
         mraid.nativeInvoke(invoke);
     };
     
     // MRAID
-    mraid.getExpandProperties = function()
-    {
+    mraid.getExpandProperties = function() {
         console.log("getExpandProperties");
-        
         return expandProperties;
     };
     
     // MRAID
-    mraid.useCustomClose = function(useCustomClose)
-    {
+    mraid.useCustomClose = function(useCustomClose) {
         console.log("useCustomClose");
-        
         var property = { useCustomClose : useCustomClose };
-        
         mraid.setExpandProperties(property);
     };
     
     // MRAID
-    mraid.expand = function(url)
-    {
+    mraid.expand = function(url) {
         console.log("expand");
-        
         var invoke = "mraid://expand";
-        
-        if (url)
-        {
+        if (url) {
             invoke += "?url=" + encodeURIComponent(url);
         }
-        
         mraid.nativeInvoke(invoke);
     };
     
@@ -424,11 +343,11 @@ window.mraid_init = function()
     //
     
     var RESIZE_PROPERTIES_CUSTOM_CLOSE_POSITION = mraid.RESIZE_PROPERTIES_CUSTOM_CLOSE_POSITION = {
-        TOP_LEFT        :"top-left",
-        TOP_RIGHT       :"top-right",
-        CENTER          :"center",
-        BOTTOM_LEFT     :"bottom-left",
-        BOTTOM_RIGHT    :"bottom-right"
+        TOP_LEFT        : "top-left",
+        TOP_RIGHT       : "top-right",
+        CENTER          : "center",
+        BOTTOM_LEFT     : "bottom-left",
+        BOTTOM_RIGHT    : "bottom-right"
     };
     
     var resizeProperties = {
@@ -441,38 +360,28 @@ window.mraid_init = function()
     };
     
     // MRAID
-    mraid.setResizeProperties = function(properties)
-    {
+    mraid.setResizeProperties = function(properties) {
         console.log("setResizeProperties");
-        
         var writableFields = ["width", "height", "customClosePosition", "offsetX", "offsetY", "allowOffscreen"];
-        
-        for (wf in writableFields)
-        {
+        for (wf in writableFields) {
             var field = writableFields[wf];
-            if (properties[field] !== undefined)
-            {
+            if (properties[field] !== undefined) {
                 resizeProperties[field] = properties[field];
             }
         }
-
         var invoke = "mraid://setResizeProperties?" + mraid.returnInfo(mraid.getResizeProperties);
         mraid.nativeInvoke(invoke);
     };
     
     // MRAID
-    mraid.getResizeProperties = function()
-    {
+    mraid.getResizeProperties = function() {
         console.log("getResizeProperties");
-        
         return resizeProperties;
     };
     
     // MRAID
-    mraid.resize = function()
-    {
+    mraid.resize = function() {
         console.log("resize");
-        
         var invoke = "mraid://resize";
         mraid.nativeInvoke(invoke);
     };
@@ -484,9 +393,9 @@ window.mraid_init = function()
     //
     
     var ORIENTATION_PROPERTIES_FORCE_ORIENTATION = mraid.ORIENTATION_PROPERTIES_FORCE_ORIENTATION = {
-        PORTRAIT    :"portrait",
-        LANDSCAPE   :"landscape",
-        NONE        :"none"
+        PORTRAIT    : "portrait",
+        LANDSCAPE   : "landscape",
+        NONE        : "none"
     };
     
     var orientationProperties = {
@@ -495,30 +404,22 @@ window.mraid_init = function()
     };
     
     // MRAID
-    mraid.setOrientationProperties = function(properties)
-    {
+    mraid.setOrientationProperties = function(properties){
         console.log("setOrientationProperties");
-        
         var writableFields = ["allowOrientationChange", "forceOrientation"];
-        
-        for (wf in writableFields)
-        {
+        for (wf in writableFields) {
             var field = writableFields[wf];
-            if (properties[field] !== undefined)
-            {
+            if (properties[field] !== undefined) {
                 orientationProperties[field] = properties[field];
             }
         }
-        
         var invoke = "mraid://setOrientationProperties?" + mraid.returnInfo(mraid.getOrientationProperties);
         mraid.nativeInvoke(invoke);
     };
     
     // MRAID
-    mraid.getOrientationProperties = function()
-    {
+    mraid.getOrientationProperties = function() {
         console.log("getOrientationProperties");
-        
         return orientationProperties;
     };
     
@@ -554,98 +455,76 @@ window.mraid_init = function()
     
     var currentOrientation = 0;
     
-    // UMOAdKit SDK
-    mraid.setCurrentPosition = function(position)
-    {
+    //UMOAdKit
+    mraid.setCurrentPosition = function(position) {
         var previousSize = mraid.getSize();
-        
         currentPosition = position;
-        
         var currentSize = mraid.getSize();
         
         // Only send the size changed event if the size in the position
         // was different from the previous position
-        if ((previousSize.width === currentSize.width) && (previousSize.height === currentSize.height))
-        {
+        if ((previousSize.width === currentSize.width) && (previousSize.height === currentSize.height)) {
             return;
         }
         
         var handlers = listeners[EVENTS.SIZE_CHANGE];
-        if (handlers)
-        {
+        if (handlers) {
             var width = currentPosition.width;
             var height = currentPosition.height;
-            
-            for (var i = 0; i < handlers.length; ++i)
-            {
+            for (var i = 0; i < handlers.length; ++i) {
                 handlers[i](width, height);
             }
         }
     };
     
     // MRAID
-    mraid.getCurrentPosition = function()
-    {
+    mraid.getCurrentPosition = function() {
         console.log("getCurrentPosition");
-        
         var invoke = "mraid://updateCurrentPosition";
         mraid.nativeInvoke(invoke);
-        
         return currentPosition;
     };
     
     // MRAID
-    mraid.getSize = function()
-    {
+    mraid.getSize = function() {
         console.log("getSize");
-        
         var size = {
             width:currentPosition.width,
             height:currentPosition.height
         };
-        
         return size;
     };
     
-    // UMOAdKit SDK
-    mraid.setMaxSize = function(size)
-    {
+    //UMOAdKit
+    mraid.setMaxSize = function(size) {
         maxSize = size;
     };
     
     // MRAID
-    mraid.getMaxSize = function()
-    {
+    mraid.getMaxSize = function() {
         console.log("getMaxSize");
-        
         return maxSize;
     };
     
-    // UMOAdKit SDK
-    mraid.setDefaultPosition = function(position)
-    {
+    //UMOAdKit
+    mraid.setDefaultPosition = function(position) {
         defaultPosition = position;
     };
     
     // MRAID
-    mraid.getDefaultPosition = function()
-    {
+    mraid.getDefaultPosition = function() {
         console.log("getDefaultPosition");
-        
         return defaultPosition;
     };
     
-    // UMOAdKit SDK
-    mraid.setScreenSize = function(size)
-    {
+    //UMOAdKit
+    mraid.setScreenSize = function(size) {
         screenSize = size;
     };
     
     // MRAID
-    mraid.getScreenSize = function()
-    {
+    mraid.getScreenSize = function() {
         console.log("getScreenSize");
-        
         return screenSize;
     };
     
@@ -656,10 +535,8 @@ window.mraid_init = function()
     //
     
     // MRAID
-    mraid.storePicture = function(url)
-    {
+    mraid.storePicture = function(url) {
         console.log("storePicture");
-        
         var invoke = "mraid://storePicture?url=" + encodeURIComponent(url);
         mraid.nativeInvoke(invoke);
     };
@@ -671,20 +548,16 @@ window.mraid_init = function()
     //
     
     // MRAID
-    mraid.createCalendarEvent = function(parameters)
-    {
+    mraid.createCalendarEvent = function(parameters) {
         console.log("createCalendarEvent");
-        
         var invoke = "mraid://createCalendarEvent?event=" + encodeURIComponent(JSON.stringify(parameters));
         mraid.nativeInvoke(invoke);
     };
     
-    
     mraid.nativeInvoke("mraid://init");
 };
 
-if (!window.mraid)
-{
+if (!window.mraid) {
     window.mraid_init();
 }
 
