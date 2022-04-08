@@ -233,6 +233,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 @property (nonatomic, strong) ASWebAuthenticationSession * _Nullable authSession;
 @property (nonatomic, copy) NSString * _Nonnull realmName;
 @property (nonatomic, copy) NSString * _Nonnull callbackURLScheme;
+@property (nonatomic, copy) NSString * _Nonnull scopes;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Set the current logging level.

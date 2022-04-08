@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CubicAuth
+// swift-module-flags: -target x86_64-apple-ios13.1-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CubicAuth
 import AuthenticationServices
 @_exported import CubicAuth
 import Foundation
@@ -100,6 +100,7 @@ public enum CubicAuthError : Foundation.LocalizedError {
   case refreshTokenMissing
   case noAnonymousAndNoProvider
   case urlCreationFailed
+  case requiredUserInfoNotPresent
   public static func == (a: CubicAuth.CubicAuthError, b: CubicAuth.CubicAuthError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -110,6 +111,14 @@ extension CubicAuthError {
   public var errorDescription: Swift.String? {
     get
   }
+}
+public struct Profile : Swift.Codable {
+  public let username: Swift.String?
+  public let email: Swift.String?
+  public let firstName: Swift.String?
+  public let lastName: Swift.String?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public typealias JWTToken = Swift.String
 public typealias AuthenticationCompletion = (Swift.Result<CubicAuth.AuthInfo, Swift.Error>) -> Swift.Void
@@ -124,6 +133,7 @@ public typealias JWTProviderClosure = (@escaping CubicAuth.JWTProviderCompletion
 public typealias JWTProviderClosureObjC = ((CubicAuth.JWTToken?, Swift.Error?) -> Swift.Void) -> Swift.Void
 public typealias AuthenticatedCompletion = (Swift.Bool) -> Swift.Void
 public typealias JWTInfoCompletion = (CubicAuth.JWTInfo?) -> Swift.Void
+public typealias ProfileCompletion = (Swift.Result<CubicAuth.Profile, Swift.Error>) -> Swift.Void
 public typealias WebViewCompletion = (WebKit.WKWebView?, Foundation.NSError?) -> Swift.Void
 public typealias URLRequestCompletion = (Foundation.URLRequest?, Foundation.NSError?) -> Swift.Void
 public typealias ErrorCompletion = (Foundation.NSError?) -> Swift.Void
@@ -154,6 +164,7 @@ public typealias ErrorCompletion = (Foundation.NSError?) -> Swift.Void
     @objc set
   }
   @objc public var callbackURLScheme: Swift.String
+  @objc public var scopes: Swift.String
   @objc public func setLoggingLevel(_ logLevel: CubicAuth.LoggingLevel)
   @objc public func setEnvironment(_ environment: CubicAuth.Environment)
   @objc public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
@@ -183,6 +194,7 @@ public typealias ErrorCompletion = (Foundation.NSError?) -> Swift.Void
   @objc public func createRegistrationObjC(prefersEphemeralWebBrowserSession: Swift.Bool, authSessionGeneration: @escaping CubicAuth.AuthSessionGenerationCompletion, authCompletion: @escaping ((CubicAuth.AuthInfo?, Swift.Error?) -> Swift.Void))
   @objc public func accountPageURLRequest(completion: @escaping CubicAuth.URLRequestCompletion)
   @objc public func accountPage(completion: @escaping CubicAuth.WebViewCompletion)
+  public func fetchProfileDetails(completion: @escaping CubicAuth.ProfileCompletion)
   @objc public func logoutFromSession(completion: @escaping CubicAuth.ErrorCompletion)
   @objc public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
   @objc deinit
