@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		G51sHVISlkL9ls0MQac5gK3b0gU=
+		kqBxEiYSPmw7vr9wwAoNdw6ODto=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		G51sHVISlkL9ls0MQac5gK3b0gU=
+		kqBxEiYSPmw7vr9wwAoNdw6ODto=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -153,7 +153,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UkSY8mxoiVAQ+K0TpJ8YW+GWmQDJ55rTD8e5SH6vraA=
+			3INotqRIQNN5062u6cOy5C6f1/XQejuTzrVMk0d/pOA=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftdoc</key>
@@ -174,7 +174,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UkSY8mxoiVAQ+K0TpJ8YW+GWmQDJ55rTD8e5SH6vraA=
+			3INotqRIQNN5062u6cOy5C6f1/XQejuTzrVMk0d/pOA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
