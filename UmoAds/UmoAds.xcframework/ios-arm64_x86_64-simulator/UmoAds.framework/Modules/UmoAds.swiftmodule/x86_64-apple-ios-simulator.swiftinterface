@@ -2553,7 +2553,7 @@ extension Ads {
 extension Ads {
   public func fetchInitializationParameters(completion: UmoAds.EmptyCompletion?)
   @objc dynamic public func fetchInitializationParametersObjC(completion: ((Swift.Error?) -> Swift.Void)?)
-  public func prefetchAd(spotId: Swift.String, hostedParamsOverride: UmoAds.UMOAdKitBannerParams?, bannerType: UmoAds.UMOAdKitBannerType, completion: @escaping UmoAds.EmptyCompletion)
+  public func prefetchAd(spotId: Swift.String, hostedParamsOverride: UmoAds.UMOAdKitBannerParams?, shouldMergeHostedParamValues: Swift.Bool = true, bannerType: UmoAds.UMOAdKitBannerType, completion: @escaping UmoAds.EmptyCompletion)
   @objc dynamic public func prefetchAdObjC(spotId: Swift.String, hostedParamsOverride: UmoAds.UMOAdKitBannerParams?, bannerType: UmoAds.UMOAdKitBannerType, completion: @escaping ((Swift.Error?) -> Swift.Void))
   public func showAd(spotId: Swift.String, bannerView: UmoAds.UMOAdKitBannerView, assignHostedParams: Swift.Bool = true, bannerType: UmoAds.UMOAdKitBannerType, completion: @escaping UmoAds.EmptyCompletion)
   @objc dynamic public func showAdObjC(spotId: Swift.String, bannerView: UmoAds.UMOAdKitBannerView, assignHostedParams: Swift.Bool = true, bannerType: UmoAds.UMOAdKitBannerType, completion: @escaping ((Swift.Error?) -> Swift.Void))

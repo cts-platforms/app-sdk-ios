@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.3.2] - 2022-4-12
+
+* Improved ability to use both assigned banner parameter values and hosted banner parameter values
+
 ## [2.3.1] - 2022-4-12
 
 * Read app name and version from bundle's localized info dictionary
