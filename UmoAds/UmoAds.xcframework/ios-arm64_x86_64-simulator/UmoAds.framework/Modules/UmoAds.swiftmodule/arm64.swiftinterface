@@ -503,14 +503,14 @@ final public class AKXMLMappableArrayResponseSerializer<T> : UmoAds.ResponseSeri
   override public func adWillExpire() -> Swift.Bool
   @objc deinit
 }
-public enum UMOAdKitAdPosition : Swift.Int, Swift.CaseIterable {
-  case UNKNOWN
-  case ABOVE_FOLD
-  case BELOW_FOLD
-  case HEADER
-  case FOOTER
-  case SIDEBAR
-  case FULL_SCREEN
+@objc public enum UMOAdKitAdPosition : Swift.Int, Swift.CaseIterable {
+  case UNKNOWN = 0
+  case ABOVE_FOLD = 1
+  case BELOW_FOLD = 3
+  case HEADER = 4
+  case FOOTER = 5
+  case SIDEBAR = 6
+  case FULL_SCREEN = 7
   public init?(rawValue: Swift.Int)
   public typealias AllCases = [UmoAds.UMOAdKitAdPosition]
   public typealias RawValue = Swift.Int
@@ -610,8 +610,8 @@ extension DownloadRequest {
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishUnserialized(on queue: Dispatch.DispatchQueue = .main) -> UmoAds.AKDownloadResponsePublisher<Foundation.URL?>
 }
-@objc @_inheritsConvenienceInitializers open class UMOAdKitBannerView : UIKit.UIView {
-  open var bannerParams: UmoAds.UMOAdKitBannerParams?
+@objc @_inheritsConvenienceInitializers @objcMembers open class UMOAdKitBannerView : UIKit.UIView {
+  @objc open var bannerParams: UmoAds.UMOAdKitBannerParams?
   weak open var bannerAdListener: UmoAds.UMOAdKitBannerAdListener?
   @objc override dynamic open func awakeFromNib()
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
@@ -625,15 +625,15 @@ extension DownloadRequest {
     @objc set
   }
   @objc override dynamic open func didMoveToWindow()
-  open func setBannerPlaceholder(bannerType: UmoAds.UMOAdKitBannerType) throws
-  open func fetchBanner() throws
-  open func showBanner(inSpotId: Swift.String? = nil) throws
-  open func refreshBanner() throws
-  open func removeBanner() throws
-  open func setVisibility(isVisible: Swift.Bool) throws
-  open func getBannerCreativeSize() throws -> UmoAds.UMOAdKitSize
+  @objc open func setBannerPlaceholder(bannerType: UmoAds.UMOAdKitBannerType) throws
+  @objc open func fetchBanner() throws
+  @objc open func showBanner(inSpotId: Swift.String? = nil) throws
+  @objc open func refreshBanner() throws
+  @objc open func removeBanner() throws
+  @objc open func setVisibility(isVisible: Swift.Bool) throws
+  @objc open func getBannerCreativeSize() throws -> UmoAds.UMOAdKitSize
   open func getBannerState() throws -> UmoAds.UMOAdKitBannerState
-  public static func getBannerSizeByBannerType(bannerType: UmoAds.UMOAdKitBannerType) -> UmoAds.UMOAdKitSize
+  @objc public static func getBannerSizeByBannerType(bannerType: UmoAds.UMOAdKitBannerType) -> UmoAds.UMOAdKitSize
   @objc deinit
 }
 public enum ReachabilityError : Swift.Error {
@@ -2485,23 +2485,23 @@ public class AKSOAPEnvelope : UmoAds.AKXMLMappable {
   public func mapping(map: UmoAds.AKXMLMap)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class UMOAdKitBannerParams : ObjectiveC.NSObject {
-  public var akSpotId: Swift.String
-  public var bannerType: UmoAds.UMOAdKitBannerType
-  public var adServerUrl: Swift.String?
-  public var bannerTimeoutSeconds: Swift.Int
-  public var enableAdPrefetch: Swift.Bool
-  public var autoPrefetchOnExpiry: Swift.Bool
+@objc @_inheritsConvenienceInitializers @objcMembers public class UMOAdKitBannerParams : ObjectiveC.NSObject {
+  @objc public var akSpotId: Swift.String
+  @objc public var bannerType: UmoAds.UMOAdKitBannerType
+  @objc public var adServerUrl: Swift.String?
+  @objc public var bannerTimeoutSeconds: Swift.Int
+  @objc public var enableAdPrefetch: Swift.Bool
+  @objc public var autoPrefetchOnExpiry: Swift.Bool
   public var bannerCreativeType: UmoAds.UMOAdKitInlineBannerCreativeType
-  public var bannerPlaylist: Swift.String?
-  public var bannerPosition: UmoAds.UMOAdKitAdPosition
-  public var stretchImageAdCreative: Swift.Bool
+  @objc public var bannerPlaylist: Swift.String?
+  @objc public var bannerPosition: UmoAds.UMOAdKitAdPosition
+  @objc public var stretchImageAdCreative: Swift.Bool
   public var bannerWidthMax: Swift.Int?
   public var bannerHeightMax: Swift.Int?
-  public var autoRefreshInterval: Swift.Int
+  @objc public var autoRefreshInterval: Swift.Int
   public var inlineVideoPlayMode: UmoAds.UMOAdKitInlineVideoPlayMode
-  public var bannerWidth: Swift.Int
-  public var bannerHeight: Swift.Int
+  @objc public var bannerWidth: Swift.Int
+  @objc public var bannerHeight: Swift.Int
   @objc override dynamic public var description: Swift.String {
     @objc get
   }

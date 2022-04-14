@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.3.3] - 2022-4-14
+
+* Make UMOAdKitBannerParams and UMOAdKitAdPosition Objective-C compatible
+
 ## [2.3.2] - 2022-4-12
 
 * Improved ability to use both assigned banner parameter values and hosted banner parameter values

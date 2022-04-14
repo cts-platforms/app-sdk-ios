@@ -662,6 +662,16 @@ SWIFT_CLASS_NAMED("UMOAdKit")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+typedef SWIFT_ENUM(NSInteger, UMOAdKitAdPosition, open) {
+  UMOAdKitAdPositionUNKNOWN = 0,
+  UMOAdKitAdPositionABOVE_FOLD = 1,
+  UMOAdKitAdPositionBELOW_FOLD = 3,
+  UMOAdKitAdPositionHEADER = 4,
+  UMOAdKitAdPositionFOOTER = 5,
+  UMOAdKitAdPositionSIDEBAR = 6,
+  UMOAdKitAdPositionFULL_SCREEN = 7,
+};
+
 
 SWIFT_CLASS("_TtC6UmoAds21UMOAdKitAdQueryParams")
 @interface UMOAdKitAdQueryParams : NSObject
@@ -671,6 +681,18 @@ SWIFT_CLASS("_TtC6UmoAds21UMOAdKitAdQueryParams")
 
 SWIFT_CLASS("_TtC6UmoAds20UMOAdKitBannerParams")
 @interface UMOAdKitBannerParams : NSObject
+@property (nonatomic, copy) NSString * _Nonnull akSpotId;
+@property (nonatomic) enum UMOAdKitBannerType bannerType;
+@property (nonatomic, copy) NSString * _Nullable adServerUrl;
+@property (nonatomic) NSInteger bannerTimeoutSeconds;
+@property (nonatomic) BOOL enableAdPrefetch;
+@property (nonatomic) BOOL autoPrefetchOnExpiry;
+@property (nonatomic, copy) NSString * _Nullable bannerPlaylist;
+@property (nonatomic) enum UMOAdKitAdPosition bannerPosition;
+@property (nonatomic) BOOL stretchImageAdCreative;
+@property (nonatomic) NSInteger autoRefreshInterval;
+@property (nonatomic) NSInteger bannerWidth;
+@property (nonatomic) NSInteger bannerHeight;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -698,15 +720,25 @@ typedef SWIFT_ENUM(NSInteger, UMOAdKitBannerType, open) {
   UMOAdKitBannerTypeINTERSTITIAL_1080x1920 = 19,
 };
 
+@class UMOAdKitSize;
 
 SWIFT_CLASS("_TtC6UmoAds18UMOAdKitBannerView")
 @interface UMOAdKitBannerView : UIView
+@property (nonatomic, strong) UMOAdKitBannerParams * _Nullable bannerParams;
 - (void)awakeFromNib;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic) CGRect frame;
 @property (nonatomic) CGRect bounds;
 - (void)didMoveToWindow;
+- (BOOL)setBannerPlaceholderWithBannerType:(enum UMOAdKitBannerType)bannerType error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)fetchBannerAndReturnError:(NSError * _Nullable * _Nullable)error;
+- (BOOL)showBannerInSpotId:(NSString * _Nullable)inSpotId error:(NSError * _Nullable * _Nullable)error;
+- (BOOL)refreshBannerAndReturnError:(NSError * _Nullable * _Nullable)error;
+- (BOOL)removeBannerAndReturnError:(NSError * _Nullable * _Nullable)error;
+- (BOOL)setVisibilityWithIsVisible:(BOOL)isVisible error:(NSError * _Nullable * _Nullable)error;
+- (UMOAdKitSize * _Nullable)getBannerCreativeSizeAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
++ (UMOAdKitSize * _Nonnull)getBannerSizeByBannerTypeWithBannerType:(enum UMOAdKitBannerType)bannerType SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
