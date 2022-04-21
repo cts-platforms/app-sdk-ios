@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.3.5] - 2022-4-21
+
+* Fix auto-refresh interval priority order to app > hosted config > default
+
 ## [2.3.4] - 2022-4-20
 
 * Fix objective-c runtime threading issue
