@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/UmoRewards-Swift.h</key>
 		<data>
-		P5VjKMjE1PxD3Ti4LnPgX/dZhs4=
+		1ybfY9EuoGmHljDjebGSoVdZreI=
 		</data>
 		<key>Headers/UmoRewards.h</key>
 		<data>
@@ -14,87 +14,67 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		9jCh/Nbm49Ap7Vt7vyHvJKD3HP4=
-		</data>
-		<key>Modules/UmoRewards.swiftmodule/Project/arm.swiftsourceinfo</key>
-		<data>
-		bK9bCSB/AuhGh11S8/wOvgddczE=
-		</data>
-		<key>Modules/UmoRewards.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
-		<data>
-		h5vGwkWYV1QVFx3xq9BPefeoM/g=
-		</data>
-		<key>Modules/UmoRewards.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<data>
-		h5vGwkWYV1QVFx3xq9BPefeoM/g=
-		</data>
-		<key>Modules/UmoRewards.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
-		<data>
-		bK9bCSB/AuhGh11S8/wOvgddczE=
-		</data>
-		<key>Modules/UmoRewards.swiftmodule/Project/armv7.swiftsourceinfo</key>
-		<data>
-		bK9bCSB/AuhGh11S8/wOvgddczE=
+		0I8IujPC/+dmmcAmJBvEIZXfnEY=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/arm.swiftdoc</key>
 		<data>
-		yCPTLzy/12SLOplUDzlr6n5XnF8=
+		9I7OMEYPq8ItTum4JmAIam2m+0g=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/arm.swiftinterface</key>
 		<data>
-		H6Hr7v9jVxZLH/ezRSOpSx1ijzM=
+		dZS1EJQXIhtsWOu0l+KhrkFfues=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/arm.swiftmodule</key>
 		<data>
-		VwZ5lWuTFHHZYkMy5o0GcnqCGGs=
+		c7/vUA4EfVP9ShnIVMdVWT4Gahk=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		pXkCfkJx9baKHX0wzwm9bfB9vXg=
+		DUUR/X6/HHUSGvl01WUHI21nIWE=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		s1cOlHqqFsEbOwqd4q1KkRhsMhk=
+		zcxrql78j0H9nqH1iVhAdOLqfKE=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		n6XWG+0UkuPt5oNJhyY1IrRlbHA=
+		lZFf18kUMngpsmSIQXnuS8xm48A=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		pXkCfkJx9baKHX0wzwm9bfB9vXg=
+		DUUR/X6/HHUSGvl01WUHI21nIWE=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		s1cOlHqqFsEbOwqd4q1KkRhsMhk=
+		zcxrql78j0H9nqH1iVhAdOLqfKE=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		n6XWG+0UkuPt5oNJhyY1IrRlbHA=
+		lZFf18kUMngpsmSIQXnuS8xm48A=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		yCPTLzy/12SLOplUDzlr6n5XnF8=
+		9I7OMEYPq8ItTum4JmAIam2m+0g=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		H6Hr7v9jVxZLH/ezRSOpSx1ijzM=
+		dZS1EJQXIhtsWOu0l+KhrkFfues=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		VwZ5lWuTFHHZYkMy5o0GcnqCGGs=
+		c7/vUA4EfVP9ShnIVMdVWT4Gahk=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/armv7.swiftdoc</key>
 		<data>
-		yCPTLzy/12SLOplUDzlr6n5XnF8=
+		9I7OMEYPq8ItTum4JmAIam2m+0g=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/armv7.swiftinterface</key>
 		<data>
-		H6Hr7v9jVxZLH/ezRSOpSx1ijzM=
+		dZS1EJQXIhtsWOu0l+KhrkFfues=
 		</data>
 		<key>Modules/UmoRewards.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		VwZ5lWuTFHHZYkMy5o0GcnqCGGs=
+		c7/vUA4EfVP9ShnIVMdVWT4Gahk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -115,11 +95,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			P5VjKMjE1PxD3Ti4LnPgX/dZhs4=
+			1ybfY9EuoGmHljDjebGSoVdZreI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ih8E0T0e7xxg+dVY1we/lAnifrXBkxbZtxIHKa1iIj8=
+			iWxKYAZNqDlB2AklxMPYXJSDonvGwt0yD2/LpNOcHrI=
 			</data>
 		</dict>
 		<key>Headers/UmoRewards.h</key>
@@ -133,224 +113,169 @@
 			ybUiauG7lXMJFud7TAhI6UyAWSe7pGAcfxGdiulJeHM=
 			</data>
 		</dict>
-		<key>Modules/UmoRewards.swiftmodule/Project/arm.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			bK9bCSB/AuhGh11S8/wOvgddczE=
-			</data>
-			<key>hash2</key>
-			<data>
-			ukcU1yoayqtgi3nQACbvBD+LwkowUmgzYfU7pHCRqrk=
-			</data>
-		</dict>
-		<key>Modules/UmoRewards.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			h5vGwkWYV1QVFx3xq9BPefeoM/g=
-			</data>
-			<key>hash2</key>
-			<data>
-			ro2NY7JXKilENiLq94YXvxEfZVyyro5ykZIgSJ9Bc0w=
-			</data>
-		</dict>
-		<key>Modules/UmoRewards.swiftmodule/Project/arm64.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			h5vGwkWYV1QVFx3xq9BPefeoM/g=
-			</data>
-			<key>hash2</key>
-			<data>
-			ro2NY7JXKilENiLq94YXvxEfZVyyro5ykZIgSJ9Bc0w=
-			</data>
-		</dict>
-		<key>Modules/UmoRewards.swiftmodule/Project/armv7-apple-ios.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			bK9bCSB/AuhGh11S8/wOvgddczE=
-			</data>
-			<key>hash2</key>
-			<data>
-			ukcU1yoayqtgi3nQACbvBD+LwkowUmgzYfU7pHCRqrk=
-			</data>
-		</dict>
-		<key>Modules/UmoRewards.swiftmodule/Project/armv7.swiftsourceinfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			bK9bCSB/AuhGh11S8/wOvgddczE=
-			</data>
-			<key>hash2</key>
-			<data>
-			ukcU1yoayqtgi3nQACbvBD+LwkowUmgzYfU7pHCRqrk=
-			</data>
-		</dict>
 		<key>Modules/UmoRewards.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yCPTLzy/12SLOplUDzlr6n5XnF8=
+			9I7OMEYPq8ItTum4JmAIam2m+0g=
 			</data>
 			<key>hash2</key>
 			<data>
-			LCyR7NRbt2jnqK2NSMrkjMhA2viiJnnK/25IeuGDgkg=
+			IPu0Tm7nM/XXRb073vnDMIPLI0+FhZiARvBncgIxCCs=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/arm.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			H6Hr7v9jVxZLH/ezRSOpSx1ijzM=
+			dZS1EJQXIhtsWOu0l+KhrkFfues=
 			</data>
 			<key>hash2</key>
 			<data>
-			Hp3XPpFEInkONX/zBXsCcTw6Xt+KgoYLN+1TL9Rhy3o=
+			2XCYM5wP20ncfud3AbpuZ1stz679+YhiyHEJm9gma7g=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VwZ5lWuTFHHZYkMy5o0GcnqCGGs=
+			c7/vUA4EfVP9ShnIVMdVWT4Gahk=
 			</data>
 			<key>hash2</key>
 			<data>
-			0kqjuR46CccwKjPZ4O1PwhNYBL3dW0GKKfDDruW5Kc0=
+			uOY32aHiOv1m2HU0/o3rKWwmjUbW5B1HmSFw5Z411Uc=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pXkCfkJx9baKHX0wzwm9bfB9vXg=
+			DUUR/X6/HHUSGvl01WUHI21nIWE=
 			</data>
 			<key>hash2</key>
 			<data>
-			QyZtI5h7aeBU+f82JLbkIah5hopIPtRVY9VBkd6YE2s=
+			SrguhCIZZPut0PWNRMsPO5/RghOSh34G0fp10/x2PC8=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			s1cOlHqqFsEbOwqd4q1KkRhsMhk=
+			zcxrql78j0H9nqH1iVhAdOLqfKE=
 			</data>
 			<key>hash2</key>
 			<data>
-			15G+10zlBVXKzEABjWw5JUKoodCbGWw57tOKB/7Al6M=
+			l0WfzC8SuNIRnAV97kg6gHlIaJ+riAiPvYAX8ZbtuZE=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			n6XWG+0UkuPt5oNJhyY1IrRlbHA=
+			lZFf18kUMngpsmSIQXnuS8xm48A=
 			</data>
 			<key>hash2</key>
 			<data>
-			w75z9vjhesefgfnIN1lA3oF86Xru/DL0gMYDMDRhNK4=
+			KyI/zxOkQSj7EtVtXC6IYmSvwrFapKjsZA0SJPI0A0Y=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pXkCfkJx9baKHX0wzwm9bfB9vXg=
+			DUUR/X6/HHUSGvl01WUHI21nIWE=
 			</data>
 			<key>hash2</key>
 			<data>
-			QyZtI5h7aeBU+f82JLbkIah5hopIPtRVY9VBkd6YE2s=
+			SrguhCIZZPut0PWNRMsPO5/RghOSh34G0fp10/x2PC8=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			s1cOlHqqFsEbOwqd4q1KkRhsMhk=
+			zcxrql78j0H9nqH1iVhAdOLqfKE=
 			</data>
 			<key>hash2</key>
 			<data>
-			15G+10zlBVXKzEABjWw5JUKoodCbGWw57tOKB/7Al6M=
+			l0WfzC8SuNIRnAV97kg6gHlIaJ+riAiPvYAX8ZbtuZE=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			n6XWG+0UkuPt5oNJhyY1IrRlbHA=
+			lZFf18kUMngpsmSIQXnuS8xm48A=
 			</data>
 			<key>hash2</key>
 			<data>
-			w75z9vjhesefgfnIN1lA3oF86Xru/DL0gMYDMDRhNK4=
+			KyI/zxOkQSj7EtVtXC6IYmSvwrFapKjsZA0SJPI0A0Y=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yCPTLzy/12SLOplUDzlr6n5XnF8=
+			9I7OMEYPq8ItTum4JmAIam2m+0g=
 			</data>
 			<key>hash2</key>
 			<data>
-			LCyR7NRbt2jnqK2NSMrkjMhA2viiJnnK/25IeuGDgkg=
+			IPu0Tm7nM/XXRb073vnDMIPLI0+FhZiARvBncgIxCCs=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			H6Hr7v9jVxZLH/ezRSOpSx1ijzM=
+			dZS1EJQXIhtsWOu0l+KhrkFfues=
 			</data>
 			<key>hash2</key>
 			<data>
-			Hp3XPpFEInkONX/zBXsCcTw6Xt+KgoYLN+1TL9Rhy3o=
+			2XCYM5wP20ncfud3AbpuZ1stz679+YhiyHEJm9gma7g=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VwZ5lWuTFHHZYkMy5o0GcnqCGGs=
+			c7/vUA4EfVP9ShnIVMdVWT4Gahk=
 			</data>
 			<key>hash2</key>
 			<data>
-			0kqjuR46CccwKjPZ4O1PwhNYBL3dW0GKKfDDruW5Kc0=
+			uOY32aHiOv1m2HU0/o3rKWwmjUbW5B1HmSFw5Z411Uc=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/armv7.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yCPTLzy/12SLOplUDzlr6n5XnF8=
+			9I7OMEYPq8ItTum4JmAIam2m+0g=
 			</data>
 			<key>hash2</key>
 			<data>
-			LCyR7NRbt2jnqK2NSMrkjMhA2viiJnnK/25IeuGDgkg=
+			IPu0Tm7nM/XXRb073vnDMIPLI0+FhZiARvBncgIxCCs=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/armv7.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			H6Hr7v9jVxZLH/ezRSOpSx1ijzM=
+			dZS1EJQXIhtsWOu0l+KhrkFfues=
 			</data>
 			<key>hash2</key>
 			<data>
-			Hp3XPpFEInkONX/zBXsCcTw6Xt+KgoYLN+1TL9Rhy3o=
+			2XCYM5wP20ncfud3AbpuZ1stz679+YhiyHEJm9gma7g=
 			</data>
 		</dict>
 		<key>Modules/UmoRewards.swiftmodule/armv7.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VwZ5lWuTFHHZYkMy5o0GcnqCGGs=
+			c7/vUA4EfVP9ShnIVMdVWT4Gahk=
 			</data>
 			<key>hash2</key>
 			<data>
-			0kqjuR46CccwKjPZ4O1PwhNYBL3dW0GKKfDDruW5Kc0=
+			uOY32aHiOv1m2HU0/o3rKWwmjUbW5B1HmSFw5Z411Uc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
