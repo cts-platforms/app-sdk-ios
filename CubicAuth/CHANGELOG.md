@@ -2,6 +2,12 @@
 
 This document contains all changes made to the _CubicAuth_ for each release along with upgrade steps.
 
+## [1.3.3] - 2022-4-26
+
+### Changed
+
+* Update license
+
 ## [1.3.2] - 2022-4-8
 
 ### Changed
