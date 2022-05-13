@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = 'UmoPass'
-  spec.version      = '0.3.0'
+  spec.version      = '0.3.1'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/cts-platforms/app-sdk-ios'
   spec.authors      = { 'Patrick Dunshee' => 'patrick.dunshee@cubic.com' }
@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.source_files = "Pass/**/*.{swift}"
   spec.framework    = 'SystemConfiguration'
   spec.swift_version = '5.0'
-  spec.ios.deployment_target = '12.1'
+  spec.ios.deployment_target = '12.0'
   spec.osx.deployment_target = '10.10'
   spec.dependency 'CubicAuth', '~> 1.3'
 end

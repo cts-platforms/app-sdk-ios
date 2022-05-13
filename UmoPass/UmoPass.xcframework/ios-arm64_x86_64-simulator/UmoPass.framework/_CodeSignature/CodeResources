@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fBdxAaFZHkrBSz0ItWxQgt1XT7s=
+		HMtmvZWZsdW0qY1+27NkmoxkHac=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Gaxn9YwnPTUqJmYYSSveOHzZYwg=
+		yJkQcdNU4qwjfPygBCRN+oVwE70=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		C2VIGzb0tC0QRNaqExa1NurJZr4=
+		ck0m7/pxLUow4gz1ydhu7Z8jFWk=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		Gaxn9YwnPTUqJmYYSSveOHzZYwg=
+		yJkQcdNU4qwjfPygBCRN+oVwE70=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		C2VIGzb0tC0QRNaqExa1NurJZr4=
+		ck0m7/pxLUow4gz1ydhu7Z8jFWk=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		CNeZDZv3M98Y9N/iWakkQ//G0Cc=
+		NLJTiXKiHuNyN6PEfsA6SkrOb7o=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QMBsigQFBdOCOfjd85fKTShOMZs=
+		MbBL3291ODCP4206YiKB3kslZZE=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		CNeZDZv3M98Y9N/iWakkQ//G0Cc=
+		NLJTiXKiHuNyN6PEfsA6SkrOb7o=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		QMBsigQFBdOCOfjd85fKTShOMZs=
+		MbBL3291ODCP4206YiKB3kslZZE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>UmoPass.podspec</key>
 		<data>
-		hgpNLmbzYkZXEigeTz8UPsgl258=
+		uqcbchpbdewNtf9qT9V/6FEP9sw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -100,14 +100,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RuSGt1cDg816wsXLETMNaXuZnSc6x3WSFptIEv/E6lo=
+			3fBPCvUztMlFDynJoED119wC9TQ/AiR8Hsr0HZ3m7w8=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6TPeIh9VJSKXuD+LoxXNSkMyuzaNi6HBr4VC3oUvWxE=
+			rNTfvlnMgCcPjZT05Ok2Yzf8hvzdXaNbjs3gvy3Ezp8=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64.swiftdoc</key>
@@ -121,14 +121,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RuSGt1cDg816wsXLETMNaXuZnSc6x3WSFptIEv/E6lo=
+			3fBPCvUztMlFDynJoED119wC9TQ/AiR8Hsr0HZ3m7w8=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6TPeIh9VJSKXuD+LoxXNSkMyuzaNi6HBr4VC3oUvWxE=
+			rNTfvlnMgCcPjZT05Ok2Yzf8hvzdXaNbjs3gvy3Ezp8=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -142,14 +142,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pqBSrupDhuPAsqCIws6b2batMcFSxpH7NdS8Y4KfhcM=
+			Qsu40oXKiedAiZU6VqXWjWsp9rqC//Xpfu9kuNYCVoo=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XJgS+P/3iBrCgFgI5vl+f6C8SfWEB00XPTyRpO605Aw=
+			wWR/ei5OkPNsDgytyVFTxnl/cR50Gx+BLajx5kYNPzQ=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64.swiftdoc</key>
@@ -163,14 +163,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pqBSrupDhuPAsqCIws6b2batMcFSxpH7NdS8Y4KfhcM=
+			Qsu40oXKiedAiZU6VqXWjWsp9rqC//Xpfu9kuNYCVoo=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XJgS+P/3iBrCgFgI5vl+f6C8SfWEB00XPTyRpO605Aw=
+			wWR/ei5OkPNsDgytyVFTxnl/cR50Gx+BLajx5kYNPzQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -184,7 +184,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5onH2H+WlS2BrRCwoBA27fdVnOnog5scHIoyAiiVgbY=
+			yVYJ5zJED0ahvmIYmNAaR0X68wa5dlD4s3mBdRq28PY=
 			</data>
 		</dict>
 	</dict>

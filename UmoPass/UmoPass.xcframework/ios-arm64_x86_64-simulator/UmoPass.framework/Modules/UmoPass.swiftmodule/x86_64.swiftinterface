@@ -295,6 +295,9 @@ public typealias AgencySelectViewClosure = ((UmoPass.Agency) -> ())
   final public let triggerValueMoney: UmoPass.Money?
   public var paymentMethod: UmoPass.PaymentMethod?
   final public let fareCapTimeEnd: Foundation.Date?
+  final public let transferMinutesRemaining: Swift.Int?
+  final public let transferTimeEnd: Foundation.Date?
+  final public let transferCredits: Swift.Int?
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
