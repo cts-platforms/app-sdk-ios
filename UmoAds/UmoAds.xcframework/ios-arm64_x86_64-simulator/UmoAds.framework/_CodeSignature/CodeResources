@@ -38,7 +38,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cjAN09vTFp8C99kgPvt/n40qHnU=
+		FGzviRqwVyc9WyUi3cA3wzBSkHo=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		FUtnMF30LDi2TDqgejfFTrkDexo=
+		tfRYBFpHRy23FAg2BwEJVkpTL60=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		FUtnMF30LDi2TDqgejfFTrkDexo=
+		tfRYBFpHRy23FAg2BwEJVkpTL60=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		E3uz8pEG2yaP1w6MRhZQPv379BQ=
+		M+dOjnI6tbhxT/j1Y8vxtAi/pY4=
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Modules/UmoAds.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		E3uz8pEG2yaP1w6MRhZQPv379BQ=
+		M+dOjnI6tbhxT/j1Y8vxtAi/pY4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>UmoAds.podspec</key>
 		<data>
-		R5pRU2AhEN7j/C447QkzWRhcvTM=
+		9yGWDRpVFW+IrlgMtkfsfRFtv/0=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -177,7 +177,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PBDP6nrxqFEAaGYlRGmc1RXCX3onXR+R8T4ptOGqdVE=
+			ilhojBKZ+0tt0WLLbTjAzcqvmMTDRtd5GgnRsFQPLHA=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/arm64.swiftdoc</key>
@@ -198,7 +198,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PBDP6nrxqFEAaGYlRGmc1RXCX3onXR+R8T4ptOGqdVE=
+			ilhojBKZ+0tt0WLLbTjAzcqvmMTDRtd5GgnRsFQPLHA=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -219,7 +219,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aY1IjmLm1Wq4RpfmjuaXZ+BaPUlHAXwu4/ynhWOLQsw=
+			Dg93G696UoH8kBSlW4KLSIZayNm569tZJ/RZDWZtgRo=
 			</data>
 		</dict>
 		<key>Modules/UmoAds.swiftmodule/x86_64.swiftdoc</key>
@@ -240,7 +240,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aY1IjmLm1Wq4RpfmjuaXZ+BaPUlHAXwu4/ynhWOLQsw=
+			Dg93G696UoH8kBSlW4KLSIZayNm569tZJ/RZDWZtgRo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -261,7 +261,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cr7S+/fGpZBqYxJcOUgJFKSKA23fNTY8SeUI3xdGmis=
+			eDzy6SVT/gwH0masitgiIAgTYBBX1dMPx9kweKLlPew=
 			</data>
 		</dict>
 	</dict>

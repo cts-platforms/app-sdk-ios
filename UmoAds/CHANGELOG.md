@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.3.8] - 2022-5-17
+
+* Support App Store placeholder link
+
 ## [2.3.7] - 2022-5-9
 
 * Fix refresh showing placeholder under ad issue
