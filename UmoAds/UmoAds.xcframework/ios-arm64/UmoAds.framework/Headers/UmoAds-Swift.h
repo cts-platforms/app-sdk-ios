@@ -657,6 +657,7 @@ typedef SWIFT_ENUM(NSInteger, LoggingLevel, open) {
 
 
 
+
 SWIFT_CLASS_NAMED("UMOAdKit")
 @interface UMOAdKit : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -681,18 +682,6 @@ SWIFT_CLASS("_TtC6UmoAds21UMOAdKitAdQueryParams")
 
 SWIFT_CLASS("_TtC6UmoAds20UMOAdKitBannerParams")
 @interface UMOAdKitBannerParams : NSObject
-@property (nonatomic, copy) NSString * _Nonnull akSpotId;
-@property (nonatomic) enum UMOAdKitBannerType bannerType;
-@property (nonatomic, copy) NSString * _Nullable adServerUrl;
-@property (nonatomic) NSInteger bannerTimeoutSeconds;
-@property (nonatomic) BOOL enableAdPrefetch;
-@property (nonatomic) BOOL autoPrefetchOnExpiry;
-@property (nonatomic, copy) NSString * _Nullable bannerPlaylist;
-@property (nonatomic) enum UMOAdKitAdPosition bannerPosition;
-@property (nonatomic) BOOL stretchImageAdCreative;
-@property (nonatomic) NSInteger autoRefreshInterval;
-@property (nonatomic) NSInteger bannerWidth;
-@property (nonatomic) NSInteger bannerHeight;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -714,10 +703,10 @@ typedef SWIFT_ENUM(NSInteger, UMOAdKitBannerType, open) {
   UMOAdKitBannerTypeTWENTYxSIXTY_120x60 = 13,
   UMOAdKitBannerTypeSMART_SWxH = 14,
   UMOAdKitBannerTypeADAPTIVE_GWxAH = 15,
-  UMOAdKitBannerTypeCUSTOM_GWxGH = 16,
-  UMOAdKitBannerTypeINTERSTITIAL_640x1136 = 17,
-  UMOAdKitBannerTypeINTERSTITIAL_750x1334 = 18,
-  UMOAdKitBannerTypeINTERSTITIAL_1080x1920 = 19,
+  UMOAdKitBannerTypeINTERSTITIAL_640x1136 = 16,
+  UMOAdKitBannerTypeINTERSTITIAL_750x1334 = 17,
+  UMOAdKitBannerTypeINTERSTITIAL_1080x1920 = 18,
+  UMOAdKitBannerTypeCUSTOM_GWxGH = 19,
 };
 
 @class UMOAdKitSize;
@@ -748,6 +737,7 @@ SWIFT_CLASS("_TtC6UmoAds18UMOAdKitBannerView")
 - (void)addAdaptiveAspectRatioConstraint;
 @end
 
+@class UMOAdKitSKANInfo;
 
 SWIFT_CLASS("_TtC6UmoAds14UMOAdKitParams")
 @interface UMOAdKitParams : NSObject
@@ -759,6 +749,7 @@ SWIFT_CLASS("_TtC6UmoAds14UMOAdKitParams")
 @property (nonatomic, copy) NSString * _Nullable placeholderClickUrl;
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable dictStaticAppPlaceholders;
 @property (nonatomic, strong) UMOAdKitAdQueryParams * _Nullable adQueryParams;
+@property (nonatomic, strong) UMOAdKitSKANInfo * _Nullable skanInfo;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -767,6 +758,12 @@ SWIFT_CLASS("_TtC6UmoAds14UMOAdKitParams")
 SWIFT_CLASS("_TtC6UmoAds20UMOAdKitRollAdParams")
 @interface UMOAdKitRollAdParams : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC6UmoAds16UMOAdKitSKANInfo")
+@interface UMOAdKitSKANInfo : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

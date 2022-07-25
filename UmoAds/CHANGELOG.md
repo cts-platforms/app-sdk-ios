@@ -2,6 +2,18 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.4.0] - 2022-7-25
+
+### Changed
+
+* Add support for SK Ad Network
+
+### Migration Steps
+
+* Follow Apple's guide for configuring an app found [here](https://developer.apple.com/documentation/storekit/skadnetwork/configuring_a_source_app) using the following identifiers:
+ - qyJfv329m4.skadnetwork
+ - cdkw7geqsh.skadnetwork
+
 ## [2.3.8] - 2022-5-17
 
 * Support App Store placeholder link

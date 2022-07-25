@@ -20,6 +20,7 @@ import MobileCoreServices
 import Photos
 import SDWebImage
 import SSZipArchive
+import StoreKit
 import Swift
 import SystemConfiguration
 import UIKit
@@ -44,6 +45,16 @@ extension AKDataRequest {
   public func responseXMLObject<T>(queue: Dispatch.DispatchQueue = .main, keyPath: Swift.String? = nil, dataPreprocessor: UmoAds.DataPreprocessor = AKXMLMappableResponseSerializer<T>.defaultDataPreprocessor, mapToObject object: T? = nil, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = AKXMLMappableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = AKXMLMappableResponseSerializer<T>.defaultEmptyRequestMethods, options: UmoAds.AKXMLSerialization.AKReadingOptions = .default, completionHandler: @escaping (UmoAds.AFDataResponse<T>) -> Swift.Void) -> Self where T : UmoAds.AKXMLBaseMappable
   @discardableResult
   public func responseXMLArray<T>(queue: Dispatch.DispatchQueue = .main, keyPath: Swift.String? = nil, dataPreprocessor: UmoAds.DataPreprocessor = AKXMLMappableArrayResponseSerializer<T>.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = AKXMLMappableArrayResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<UmoAds.AKHTTPMethod> = AKXMLMappableArrayResponseSerializer<T>.defaultEmptyRequestMethods, options: UmoAds.AKXMLSerialization.AKReadingOptions = .default, completionHandler: @escaping (UmoAds.AFDataResponse<[T]>) -> Swift.Void) -> Self where T : UmoAds.AKXMLBaseMappable
+}
+@objc @_inheritsConvenienceInitializers public class UMOAdKitSKANInfo : ObjectiveC.NSObject {
+  public var sourceAppITunesId: Swift.String?
+  public var adNetIds: Swift.Array<Swift.String>?
+  public var maxEntityId: Swift.Int
+  public var exclEntityIds: Swift.Array<Swift.Int>?
+  public var addlAdNetIds: Swift.Array<Swift.String>?
+  public func toString() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers open class AKNetworkReachabilityManager {
   public enum NetworkReachabilityStatus {
@@ -286,6 +297,9 @@ extension AKArchive {
   final public func addEntry(with path: Swift.String, type: UmoAds.AKEntry.EntryType, uncompressedSize: Swift.UInt32, modificationDate: Foundation.Date = Date(), permissions: Swift.UInt16? = nil, compressionMethod: UmoAds.CompressionMethod = .none, bufferSize: Swift.UInt32 = defaultWriteChunkSize, progress: Foundation.Progress? = nil, provider: (Swift.Int, Swift.Int) throws -> Foundation.Data) throws
   final public func remove(_ entry: UmoAds.AKEntry, bufferSize: Swift.UInt32 = defaultReadChunkSize, progress: Foundation.Progress? = nil) throws
 }
+@available(iOS 14.5, *)
+extension SKAdImpression : Swift.CustomStringConvertible {
+}
 public typealias AFResult<Success> = Swift.Result<Success, UmoAds.AKAFError>
 @objc @_hasMissingDesignatedInitializers public class AKVPaidBridge : ObjectiveC.NSObject {
   @objc override dynamic public init()
@@ -495,6 +509,20 @@ final public class AKXMLMappableArrayResponseSerializer<T> : UmoAds.ResponseSeri
   final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) throws -> [T]
   public typealias SerializedObject = [T]
   @objc deinit
+}
+public enum UMOAdKitAdOrientation : Swift.String, Swift.CaseIterable {
+  case UNSPECIFIED
+  case PORTRAIT
+  case LANDSCAPE
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [UmoAds.UMOAdKitAdOrientation]
+  public typealias RawValue = Swift.String
+  public static var allCases: [UmoAds.UMOAdKitAdOrientation] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
 }
 @_inheritsConvenienceInitializers @objc public class GenericAdView : UmoAds.BaseAdView {
   @objc override public init(adSlotId: Swift.String, adSize: UmoAds.AdSize)
@@ -899,6 +927,7 @@ public enum UMOAdKitInlineVideoPlayMode : Swift.String, Swift.CaseIterable {
   public var enableAdPrefetch: Swift.Bool
   public var autoPrefetchOnExpiry: Swift.Bool
   public var rollAdPlaylist: Swift.String?
+  public var adOrientation: UmoAds.UMOAdKitAdOrientation
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
@@ -1434,7 +1463,7 @@ public enum UMOAdKitRollAdEvent : Swift.String {
   case AD_PLAYING
   case AD_COMPLETED
   case AD_CLICKED
-  case AD_STOPPED
+  case AD_REMOVED
   case AD_EXPIRED
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -1459,10 +1488,10 @@ public enum UMOAdKitRollAdEvent : Swift.String {
   case TWENTYxSIXTY_120x60
   case SMART_SWxH
   case ADAPTIVE_GWxAH
-  case CUSTOM_GWxGH
   case INTERSTITIAL_640x1136
   case INTERSTITIAL_750x1334
   case INTERSTITIAL_1080x1920
+  case CUSTOM_GWxGH
   public init?(rawValue: Swift.Int)
   public typealias AllCases = [UmoAds.UMOAdKitBannerType]
   public typealias RawValue = Swift.Int
@@ -1529,18 +1558,20 @@ extension AKSessionDelegate : Foundation.URLSessionDownloadDelegate {
   public func deInitialize() throws
   public func fetchInlineBannerForSpot(bannerParams: UmoAds.UMOAdKitBannerParams, bannerAdListener: UmoAds.UMOAdKitBannerAdListener?) throws
   public func fetchInlineBannersForSpots(bannerParamsList: Swift.Array<UmoAds.UMOAdKitBannerParams>, bannerAdListener: UmoAds.UMOAdKitBannerAdListener?) throws
+  public func getCurrentOrientationAdaptiveBannerSize(width: Swift.Int) throws -> UmoAds.UMOAdKitSize
+  public func getSmartBannerSize() throws -> UmoAds.UMOAdKitSize
   public func fetchBanners(bannerViews: Swift.Array<UmoAds.UMOAdKitBannerView>) throws
   public func showBanners(bannerViews: Swift.Array<UmoAds.UMOAdKitBannerView>, spotIds: Swift.Array<Swift.String>? = nil) throws
   public func refreshBanners(bannerViews: Swift.Array<UmoAds.UMOAdKitBannerView>) throws
   public func removeBanners(bannerViews: Swift.Array<UmoAds.UMOAdKitBannerView>) throws
-  public func getCurrentOrientationAdaptiveBannerSize(width: Swift.Int) throws -> UmoAds.UMOAdKitSize
-  public func getSmartBannerSize() throws -> UmoAds.UMOAdKitSize
   public func fetchInterstitialBanner(bannerParams: UmoAds.UMOAdKitBannerParams, bannerAdListener: UmoAds.UMOAdKitBannerAdListener?) throws
   public func showInterstitialBanner(bannerParams: UmoAds.UMOAdKitBannerParams, bannerAdListener: UmoAds.UMOAdKitBannerAdListener?) throws
+  public func removeInterstitialBanner(spotId: Swift.String) throws
   public func fetchRollAd(spotId: Swift.String, inRollAdParams: UmoAds.UMOAdKitRollAdParams?, rollAdListener: UmoAds.UMOAdKitRollAdListener?) throws
   public func showRollAd(spotId: Swift.String, inRollAdParams: UmoAds.UMOAdKitRollAdParams?, rollAdListener: UmoAds.UMOAdKitRollAdListener?) throws
-  public func stopRollAd() throws
+  public func removeRollAd() throws
   public func setAutoPrefetchRollAdOnExpiry(autoPrefetchOnExpiry: Swift.Bool) throws
+  public func requestATTAuthorization()
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2354,6 +2385,7 @@ extension AdsError {
   @objc public var placeholderClickUrl: Swift.String?
   @objc public var dictStaticAppPlaceholders: [Swift.String : Swift.String]?
   @objc public var adQueryParams: UmoAds.UMOAdKitAdQueryParams?
+  @objc public var skanInfo: UmoAds.UMOAdKitSKANInfo?
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
@@ -2485,23 +2517,24 @@ public class AKSOAPEnvelope : UmoAds.AKXMLMappable {
   public func mapping(map: UmoAds.AKXMLMap)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @objcMembers public class UMOAdKitBannerParams : ObjectiveC.NSObject {
-  @objc public var akSpotId: Swift.String
-  @objc public var bannerType: UmoAds.UMOAdKitBannerType
-  @objc public var adServerUrl: Swift.String?
-  @objc public var bannerTimeoutSeconds: Swift.Int
-  @objc public var enableAdPrefetch: Swift.Bool
-  @objc public var autoPrefetchOnExpiry: Swift.Bool
+@objc @_inheritsConvenienceInitializers public class UMOAdKitBannerParams : ObjectiveC.NSObject {
+  public var akSpotId: Swift.String
+  public var bannerType: UmoAds.UMOAdKitBannerType
+  public var adServerUrl: Swift.String?
+  public var bannerTimeoutSeconds: Swift.Int
+  public var enableAdPrefetch: Swift.Bool
+  public var autoPrefetchOnExpiry: Swift.Bool
   public var bannerCreativeType: UmoAds.UMOAdKitInlineBannerCreativeType
-  @objc public var bannerPlaylist: Swift.String?
-  @objc public var bannerPosition: UmoAds.UMOAdKitAdPosition
-  @objc public var stretchImageAdCreative: Swift.Bool
+  public var bannerPlaylist: Swift.String?
+  public var bannerPosition: UmoAds.UMOAdKitAdPosition
+  public var stretchImageAdCreative: Swift.Bool
+  public var bannerWidth: Swift.Int
+  public var bannerHeight: Swift.Int
   public var bannerWidthMax: Swift.Int?
   public var bannerHeightMax: Swift.Int?
-  @objc public var autoRefreshInterval: Swift.Int
+  public var autoRefreshInterval: Swift.Int?
   public var inlineVideoPlayMode: UmoAds.UMOAdKitInlineVideoPlayMode
-  @objc public var bannerWidth: Swift.Int
-  @objc public var bannerHeight: Swift.Int
+  public var adOrientation: UmoAds.UMOAdKitAdOrientation
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
@@ -3313,6 +3346,9 @@ extension UmoAds.UMOAdKitBannerState : Swift.Hashable {}
 extension UmoAds.AdSize : Swift.Equatable {}
 extension UmoAds.AdSize : Swift.Hashable {}
 extension UmoAds.AdSize : Swift.RawRepresentable {}
+extension UmoAds.UMOAdKitAdOrientation : Swift.Equatable {}
+extension UmoAds.UMOAdKitAdOrientation : Swift.Hashable {}
+extension UmoAds.UMOAdKitAdOrientation : Swift.RawRepresentable {}
 extension UmoAds.UMOAdKitAdPosition : Swift.Equatable {}
 extension UmoAds.UMOAdKitAdPosition : Swift.Hashable {}
 extension UmoAds.UMOAdKitAdPosition : Swift.RawRepresentable {}
