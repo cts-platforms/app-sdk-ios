@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.4.1] - 2022-7-26
+
+* Fixed SDWebImage dependency removal
+
 ## [2.4.0] - 2022-7-25
 
 ### Changed
