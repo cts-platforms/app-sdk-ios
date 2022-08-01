@@ -684,6 +684,17 @@ SWIFT_CLASS("_TtC6UmoAds21UMOAdKitAdQueryParams")
 
 SWIFT_CLASS("_TtC6UmoAds20UMOAdKitBannerParams")
 @interface UMOAdKitBannerParams : NSObject
+@property (nonatomic, copy) NSString * _Nonnull akSpotId;
+@property (nonatomic) enum UMOAdKitBannerType bannerType;
+@property (nonatomic, copy) NSString * _Nullable adServerUrl;
+@property (nonatomic) NSInteger bannerTimeoutSeconds;
+@property (nonatomic) BOOL enableAdPrefetch;
+@property (nonatomic) BOOL autoPrefetchOnExpiry;
+@property (nonatomic, copy) NSString * _Nullable bannerPlaylist;
+@property (nonatomic) enum UMOAdKitAdPosition bannerPosition;
+@property (nonatomic) BOOL stretchImageAdCreative;
+@property (nonatomic) NSInteger bannerWidth;
+@property (nonatomic) NSInteger bannerHeight;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1469,6 +1480,17 @@ SWIFT_CLASS("_TtC6UmoAds21UMOAdKitAdQueryParams")
 
 SWIFT_CLASS("_TtC6UmoAds20UMOAdKitBannerParams")
 @interface UMOAdKitBannerParams : NSObject
+@property (nonatomic, copy) NSString * _Nonnull akSpotId;
+@property (nonatomic) enum UMOAdKitBannerType bannerType;
+@property (nonatomic, copy) NSString * _Nullable adServerUrl;
+@property (nonatomic) NSInteger bannerTimeoutSeconds;
+@property (nonatomic) BOOL enableAdPrefetch;
+@property (nonatomic) BOOL autoPrefetchOnExpiry;
+@property (nonatomic, copy) NSString * _Nullable bannerPlaylist;
+@property (nonatomic) enum UMOAdKitAdPosition bannerPosition;
+@property (nonatomic) BOOL stretchImageAdCreative;
+@property (nonatomic) NSInteger bannerWidth;
+@property (nonatomic) NSInteger bannerHeight;
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

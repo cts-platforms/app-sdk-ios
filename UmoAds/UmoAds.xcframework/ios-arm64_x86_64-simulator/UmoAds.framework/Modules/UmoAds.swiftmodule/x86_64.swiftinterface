@@ -2516,19 +2516,19 @@ public class AKSOAPEnvelope : UmoAds.AKXMLMappable {
   public func mapping(map: UmoAds.AKXMLMap)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class UMOAdKitBannerParams : ObjectiveC.NSObject {
-  public var akSpotId: Swift.String
-  public var bannerType: UmoAds.UMOAdKitBannerType
-  public var adServerUrl: Swift.String?
-  public var bannerTimeoutSeconds: Swift.Int
-  public var enableAdPrefetch: Swift.Bool
-  public var autoPrefetchOnExpiry: Swift.Bool
+@objc @_inheritsConvenienceInitializers @objcMembers public class UMOAdKitBannerParams : ObjectiveC.NSObject {
+  @objc public var akSpotId: Swift.String
+  @objc public var bannerType: UmoAds.UMOAdKitBannerType
+  @objc public var adServerUrl: Swift.String?
+  @objc public var bannerTimeoutSeconds: Swift.Int
+  @objc public var enableAdPrefetch: Swift.Bool
+  @objc public var autoPrefetchOnExpiry: Swift.Bool
   public var bannerCreativeType: UmoAds.UMOAdKitInlineBannerCreativeType
-  public var bannerPlaylist: Swift.String?
-  public var bannerPosition: UmoAds.UMOAdKitAdPosition
-  public var stretchImageAdCreative: Swift.Bool
-  public var bannerWidth: Swift.Int
-  public var bannerHeight: Swift.Int
+  @objc public var bannerPlaylist: Swift.String?
+  @objc public var bannerPosition: UmoAds.UMOAdKitAdPosition
+  @objc public var stretchImageAdCreative: Swift.Bool
+  @objc public var bannerWidth: Swift.Int
+  @objc public var bannerHeight: Swift.Int
   public var bannerWidthMax: Swift.Int?
   public var bannerHeightMax: Swift.Int?
   public var autoRefreshInterval: Swift.Int?
