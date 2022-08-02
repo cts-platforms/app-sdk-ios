@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = 'UmoAds'
-  spec.version      = '2.4.2'
+  spec.version      = '2.4.3'
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/cts-platforms/ads-sdk-ios'
   spec.authors      = { 'Patrick Dunshee' => 'patrick.dunshee@cubic.com' }
