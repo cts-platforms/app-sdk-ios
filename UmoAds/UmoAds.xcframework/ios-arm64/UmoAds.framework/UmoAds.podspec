@@ -13,6 +13,6 @@ Pod::Spec.new do |spec|
   spec.swift_version = '5.0'
   spec.ios.deployment_target = '12.0'
   spec.osx.deployment_target = '10.10'
-  spec.dependency 'CubicAuth', '~> 1.3'
+  spec.dependency 'CubicAuth', '~> 1.4'
   spec.resources = 'Ads/**/*.{pfx,png,pdf,json,xcassets}'
 end

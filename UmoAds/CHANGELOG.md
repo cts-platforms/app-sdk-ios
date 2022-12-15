@@ -2,6 +2,10 @@
 
 This document contains all changes made to the _UmoAds_ for each release along with upgrade steps.
 
+## [2.5.0] - 2022-12-15
+
+* Use CubicAuth 1.4.0 to support internationalization
+
 ## [2.4.3] - 2022-8-2
 
 * Open tap targets using default OS handling instead of custom web view
