@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XN8CE+dYdg+1Wqpf3L7BLS9lDKI=
+		O/TfCTTSRcvWlAiVhRRTkKR3FWw=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		CcSPXcR76W4Aij6iFUD9NMR7cyQ=
+		1rogR7G5MtWqqfHDJJJ3hOYVy1s=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		esnm9HaT7vF821cV6m8oVL6swGo=
+		kV3mUnKrTdWLDAsRueSGkyholBg=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		0OH9QBqzzJOoNDxX8HXu6qJP3fU=
+		HPn9CW8XGEIHnFV7TWF+6BEnkuY=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		esnm9HaT7vF821cV6m8oVL6swGo=
+		kV3mUnKrTdWLDAsRueSGkyholBg=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Mw6P5X0+r/B+xSBstA7gKT+LGpA=
+		rYpa5AMKdZmPMwjuAxjbEptfOzk=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		CcSPXcR76W4Aij6iFUD9NMR7cyQ=
+		1rogR7G5MtWqqfHDJJJ3hOYVy1s=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		2hRl9cylvQh0Z8dX9+8+oEM25Yk=
+		PL8IuNLLNWFH2bJfQUyhF3CLvLQ=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		JF3f3Br9JpoGnUMqjGPIXsdtr2I=
+		PT4CY0MmIi2zVB1b6hchOe04byY=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		2hRl9cylvQh0Z8dX9+8+oEM25Yk=
+		PL8IuNLLNWFH2bJfQUyhF3CLvLQ=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Ra7L/MDYU7mXGUd/OxDrD+By3Tg=
+		9y80iUvdbr0VBDDPFF2ZOhJOuUw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>UmoPass.podspec</key>
 		<data>
-		uqcbchpbdewNtf9qT9V/6FEP9sw=
+		Zp31d/NWq/69SyB9BAuQYQxbV7g=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -85,70 +85,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pznGoQrCQwcRaGqw53p9WxNGJEBplnwHx/s6+cJiRU8=
+			QYIMe1khRGWRa9v8suDO6gve8Cn/oV71PbkcUPPMiAk=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wSmUZck6Qkw2Aqr7esv3PJqq+pM4EzGdhr5UJtlk5sU=
+			rA46XQUnf8LdTxkBbggmC3qzeGaOkCYozeOPUeo7fGE=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hzQkNl1xksHbCKbj55zgNb8xwKCZOewmRIGBfal9gx0=
+			D4DVK4PgBl3T7zVsbvQh9aVF9ZIvQVRittQr3LW1pSM=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wSmUZck6Qkw2Aqr7esv3PJqq+pM4EzGdhr5UJtlk5sU=
+			rA46XQUnf8LdTxkBbggmC3qzeGaOkCYozeOPUeo7fGE=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SHjQkc59wYs1XzmweE63TYG3WzGJ/+xeiOBvBw/ZpXQ=
+			qSxU2XMgDGRfLMGCeqOMaG0pjmlItwdjkyLAvptxnWw=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pznGoQrCQwcRaGqw53p9WxNGJEBplnwHx/s6+cJiRU8=
+			QYIMe1khRGWRa9v8suDO6gve8Cn/oV71PbkcUPPMiAk=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qYhqz7j3v4Ra/U14B68zmZEvQG0M5lHkF2VJawrixKQ=
+			RPL8MaRexzZwps8lRxho0IHkUSvbKBAlOdw32Uh8A1w=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LvFa5KSCpVZIdtKjXoFpUQqBOeaI1JuFwZoLx+UuRlo=
+			z8WNlG7iicc1XJpzDpBbmoTAiSE71GgLwuO8KxqjDeg=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qYhqz7j3v4Ra/U14B68zmZEvQG0M5lHkF2VJawrixKQ=
+			RPL8MaRexzZwps8lRxho0IHkUSvbKBAlOdw32Uh8A1w=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			i8+ajUV3sFPUW+jMoesHfzo/lOHjYsCtPNLv1UNNr7U=
+			LRCqMZJqNF50v7R8/ujJMs3S1YlQQ+uRQtFdPL1nv9w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -162,7 +162,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yVYJ5zJED0ahvmIYmNAaR0X68wa5dlD4s3mBdRq28PY=
+			zLR4dXkipEA4jA3z9cLuSVoxZ6maVKcP/yDWNBAE1p4=
 			</data>
 		</dict>
 	</dict>

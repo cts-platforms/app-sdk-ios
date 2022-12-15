@@ -61,6 +61,7 @@ public struct Agency {
   }
   public let currencyFormat: UmoPass.CurrencyFormat?
   public let locale: Swift.String?
+  public let scanRideSupported: Swift.Bool
 }
 extension UmoPass.Agency {
   public init(agencyDTO: UmoPass.TPAgencyDTO)
@@ -89,6 +90,7 @@ public typealias LegacyUsernameCompletion = (Swift.String?) -> Swift.Void
 public typealias LegacyPasswordCompletion = (Swift.String?) -> Swift.Void
 public typealias QRGenerationCompletion = (UIKit.UIImage?, [Swift.Error]) -> Swift.Void
 public typealias ServerDeviceIdCompletion = ((Swift.Result<Swift.Int?, Swift.Error>) -> Swift.Void)
+public typealias OrgCompletion = (Swift.Result<UmoPass.Organization, Swift.Error>) -> Swift.Void
 extension Foundation.NSNotification.Name {
   public static let PassUserUpdated: Foundation.Notification.Name
   public static let PassProductsShouldBeRefetched: Foundation.Notification.Name
@@ -188,6 +190,8 @@ extension UmoPass.Pass {
 }
 extension UmoPass.Pass {
   public func redeemBenefit(code: Swift.String, shouldRefreshUser: Swift.Bool = true, completion: @escaping UmoPass.RedemptionCompletion)
+  public func uploadNFCUIDs(_ uids: [Swift.String], positiveListID: Swift.String, completion: @escaping UmoPass.EmptyCompletion)
+  public func fetchOrganization(completion: @escaping UmoPass.OrgCompletion)
 }
 extension UmoPass.Pass {
   @available(*, deprecated, message: "Use legacyUsername(completion:) instead.")
@@ -484,7 +488,7 @@ public struct TPAccountDTO : Swift.Codable {
 }
 public struct TPAgencyDTO : Swift.Codable {
   public let state: Swift.String, city: Swift.String, country: Swift.String, publicID: Swift.String
-  public init(name: Swift.String, shortName: Swift.String, serviceName: Swift.String, region: Swift.String?, state: Swift.String, city: Swift.String, country: Swift.String, publicID: Swift.String, centerLatitude: Swift.Double?, centerLongitude: Swift.Double?, id: Swift.Int, minPurchaseAmount: Swift.Int?, media: UmoPass.TPMedia, colors: UmoPass.TPColors, allowStoredValue: Swift.Bool?, storedValueTransactionMin: Swift.Int?, storedValueTransactionMax: Swift.Int?, storedValueButtonValues: [Swift.String]?, storedValueButtonMoneys: [UmoPass.Money]?, mobilePages: UmoPass.TPMobilePages?, mobileLogoTargetURL: Swift.String?, amexAccepted: Swift.Bool?, mcAccepted: Swift.Bool?, visaAccepted: Swift.Bool?, discAccepted: Swift.Bool?, jcbAccepted: Swift.Bool?, lowBalanceLevel: Swift.Int?, minimumAutoloadAmount: Swift.Int?, minimumTripAutoload: Swift.Int?, minimumHoursAutoload: Swift.Int?, minimumAutoloadAmountMoney: UmoPass.Money?, minPurchaseAmountMoney: UmoPass.Money?, maxPurchaseAmountMoney: UmoPass.Money?, applePayAccepted: Swift.Bool?, storedValuePayAccepted: Swift.Bool?, i18n: UmoPass.TPLanguageStrings?, poolId: Swift.String, currencyFormat: UmoPass.CurrencyFormat?, locale: Swift.String?)
+  public init(name: Swift.String, shortName: Swift.String, serviceName: Swift.String, region: Swift.String?, state: Swift.String, city: Swift.String, country: Swift.String, publicID: Swift.String, centerLatitude: Swift.Double?, centerLongitude: Swift.Double?, id: Swift.Int, minPurchaseAmount: Swift.Int?, media: UmoPass.TPMedia, colors: UmoPass.TPColors, allowStoredValue: Swift.Bool?, storedValueTransactionMin: Swift.Int?, storedValueTransactionMax: Swift.Int?, storedValueButtonValues: [Swift.String]?, storedValueButtonMoneys: [UmoPass.Money]?, mobilePages: UmoPass.TPMobilePages?, mobileLogoTargetURL: Swift.String?, amexAccepted: Swift.Bool?, mcAccepted: Swift.Bool?, visaAccepted: Swift.Bool?, discAccepted: Swift.Bool?, jcbAccepted: Swift.Bool?, lowBalanceLevel: Swift.Int?, minimumAutoloadAmount: Swift.Int?, minimumTripAutoload: Swift.Int?, minimumHoursAutoload: Swift.Int?, minimumAutoloadAmountMoney: UmoPass.Money?, minPurchaseAmountMoney: UmoPass.Money?, maxPurchaseAmountMoney: UmoPass.Money?, applePayAccepted: Swift.Bool?, storedValuePayAccepted: Swift.Bool?, i18n: UmoPass.TPLanguageStrings?, poolId: Swift.String, currencyFormat: UmoPass.CurrencyFormat?, locale: Swift.String?, scanRideSupported: Swift.Bool?)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -804,6 +808,39 @@ extension UmoPass.CodeChunkView : UIKit.UITextFieldDelegate {
 }
 public struct PublicKeyModel : Swift.Codable {
   public let publicKey: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct PositiveListStatusInterface : Swift.Codable {
+  public let errors: [Swift.Int]?
+  public let addedCards: Swift.Int?
+  public let removedCards: Swift.Int?
+  public let tsStart: Swift.Int?
+  public let tsEnd: Swift.Int?
+  public let positiveListId: Swift.Int?
+  public let lastHash: Swift.String?
+  public let totalCards: Swift.Int?
+  public let status: Swift.String?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct PositiveList : Swift.Codable {
+  public let id: Swift.Int?
+  public let publicId: Swift.String?
+  public let name: Swift.String?
+  public let fareCode: Swift.Int?
+  public let cardType: Swift.String?
+  public let owningOrg: Swift.String?
+  public let lastHash: Swift.String?
+  public let lastProcessingStatus: UmoPass.PositiveListStatusInterface?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Organization : Swift.Codable {
+  public let id: Swift.Int?
+  public let name: Swift.String?
+  public let owningAgency: Swift.String?
+  public let positiveLists: [UmoPass.PositiveList]?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }

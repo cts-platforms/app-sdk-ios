@@ -2036,6 +2036,50 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "scanRideSupported",
+            "printedName": "scanRideSupported",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass6AgencyV17scanRideSupportedSbvp",
+            "mangledName": "$s7UmoPass6AgencyV17scanRideSupportedSbvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass6AgencyV17scanRideSupportedSbvg",
+                "mangledName": "$s7UmoPass6AgencyV17scanRideSupportedSbvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(agencyDTO:)",
@@ -5463,6 +5507,132 @@
             "declKind": "Func",
             "usr": "s:7UmoPass0B0C13redeemBenefit4code17shouldRefreshUser10completionySS_Sbys6ResultOyAA06RedeemD8ResponseVs5Error_pGctF",
             "mangledName": "$s7UmoPass0B0C13redeemBenefit4code17shouldRefreshUser10completionySS_Sbys6ResultOyAA06RedeemD8ResponseVs5Error_pGctF",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "uploadNFCUIDs",
+            "printedName": "uploadNFCUIDs(_:positiveListID:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<UmoPass.EmptyResponse, Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<UmoPass.EmptyResponse, Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EmptyResponse",
+                        "printedName": "UmoPass.EmptyResponse",
+                        "usr": "s:7UmoPass13EmptyResponseV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7UmoPass0B0C13uploadNFCUIDs_14positiveListID10completionySaySSG_SSys6ResultOyAA13EmptyResponseVs5Error_pGctF",
+            "mangledName": "$s7UmoPass0B0C13uploadNFCUIDs_14positiveListID10completionySaySSG_SSys6ResultOyAA13EmptyResponseVs5Error_pGctF",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "fetchOrganization",
+            "printedName": "fetchOrganization(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<UmoPass.Organization, Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<UmoPass.Organization, Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Organization",
+                        "printedName": "UmoPass.Organization",
+                        "usr": "s:7UmoPass12OrganizationV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7UmoPass0B0C17fetchOrganization10completionyys6ResultOyAA0D0Vs5Error_pGc_tF",
+            "mangledName": "$s7UmoPass0B0C17fetchOrganization10completionyys6ResultOyAA0D0Vs5Error_pGc_tF",
             "moduleName": "UmoPass",
             "declAttributes": [
               "RawDocComment"
@@ -16379,7 +16549,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(name:shortName:serviceName:region:state:city:country:publicID:centerLatitude:centerLongitude:id:minPurchaseAmount:media:colors:allowStoredValue:storedValueTransactionMin:storedValueTransactionMax:storedValueButtonValues:storedValueButtonMoneys:mobilePages:mobileLogoTargetURL:amexAccepted:mcAccepted:visaAccepted:discAccepted:jcbAccepted:lowBalanceLevel:minimumAutoloadAmount:minimumTripAutoload:minimumHoursAutoload:minimumAutoloadAmountMoney:minPurchaseAmountMoney:maxPurchaseAmountMoney:applePayAccepted:storedValuePayAccepted:i18n:poolId:currencyFormat:locale:)",
+            "printedName": "init(name:shortName:serviceName:region:state:city:country:publicID:centerLatitude:centerLongitude:id:minPurchaseAmount:media:colors:allowStoredValue:storedValueTransactionMin:storedValueTransactionMax:storedValueButtonValues:storedValueButtonMoneys:mobilePages:mobileLogoTargetURL:amexAccepted:mcAccepted:visaAccepted:discAccepted:jcbAccepted:lowBalanceLevel:minimumAutoloadAmount:minimumTripAutoload:minimumHoursAutoload:minimumAutoloadAmountMoney:minPurchaseAmountMoney:maxPurchaseAmountMoney:applePayAccepted:storedValuePayAccepted:i18n:poolId:currencyFormat:locale:scanRideSupported:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -16860,11 +17030,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:7UmoPass11TPAgencyDTOV4name9shortName07serviceG06region5state4city7country8publicID14centerLatitude0O9Longitude2id17minPurchaseAmount5media6colors16allowStoredValue06storedZ14TransactionMin06storedZ14TransactionMax06storedZ12ButtonValues06storedZ12ButtonMoneys11mobilePages19mobileLogoTargetURL12amexAccepted10mcAccepted12visaAccepted12discAccepted11jcbAccepted15lowBalanceLevel015minimumAutoloadU019minimumTripAutoload20minimumHoursAutoload015minimumAutoloadU5Money0stU5Money03maxtU5Money16applePayAccepted06storedZ11PayAccepted4i18n6poolId14currencyFormat6localeACSS_S3SSgS4SSdSgA16_S2iSgAA7TPMediaVAA8TPColorsVSbSgA17_A17_SaySSGSgSayAA5MoneyVGSgAA13TPMobilePagesVSgA15_A22_A22_A22_A22_A22_A17_A17_A17_A17_A26_SgA32_A32_A22_A22_AA17TPLanguageStringsVSgSSAA14CurrencyFormatVSgA15_tcfc",
-            "mangledName": "$s7UmoPass11TPAgencyDTOV4name9shortName07serviceG06region5state4city7country8publicID14centerLatitude0O9Longitude2id17minPurchaseAmount5media6colors16allowStoredValue06storedZ14TransactionMin06storedZ14TransactionMax06storedZ12ButtonValues06storedZ12ButtonMoneys11mobilePages19mobileLogoTargetURL12amexAccepted10mcAccepted12visaAccepted12discAccepted11jcbAccepted15lowBalanceLevel015minimumAutoloadU019minimumTripAutoload20minimumHoursAutoload015minimumAutoloadU5Money0stU5Money03maxtU5Money16applePayAccepted06storedZ11PayAccepted4i18n6poolId14currencyFormat6localeACSS_S3SSgS4SSdSgA16_S2iSgAA7TPMediaVAA8TPColorsVSbSgA17_A17_SaySSGSgSayAA5MoneyVGSgAA13TPMobilePagesVSgA15_A22_A22_A22_A22_A22_A17_A17_A17_A17_A26_SgA32_A32_A22_A22_AA17TPLanguageStringsVSgSSAA14CurrencyFormatVSgA15_tcfc",
+            "usr": "s:7UmoPass11TPAgencyDTOV4name9shortName07serviceG06region5state4city7country8publicID14centerLatitude0O9Longitude2id17minPurchaseAmount5media6colors16allowStoredValue06storedZ14TransactionMin06storedZ14TransactionMax06storedZ12ButtonValues06storedZ12ButtonMoneys11mobilePages19mobileLogoTargetURL12amexAccepted10mcAccepted12visaAccepted12discAccepted11jcbAccepted15lowBalanceLevel015minimumAutoloadU019minimumTripAutoload20minimumHoursAutoload015minimumAutoloadU5Money0stU5Money03maxtU5Money16applePayAccepted06storedZ11PayAccepted4i18n6poolId14currencyFormat6locale17scanRideSupportedACSS_S3SSgS4SSdSgA17_S2iSgAA7TPMediaVAA8TPColorsVSbSgA18_A18_SaySSGSgSayAA5MoneyVGSgAA13TPMobilePagesVSgA16_A23_A23_A23_A23_A23_A18_A18_A18_A18_A27_SgA33_A33_A23_A23_AA17TPLanguageStringsVSgSSAA14CurrencyFormatVSgA16_A23_tcfc",
+            "mangledName": "$s7UmoPass11TPAgencyDTOV4name9shortName07serviceG06region5state4city7country8publicID14centerLatitude0O9Longitude2id17minPurchaseAmount5media6colors16allowStoredValue06storedZ14TransactionMin06storedZ14TransactionMax06storedZ12ButtonValues06storedZ12ButtonMoneys11mobilePages19mobileLogoTargetURL12amexAccepted10mcAccepted12visaAccepted12discAccepted11jcbAccepted15lowBalanceLevel015minimumAutoloadU019minimumTripAutoload20minimumHoursAutoload015minimumAutoloadU5Money0stU5Money03maxtU5Money16applePayAccepted06storedZ11PayAccepted4i18n6poolId14currencyFormat6locale17scanRideSupportedACSS_S3SSgS4SSdSgA17_S2iSgAA7TPMediaVAA8TPColorsVSbSgA18_A18_SaySSGSgSayAA5MoneyVGSgAA13TPMobilePagesVSgA16_A23_A23_A23_A23_A23_A18_A18_A18_A18_A27_SgA33_A33_A23_A23_AA17TPLanguageStringsVSgSSAA14CurrencyFormatVSgA16_A23_tcfc",
             "moduleName": "UmoPass",
             "declAttributes": [
               "AccessControl"
@@ -29093,6 +29277,1551 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "PositiveListStatusInterface",
+        "printedName": "PositiveListStatusInterface",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "errors",
+            "printedName": "errors",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.Int]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.Int]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV6errorsSaySiGSgvp",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV6errorsSaySiGSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.Int]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.Int]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV6errorsSaySiGSgvg",
+                "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV6errorsSaySiGSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "addedCards",
+            "printedName": "addedCards",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV10addedCardsSiSgvp",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV10addedCardsSiSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV10addedCardsSiSgvg",
+                "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV10addedCardsSiSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "removedCards",
+            "printedName": "removedCards",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV12removedCardsSiSgvp",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV12removedCardsSiSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV12removedCardsSiSgvg",
+                "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV12removedCardsSiSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "tsStart",
+            "printedName": "tsStart",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV7tsStartSiSgvp",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV7tsStartSiSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV7tsStartSiSgvg",
+                "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV7tsStartSiSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "tsEnd",
+            "printedName": "tsEnd",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV5tsEndSiSgvp",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV5tsEndSiSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV5tsEndSiSgvg",
+                "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV5tsEndSiSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "positiveListId",
+            "printedName": "positiveListId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV08positiveD2IdSiSgvp",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV08positiveD2IdSiSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV08positiveD2IdSiSgvg",
+                "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV08positiveD2IdSiSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "lastHash",
+            "printedName": "lastHash",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV8lastHashSSSgvp",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV8lastHashSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV8lastHashSSSgvg",
+                "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV8lastHashSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "totalCards",
+            "printedName": "totalCards",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV10totalCardsSiSgvp",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV10totalCardsSiSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV10totalCardsSiSgvg",
+                "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV10totalCardsSiSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "status",
+            "printedName": "status",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV6statusSSSgvp",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV6statusSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV6statusSSSgvg",
+                "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV6statusSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PositiveListStatusInterface",
+                "printedName": "UmoPass.PositiveListStatusInterface",
+                "usr": "s:7UmoPass27PositiveListStatusInterfaceV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "UmoPass",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7UmoPass27PositiveListStatusInterfaceV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV6encode2toys7Encoder_p_tKF",
+            "moduleName": "UmoPass",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:7UmoPass27PositiveListStatusInterfaceV",
+        "mangledName": "$s7UmoPass27PositiveListStatusInterfaceV",
+        "moduleName": "UmoPass",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PositiveList",
+        "printedName": "PositiveList",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "id",
+            "printedName": "id",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12PositiveListV2idSiSgvp",
+            "mangledName": "$s7UmoPass12PositiveListV2idSiSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12PositiveListV2idSiSgvg",
+                "mangledName": "$s7UmoPass12PositiveListV2idSiSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "publicId",
+            "printedName": "publicId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12PositiveListV8publicIdSSSgvp",
+            "mangledName": "$s7UmoPass12PositiveListV8publicIdSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12PositiveListV8publicIdSSSgvg",
+                "mangledName": "$s7UmoPass12PositiveListV8publicIdSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12PositiveListV4nameSSSgvp",
+            "mangledName": "$s7UmoPass12PositiveListV4nameSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12PositiveListV4nameSSSgvg",
+                "mangledName": "$s7UmoPass12PositiveListV4nameSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fareCode",
+            "printedName": "fareCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12PositiveListV8fareCodeSiSgvp",
+            "mangledName": "$s7UmoPass12PositiveListV8fareCodeSiSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12PositiveListV8fareCodeSiSgvg",
+                "mangledName": "$s7UmoPass12PositiveListV8fareCodeSiSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cardType",
+            "printedName": "cardType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12PositiveListV8cardTypeSSSgvp",
+            "mangledName": "$s7UmoPass12PositiveListV8cardTypeSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12PositiveListV8cardTypeSSSgvg",
+                "mangledName": "$s7UmoPass12PositiveListV8cardTypeSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "owningOrg",
+            "printedName": "owningOrg",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12PositiveListV9owningOrgSSSgvp",
+            "mangledName": "$s7UmoPass12PositiveListV9owningOrgSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12PositiveListV9owningOrgSSSgvg",
+                "mangledName": "$s7UmoPass12PositiveListV9owningOrgSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "lastHash",
+            "printedName": "lastHash",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12PositiveListV8lastHashSSSgvp",
+            "mangledName": "$s7UmoPass12PositiveListV8lastHashSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12PositiveListV8lastHashSSSgvg",
+                "mangledName": "$s7UmoPass12PositiveListV8lastHashSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "lastProcessingStatus",
+            "printedName": "lastProcessingStatus",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UmoPass.PositiveListStatusInterface?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PositiveListStatusInterface",
+                    "printedName": "UmoPass.PositiveListStatusInterface",
+                    "usr": "s:7UmoPass27PositiveListStatusInterfaceV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12PositiveListV20lastProcessingStatusAA0cdG9InterfaceVSgvp",
+            "mangledName": "$s7UmoPass12PositiveListV20lastProcessingStatusAA0cdG9InterfaceVSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UmoPass.PositiveListStatusInterface?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PositiveListStatusInterface",
+                        "printedName": "UmoPass.PositiveListStatusInterface",
+                        "usr": "s:7UmoPass27PositiveListStatusInterfaceV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12PositiveListV20lastProcessingStatusAA0cdG9InterfaceVSgvg",
+                "mangledName": "$s7UmoPass12PositiveListV20lastProcessingStatusAA0cdG9InterfaceVSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PositiveList",
+                "printedName": "UmoPass.PositiveList",
+                "usr": "s:7UmoPass12PositiveListV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7UmoPass12PositiveListV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s7UmoPass12PositiveListV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "UmoPass",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7UmoPass12PositiveListV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s7UmoPass12PositiveListV6encode2toys7Encoder_p_tKF",
+            "moduleName": "UmoPass",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:7UmoPass12PositiveListV",
+        "mangledName": "$s7UmoPass12PositiveListV",
+        "moduleName": "UmoPass",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Organization",
+        "printedName": "Organization",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "id",
+            "printedName": "id",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12OrganizationV2idSiSgvp",
+            "mangledName": "$s7UmoPass12OrganizationV2idSiSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12OrganizationV2idSiSgvg",
+                "mangledName": "$s7UmoPass12OrganizationV2idSiSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12OrganizationV4nameSSSgvp",
+            "mangledName": "$s7UmoPass12OrganizationV4nameSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12OrganizationV4nameSSSgvg",
+                "mangledName": "$s7UmoPass12OrganizationV4nameSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "owningAgency",
+            "printedName": "owningAgency",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12OrganizationV12owningAgencySSSgvp",
+            "mangledName": "$s7UmoPass12OrganizationV12owningAgencySSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12OrganizationV12owningAgencySSSgvg",
+                "mangledName": "$s7UmoPass12OrganizationV12owningAgencySSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "positiveLists",
+            "printedName": "positiveLists",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[UmoPass.PositiveList]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[UmoPass.PositiveList]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PositiveList",
+                        "printedName": "UmoPass.PositiveList",
+                        "usr": "s:7UmoPass12PositiveListV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass12OrganizationV13positiveListsSayAA12PositiveListVGSgvp",
+            "mangledName": "$s7UmoPass12OrganizationV13positiveListsSayAA12PositiveListVGSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[UmoPass.PositiveList]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[UmoPass.PositiveList]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PositiveList",
+                            "printedName": "UmoPass.PositiveList",
+                            "usr": "s:7UmoPass12PositiveListV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass12OrganizationV13positiveListsSayAA12PositiveListVGSgvg",
+                "mangledName": "$s7UmoPass12OrganizationV13positiveListsSayAA12PositiveListVGSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Organization",
+                "printedName": "UmoPass.Organization",
+                "usr": "s:7UmoPass12OrganizationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7UmoPass12OrganizationV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s7UmoPass12OrganizationV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "UmoPass",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7UmoPass12OrganizationV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s7UmoPass12OrganizationV6encode2toys7Encoder_p_tKF",
+            "moduleName": "UmoPass",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:7UmoPass12OrganizationV",
+        "mangledName": "$s7UmoPass12OrganizationV",
+        "moduleName": "UmoPass",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UmoPass",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -37841,70 +39570,70 @@
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "StringLiteral",
-      "offset": 2082,
+      "offset": 2153,
       "length": 31,
       "value": "\"com.cubic.umoPass.userUpdated\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "StringLiteral",
-      "offset": 2180,
+      "offset": 2251,
       "length": 45,
       "value": "\"com.cubic.umoPass.productsShouldBeRefetched\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "StringLiteral",
-      "offset": 2596,
+      "offset": 2667,
       "length": 23,
       "value": "\"merchant.com.umo.pass\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "StringLiteral",
-      "offset": 3522,
+      "offset": 3593,
       "length": 10,
       "value": "\"username\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "StringLiteral",
-      "offset": 3632,
+      "offset": 3703,
       "length": 7,
       "value": "\"email\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "StringLiteral",
-      "offset": 3729,
+      "offset": 3800,
       "length": 10,
       "value": "\"password\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "BooleanLiteral",
-      "offset": 6631,
+      "offset": 6702,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "BooleanLiteral",
-      "offset": 21609,
+      "offset": 21680,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "StringLiteral",
-      "offset": 26302,
+      "offset": 26373,
       "length": 5,
       "value": "\"USD\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "BooleanLiteral",
-      "offset": 44607,
+      "offset": 44678,
       "length": 4,
       "value": "true"
     },
@@ -38296,6 +40025,13 @@
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/NetworkManager.swift",
       "kind": "StringLiteral",
+      "offset": 524,
+      "length": 5,
+      "value": "\"PUT\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/NetworkManager.swift",
+      "kind": "StringLiteral",
       "offset": 441,
       "length": 5,
       "value": "\"GET\""
@@ -38316,15 +40052,22 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/NetworkManager.swift",
+      "kind": "StringLiteral",
+      "offset": 524,
+      "length": 5,
+      "value": "\"PUT\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/NetworkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1960,
+      "offset": 1985,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/NetworkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2848,
+      "offset": 2873,
       "length": 4,
       "value": "true"
     },
@@ -38373,294 +40116,294 @@
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 5098,
+      "offset": 5131,
       "length": 10,
       "value": "\"publicId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 5329,
+      "offset": 5362,
       "length": 21,
       "value": "\"mobileLogoTargetUrl\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 5098,
+      "offset": 5131,
       "length": 10,
       "value": "\"publicId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 5329,
+      "offset": 5362,
       "length": 21,
       "value": "\"mobileLogoTargetUrl\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10167,
+      "offset": 10296,
       "length": 16,
       "value": "\"color.derived4\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10213,
+      "offset": 10342,
       "length": 16,
       "value": "\"color.derived2\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10259,
+      "offset": 10388,
       "length": 16,
       "value": "\"color.derived3\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10304,
+      "offset": 10433,
       "length": 15,
       "value": "\"color.primary\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10347,
+      "offset": 10476,
       "length": 14,
       "value": "\"color.accent\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10391,
+      "offset": 10520,
       "length": 16,
       "value": "\"color.derived1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10167,
+      "offset": 10296,
       "length": 16,
       "value": "\"color.derived4\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10213,
+      "offset": 10342,
       "length": 16,
       "value": "\"color.derived2\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10259,
+      "offset": 10388,
       "length": 16,
       "value": "\"color.derived3\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10304,
+      "offset": 10433,
       "length": 15,
       "value": "\"color.primary\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10347,
+      "offset": 10476,
       "length": 14,
       "value": "\"color.accent\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 10391,
+      "offset": 10520,
       "length": 16,
       "value": "\"color.derived1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11553,
+      "offset": 11682,
       "length": 12,
       "value": "\"contact_us\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11688,
+      "offset": 11817,
       "length": 13,
       "value": "\"general_faq\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11752,
+      "offset": 11881,
       "length": 9,
       "value": "\"svg_1_1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11797,
+      "offset": 11926,
       "length": 12,
       "value": "\"svg_bw_1_1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11841,
+      "offset": 11970,
       "length": 19,
       "value": "\"image_web_splash1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11892,
+      "offset": 12021,
       "length": 19,
       "value": "\"image_web_splash2\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11943,
+      "offset": 12072,
       "length": 19,
       "value": "\"image_web_splash3\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 12074,
+      "offset": 12203,
       "length": 22,
       "value": "\"terms_and_conditions\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 12173,
+      "offset": 12302,
       "length": 16,
       "value": "\"privacy_policy\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11553,
+      "offset": 11682,
       "length": 12,
       "value": "\"contact_us\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11688,
+      "offset": 11817,
       "length": 13,
       "value": "\"general_faq\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11752,
+      "offset": 11881,
       "length": 9,
       "value": "\"svg_1_1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11797,
+      "offset": 11926,
       "length": 12,
       "value": "\"svg_bw_1_1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11841,
+      "offset": 11970,
       "length": 19,
       "value": "\"image_web_splash1\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11892,
+      "offset": 12021,
       "length": 19,
       "value": "\"image_web_splash2\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 11943,
+      "offset": 12072,
       "length": 19,
       "value": "\"image_web_splash3\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 12074,
+      "offset": 12203,
       "length": 22,
       "value": "\"terms_and_conditions\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 12173,
+      "offset": 12302,
       "length": 16,
       "value": "\"privacy_policy\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 16054,
+      "offset": 16183,
       "length": 13,
       "value": "\"description\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 16054,
+      "offset": 16183,
       "length": 13,
       "value": "\"description\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 17979,
+      "offset": 18108,
       "length": 6,
       "value": "\"txId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 18071,
+      "offset": 18200,
       "length": 13,
       "value": "\"description\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 17979,
+      "offset": 18108,
       "length": 6,
       "value": "\"txId\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 18071,
+      "offset": 18200,
       "length": 13,
       "value": "\"description\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 19115,
+      "offset": 19244,
       "length": 8,
       "value": "\"prefix\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/Network Model\/TPFullUserDTO.swift",
       "kind": "StringLiteral",
-      "offset": 19115,
+      "offset": 19244,
       "length": 8,
       "value": "\"prefix\""
     },
