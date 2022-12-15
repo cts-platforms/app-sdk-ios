@@ -31,7 +31,8 @@ extension CubicAuth.NetworkError {
   @objc final public let isAnonymous: Swift.Bool
   @objc final public let isTokenValid: Swift.Bool
   @objc final public let isRefreshTokenValid: Swift.Bool
-  public init(cubicId: Swift.String?, preferredUsername: Swift.String?, email: Swift.String?, firstName: Swift.String?, lastName: Swift.String?, isAnonymous: Swift.Bool, isTokenValid: Swift.Bool, isRefreshTokenValid: Swift.Bool)
+  @objc final public let orgAPIToken: Swift.String?
+  public init(cubicId: Swift.String?, preferredUsername: Swift.String?, email: Swift.String?, firstName: Swift.String?, lastName: Swift.String?, isAnonymous: Swift.Bool, isTokenValid: Swift.Bool, isRefreshTokenValid: Swift.Bool, orgAPIToken: Swift.String?)
   @objc deinit
 }
 extension CubicAuth.JWTInfo {
@@ -100,6 +101,7 @@ extension CubicAuth.CountryURLMapping {
 }
 extension CubicAuth.GUD {
   public func url(countryCode: Swift.String?, type: CubicAuth.GUD.URLType) -> Swift.String?
+  public func gudKeyForCountryCode(_ countryCode: Swift.String) -> Swift.String
 }
 @objc public enum LoggingLevel : Swift.Int {
   case none = 0
@@ -148,6 +150,9 @@ public struct EmptyNetworkResponse : Swift.Codable {
   case sandbox
   case dev
   case moovit
+  public var gudURL: Swift.String {
+    get
+  }
   public var string: Swift.String {
     get
   }
@@ -182,10 +187,13 @@ extension CubicAuth.CubicAuthError {
   }
 }
 public struct Profile : Swift.Codable {
+  public let id: Swift.String?
   public let username: Swift.String?
   public let email: Swift.String?
   public let firstName: Swift.String?
   public let lastName: Swift.String?
+  public let mobileNumber: Swift.String?
+  public init(id: Swift.String?, username: Swift.String?, email: Swift.String?, firstName: Swift.String?, lastName: Swift.String?, mobileNumber: Swift.String?)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -271,11 +279,13 @@ public typealias URLStringCompletionObjC = (Swift.String?, Swift.Error?) -> Swif
   @objc public func accountPageURLRequest(completion: @escaping CubicAuth.URLRequestCompletion)
   @objc public func accountPage(completion: @escaping CubicAuth.WebViewCompletion)
   public func fetchProfileDetails(completion: @escaping CubicAuth.ProfileCompletion)
+  public func updateProfileDetails(profile: CubicAuth.Profile, completion: @escaping CubicAuth.EmptyCompletion)
   @objc public func login(username: Swift.String, password: Swift.String, completion: @escaping CubicAuth.AuthenticationCompletionObjC)
   @objc public func logoutFromSession(completion: @escaping CubicAuth.ErrorCompletion)
   @objc public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
-  @objc public func selectCountryCode(_ countryCode: Swift.String?)
+  @objc public func selectCountryCode(_ countryCode: Swift.String?, cacheSelection: Swift.Bool = true)
   @objc public func countryCodeIsOnDifferentInstanceFromCurrent(countryCode: Swift.String) -> Swift.Bool
+  @objc public func countryCodesAreOnDifferentInstances(firstCountryCode: Swift.String, secondCountryCode: Swift.String) -> Swift.Bool
   @objc public func countryCodesFetched() -> [Swift.String]
   @objc deinit
 }

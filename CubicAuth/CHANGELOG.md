@@ -2,6 +2,12 @@
 
 This document contains all changes made to the _CubicAuth_ for each release along with upgrade steps.
 
+## [1.4.0]
+
+### Changed
+
+* Add international support via country code selection
+
 ## [1.3.3] - 2022-4-26
 
 ### Changed

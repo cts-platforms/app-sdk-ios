@@ -880,9 +880,75 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "orgAPIToken",
+            "printedName": "orgAPIToken",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@CubicAuth@objc(cs)JWTInfo(py)orgAPIToken",
+            "mangledName": "$s9CubicAuth7JWTInfoC11orgAPITokenSSSgvp",
+            "moduleName": "CubicAuth",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@CubicAuth@objc(cs)JWTInfo(im)orgAPIToken",
+                "mangledName": "$s9CubicAuth7JWTInfoC11orgAPITokenSSSgvg",
+                "moduleName": "CubicAuth",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(cubicId:preferredUsername:email:firstName:lastName:isAnonymous:isTokenValid:isRefreshTokenValid:)",
+            "printedName": "init(cubicId:preferredUsername:email:firstName:lastName:isAnonymous:isTokenValid:isRefreshTokenValid:orgAPIToken:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -977,11 +1043,25 @@
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:9CubicAuth7JWTInfoC7cubicId17preferredUsername5email9firstName04lastJ011isAnonymous0L10TokenValid0l7RefreshnO0ACSSSg_A4LS3btcfc",
-            "mangledName": "$s9CubicAuth7JWTInfoC7cubicId17preferredUsername5email9firstName04lastJ011isAnonymous0L10TokenValid0l7RefreshnO0ACSSSg_A4LS3btcfc",
+            "usr": "s:9CubicAuth7JWTInfoC7cubicId17preferredUsername5email9firstName04lastJ011isAnonymous0L10TokenValid0l7RefreshnO011orgAPITokenACSSSg_A4MS3bAMtcfc",
+            "mangledName": "$s9CubicAuth7JWTInfoC7cubicId17preferredUsername5email9firstName04lastJ011isAnonymous0L10TokenValid0l7RefreshnO011orgAPITokenACSSSg_A4MS3bAMtcfc",
             "moduleName": "CubicAuth",
             "declAttributes": [
               "AccessControl"
@@ -2030,6 +2110,31 @@
             "declKind": "Func",
             "usr": "s:9CubicAuth3GUDV3url11countryCode4typeSSSgAG_AC7URLTypeOtF",
             "mangledName": "$s9CubicAuth3GUDV3url11countryCode4typeSSSgAG_AC7URLTypeOtF",
+            "moduleName": "CubicAuth",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "gudKeyForCountryCode",
+            "printedName": "gudKeyForCountryCode(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9CubicAuth3GUDV20gudKeyForCountryCodeyS2SF",
+            "mangledName": "$s9CubicAuth3GUDV20gudKeyForCountryCodeyS2SF",
             "moduleName": "CubicAuth",
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
@@ -4611,6 +4716,46 @@
           },
           {
             "kind": "Var",
+            "name": "gudURL",
+            "printedName": "gudURL",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9CubicAuth11EnvironmentO6gudURLSSvp",
+            "mangledName": "$s9CubicAuth11EnvironmentO6gudURLSSvp",
+            "moduleName": "CubicAuth",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9CubicAuth11EnvironmentO6gudURLSSvg",
+                "mangledName": "$s9CubicAuth11EnvironmentO6gudURLSSvg",
+                "moduleName": "CubicAuth",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "string",
             "printedName": "string",
             "children": [
@@ -5405,6 +5550,66 @@
         "children": [
           {
             "kind": "Var",
+            "name": "id",
+            "printedName": "id",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9CubicAuth7ProfileV2idSSSgvp",
+            "mangledName": "$s9CubicAuth7ProfileV2idSSSgvp",
+            "moduleName": "CubicAuth",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9CubicAuth7ProfileV2idSSSgvg",
+                "mangledName": "$s9CubicAuth7ProfileV2idSSSgvg",
+                "moduleName": "CubicAuth",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "username",
             "printedName": "username",
             "children": [
@@ -5642,6 +5847,171 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "mobileNumber",
+            "printedName": "mobileNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9CubicAuth7ProfileV12mobileNumberSSSgvp",
+            "mangledName": "$s9CubicAuth7ProfileV12mobileNumberSSSgvp",
+            "moduleName": "CubicAuth",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9CubicAuth7ProfileV12mobileNumberSSSgvg",
+                "mangledName": "$s9CubicAuth7ProfileV12mobileNumberSSSgvg",
+                "moduleName": "CubicAuth",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(id:username:email:firstName:lastName:mobileNumber:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Profile",
+                "printedName": "CubicAuth.Profile",
+                "usr": "s:9CubicAuth7ProfileV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9CubicAuth7ProfileV2id8username5email9firstName04lastH012mobileNumberACSSSg_A5Jtcfc",
+            "mangledName": "$s9CubicAuth7ProfileV2id8username5email9firstName04lastH012mobileNumberACSSSg_A5Jtcfc",
+            "moduleName": "CubicAuth",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
           },
           {
             "kind": "Constructor",
@@ -8611,6 +8981,64 @@
           },
           {
             "kind": "Function",
+            "name": "updateProfileDetails",
+            "printedName": "updateProfileDetails(profile:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Profile",
+                "printedName": "CubicAuth.Profile",
+                "usr": "s:9CubicAuth7ProfileV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<CubicAuth.EmptyNetworkResponse, Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<CubicAuth.EmptyNetworkResponse, Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EmptyNetworkResponse",
+                        "printedName": "CubicAuth.EmptyNetworkResponse",
+                        "usr": "s:9CubicAuth20EmptyNetworkResponseV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9CubicAuth0B0C20updateProfileDetails7profile10completionyAA0D0V_ys6ResultOyAA20EmptyNetworkResponseVs5Error_pGctF",
+            "mangledName": "$s9CubicAuth0B0C20updateProfileDetails7profile10completionyAA0D0V_ys6ResultOyAA20EmptyNetworkResponseVs5Error_pGctF",
+            "moduleName": "CubicAuth",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "login",
             "printedName": "login(username:password:completion:)",
             "children": [
@@ -8805,7 +9233,7 @@
           {
             "kind": "Function",
             "name": "selectCountryCode",
-            "printedName": "selectCountryCode(_:)",
+            "printedName": "selectCountryCode(_:cacheSelection:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8825,11 +9253,18 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@CubicAuth@objc(cs)Auth(im)selectCountryCode:",
-            "mangledName": "$s9CubicAuth0B0C17selectCountryCodeyySSSgF",
+            "usr": "c:@M@CubicAuth@objc(cs)Auth(im)selectCountryCode:cacheSelection:",
+            "mangledName": "$s9CubicAuth0B0C17selectCountryCode_14cacheSelectionySSSg_SbtF",
             "moduleName": "CubicAuth",
             "declAttributes": [
               "AccessControl",
@@ -8861,6 +9296,42 @@
             "mangledName": "$s9CubicAuth0B0C43countryCodeIsOnDifferentInstanceFromCurrent0cD0SbSS_tF",
             "moduleName": "CubicAuth",
             "objc_name": "countryCodeIsOnDifferentInstanceFromCurrentWithCountryCode:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "countryCodesAreOnDifferentInstances",
+            "printedName": "countryCodesAreOnDifferentInstances(firstCountryCode:secondCountryCode:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@CubicAuth@objc(cs)Auth(im)countryCodesAreOnDifferentInstancesWithFirstCountryCode:secondCountryCode:",
+            "mangledName": "$s9CubicAuth0B0C35countryCodesAreOnDifferentInstances16firstCountryCode06secondjK0SbSS_SStF",
+            "moduleName": "CubicAuth",
+            "objc_name": "countryCodesAreOnDifferentInstancesWithFirstCountryCode:secondCountryCode:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
@@ -9190,70 +9661,70 @@
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "StringLiteral",
-      "offset": 728,
+      "offset": 759,
       "length": 37,
       "value": "\"com.cubic.umo.ads.refreshTokenQueue\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 824,
+      "offset": 855,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "Array",
-      "offset": 2684,
+      "offset": 2795,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "Array",
-      "offset": 2761,
+      "offset": 2872,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "StringLiteral",
-      "offset": 2791,
+      "offset": 2902,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "StringLiteral",
-      "offset": 2825,
+      "offset": 2936,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "StringLiteral",
-      "offset": 2856,
+      "offset": 2967,
       "length": 10,
       "value": "\"umo-pass\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2906,
+      "offset": 3017,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "Array",
-      "offset": 2962,
+      "offset": 3073,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/AuthManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 19762,
+      "offset": 20980,
       "length": 5,
       "value": "false"
     },
@@ -9603,14 +10074,14 @@
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/NetworkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3997,
+      "offset": 4099,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/NetworkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4885,
+      "offset": 5052,
       "length": 4,
       "value": "true"
     },
@@ -9876,58 +10347,72 @@
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
       "kind": "StringLiteral",
-      "offset": 612,
+      "offset": 641,
       "length": 10,
       "value": "\"cubic_id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
       "kind": "StringLiteral",
-      "offset": 656,
+      "offset": 685,
       "length": 20,
       "value": "\"preferred_username\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
       "kind": "StringLiteral",
-      "offset": 721,
+      "offset": 750,
       "length": 12,
       "value": "\"first_name\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
       "kind": "StringLiteral",
-      "offset": 758,
+      "offset": 787,
       "length": 11,
       "value": "\"last_name\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
       "kind": "StringLiteral",
-      "offset": 612,
+      "offset": 826,
+      "length": 15,
+      "value": "\"org_api_token\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 641,
       "length": 10,
       "value": "\"cubic_id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
       "kind": "StringLiteral",
-      "offset": 656,
+      "offset": 685,
       "length": 20,
       "value": "\"preferred_username\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
       "kind": "StringLiteral",
-      "offset": 721,
+      "offset": 750,
       "length": 12,
       "value": "\"first_name\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
       "kind": "StringLiteral",
-      "offset": 758,
+      "offset": 787,
       "length": 11,
       "value": "\"last_name\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Model\/JWTPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 826,
+      "length": 15,
+      "value": "\"org_api_token\""
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Auth.swift",
@@ -9949,6 +10434,13 @@
       "offset": 3086,
       "length": 51,
       "value": "\"openid%20email%20profile%20users%20offline_access\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/CubicAuth\/CubicAuth\/Auth\/Auth.swift",
+      "kind": "BooleanLiteral",
+      "offset": 29356,
+      "length": 4,
+      "value": "true"
     }
   ]
 }

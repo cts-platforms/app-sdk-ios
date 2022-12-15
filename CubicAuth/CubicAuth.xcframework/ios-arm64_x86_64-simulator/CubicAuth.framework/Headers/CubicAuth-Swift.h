@@ -336,9 +336,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 ///   <li>
 ///     Parameters:
 ///     - countryCode: Two-letter code representing the country e.g. “us” for United States.
+///     - cacheSelection: Stores countryCode to UserDefaults so it persists on next launch. Default value is <code>true</code>.
 ///   </li>
 /// </ul>
-- (void)selectCountryCode:(NSString * _Nullable)countryCode;
+- (void)selectCountryCode:(NSString * _Nullable)countryCode cacheSelection:(BOOL)cacheSelection;
 /// Check if country code is on different instance than the currently selected country, assuming GUD has already been fetched.
 /// <ul>
 ///   <li>
@@ -347,6 +348,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 ///   </li>
 /// </ul>
 - (BOOL)countryCodeIsOnDifferentInstanceFromCurrentWithCountryCode:(NSString * _Nonnull)countryCode SWIFT_WARN_UNUSED_RESULT;
+/// Check if country code is on different instance than the second country, assuming GUD has already been fetched.
+/// <ul>
+///   <li>
+///     Parameters:
+///     - firstCountryCode: Two-letter code representing the country e.g. “us” for United States.
+///     - secondCountryCode: Two-letter code representing the other country e.g. “ca” for Canada.
+///   </li>
+/// </ul>
+- (BOOL)countryCodesAreOnDifferentInstancesWithFirstCountryCode:(NSString * _Nonnull)firstCountryCode secondCountryCode:(NSString * _Nonnull)secondCountryCode SWIFT_WARN_UNUSED_RESULT;
 /// Get the two-letter country codes for all countries fetched from the hosted GUD file, assuming it has already been fetched.
 /// <ul>
 ///   <li>
@@ -401,6 +411,7 @@ SWIFT_CLASS("_TtC9CubicAuth7JWTInfo")
 @property (nonatomic, readonly) BOOL isAnonymous;
 @property (nonatomic, readonly) BOOL isTokenValid;
 @property (nonatomic, readonly) BOOL isRefreshTokenValid;
+@property (nonatomic, readonly, copy) NSString * _Nullable orgAPIToken;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -766,9 +777,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 ///   <li>
 ///     Parameters:
 ///     - countryCode: Two-letter code representing the country e.g. “us” for United States.
+///     - cacheSelection: Stores countryCode to UserDefaults so it persists on next launch. Default value is <code>true</code>.
 ///   </li>
 /// </ul>
-- (void)selectCountryCode:(NSString * _Nullable)countryCode;
+- (void)selectCountryCode:(NSString * _Nullable)countryCode cacheSelection:(BOOL)cacheSelection;
 /// Check if country code is on different instance than the currently selected country, assuming GUD has already been fetched.
 /// <ul>
 ///   <li>
@@ -777,6 +789,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 ///   </li>
 /// </ul>
 - (BOOL)countryCodeIsOnDifferentInstanceFromCurrentWithCountryCode:(NSString * _Nonnull)countryCode SWIFT_WARN_UNUSED_RESULT;
+/// Check if country code is on different instance than the second country, assuming GUD has already been fetched.
+/// <ul>
+///   <li>
+///     Parameters:
+///     - firstCountryCode: Two-letter code representing the country e.g. “us” for United States.
+///     - secondCountryCode: Two-letter code representing the other country e.g. “ca” for Canada.
+///   </li>
+/// </ul>
+- (BOOL)countryCodesAreOnDifferentInstancesWithFirstCountryCode:(NSString * _Nonnull)firstCountryCode secondCountryCode:(NSString * _Nonnull)secondCountryCode SWIFT_WARN_UNUSED_RESULT;
 /// Get the two-letter country codes for all countries fetched from the hosted GUD file, assuming it has already been fetched.
 /// <ul>
 ///   <li>
@@ -831,6 +852,7 @@ SWIFT_CLASS("_TtC9CubicAuth7JWTInfo")
 @property (nonatomic, readonly) BOOL isAnonymous;
 @property (nonatomic, readonly) BOOL isTokenValid;
 @property (nonatomic, readonly) BOOL isRefreshTokenValid;
+@property (nonatomic, readonly, copy) NSString * _Nullable orgAPIToken;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
