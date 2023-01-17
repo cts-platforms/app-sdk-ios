@@ -279,6 +279,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 @property (nonatomic, copy) NSString * _Nonnull callbackURLScheme;
 @property (nonatomic, copy) NSString * _Nonnull scopes;
 @property (nonatomic, readonly, copy) NSString * _Nullable currentCountryCode;
+/// defaultCountryCode is only used when a country code has been set but is not mapped to any instance. If not manually set, it is “us”
+@property (nonatomic, copy) NSString * _Nonnull defaultCountryCode;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull canadianMetroIDs;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Set the current logging level.
@@ -340,6 +343,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 ///   </li>
 /// </ul>
 - (void)selectCountryCode:(NSString * _Nullable)countryCode cacheSelection:(BOOL)cacheSelection;
+- (void)selectMetroID:(NSInteger)metroID cacheSelection:(BOOL)cacheSelection;
+- (BOOL)metroIDIsOnDifferentInstanceFromCurrent:(NSInteger)metroID SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)metroIDsAreOnDifferentInstancesWithFirstMetroID:(NSInteger)firstMetroID secondMetroID:(NSInteger)secondMetroID SWIFT_WARN_UNUSED_RESULT;
 /// Check if country code is on different instance than the currently selected country, assuming GUD has already been fetched.
 /// <ul>
 ///   <li>
@@ -720,6 +726,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 @property (nonatomic, copy) NSString * _Nonnull callbackURLScheme;
 @property (nonatomic, copy) NSString * _Nonnull scopes;
 @property (nonatomic, readonly, copy) NSString * _Nullable currentCountryCode;
+/// defaultCountryCode is only used when a country code has been set but is not mapped to any instance. If not manually set, it is “us”
+@property (nonatomic, copy) NSString * _Nonnull defaultCountryCode;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull canadianMetroIDs;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Set the current logging level.
@@ -781,6 +790,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Auth * _Nonn
 ///   </li>
 /// </ul>
 - (void)selectCountryCode:(NSString * _Nullable)countryCode cacheSelection:(BOOL)cacheSelection;
+- (void)selectMetroID:(NSInteger)metroID cacheSelection:(BOOL)cacheSelection;
+- (BOOL)metroIDIsOnDifferentInstanceFromCurrent:(NSInteger)metroID SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)metroIDsAreOnDifferentInstancesWithFirstMetroID:(NSInteger)firstMetroID secondMetroID:(NSInteger)secondMetroID SWIFT_WARN_UNUSED_RESULT;
 /// Check if country code is on different instance than the currently selected country, assuming GUD has already been fetched.
 /// <ul>
 ///   <li>

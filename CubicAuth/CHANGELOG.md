@@ -2,6 +2,13 @@
 
 This document contains all changes made to the _CubicAuth_ for each release along with upgrade steps.
 
+## [1.4.1]
+
+### Changed
+
+* Add select instance by metro area ID
+* Select default country of "us" if selected country not found in GUD
+
 ## [1.4.0]
 
 ### Changed

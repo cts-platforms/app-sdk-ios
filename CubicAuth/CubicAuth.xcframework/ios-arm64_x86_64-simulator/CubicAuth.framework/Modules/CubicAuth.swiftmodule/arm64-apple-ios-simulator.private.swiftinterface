@@ -100,7 +100,7 @@ extension CubicAuth.CountryURLMapping {
   public func url(for type: CubicAuth.GUD.URLType) -> Swift.String
 }
 extension CubicAuth.GUD {
-  public func url(countryCode: Swift.String?, type: CubicAuth.GUD.URLType) -> Swift.String?
+  public func url(countryCode: Swift.String?, defaultCountryCode: Swift.String, type: CubicAuth.GUD.URLType) -> Swift.String?
   public func gudKeyForCountryCode(_ countryCode: Swift.String) -> Swift.String
 }
 @objc public enum LoggingLevel : Swift.Int {
@@ -248,6 +248,11 @@ public typealias URLStringCompletionObjC = (Swift.String?, Swift.Error?) -> Swif
   @objc public var currentCountryCode: Swift.String? {
     @objc get
   }
+  @objc public var defaultCountryCode: Swift.String {
+    @objc get
+    @objc set
+  }
+  @objc public var canadianMetroIDs: [Swift.Int]
   @objc public func setLoggingLevel(_ logLevel: CubicAuth.LoggingLevel)
   @objc public func setEnvironment(_ environment: CubicAuth.Environment)
   @objc public func setClientId(_ clientId: Swift.String, clientSecret: Swift.String)
@@ -284,6 +289,9 @@ public typealias URLStringCompletionObjC = (Swift.String?, Swift.Error?) -> Swif
   @objc public func logoutFromSession(completion: @escaping CubicAuth.ErrorCompletion)
   @objc public func deviceId(completion: @escaping CubicAuth.DeviceIdCompletion)
   @objc public func selectCountryCode(_ countryCode: Swift.String?, cacheSelection: Swift.Bool = true)
+  @objc public func selectMetroID(_ metroID: Swift.Int, cacheSelection: Swift.Bool = true)
+  @objc public func metroIDIsOnDifferentInstanceFromCurrent(_ metroID: Swift.Int) -> Swift.Bool
+  @objc public func metroIDsAreOnDifferentInstances(firstMetroID: Swift.Int, secondMetroID: Swift.Int) -> Swift.Bool
   @objc public func countryCodeIsOnDifferentInstanceFromCurrent(countryCode: Swift.String) -> Swift.Bool
   @objc public func countryCodesAreOnDifferentInstances(firstCountryCode: Swift.String, secondCountryCode: Swift.String) -> Swift.Bool
   @objc public func countryCodesFetched() -> [Swift.String]
