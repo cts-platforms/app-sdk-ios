@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		O/TfCTTSRcvWlAiVhRRTkKR3FWw=
+		PkEVIOAq4vn7MRSxnCAah6iaFOQ=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		1rogR7G5MtWqqfHDJJJ3hOYVy1s=
+		vnjkx8WhW9YG/Tu+89eKRqAJdAI=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		kV3mUnKrTdWLDAsRueSGkyholBg=
+		9lpmUs4RGNyIuxdsCW76LLLs0nQ=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,19 +30,19 @@
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		kV3mUnKrTdWLDAsRueSGkyholBg=
+		9lpmUs4RGNyIuxdsCW76LLLs0nQ=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		rYpa5AMKdZmPMwjuAxjbEptfOzk=
+		iBJ5KOhCe6ir8Fh94rEXo1iX36M=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		1rogR7G5MtWqqfHDJJJ3hOYVy1s=
+		vnjkx8WhW9YG/Tu+89eKRqAJdAI=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PL8IuNLLNWFH2bJfQUyhF3CLvLQ=
+		me4fL0C3cf4rdBIWpSvHIEO4Nug=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PL8IuNLLNWFH2bJfQUyhF3CLvLQ=
+		me4fL0C3cf4rdBIWpSvHIEO4Nug=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9y80iUvdbr0VBDDPFF2ZOhJOuUw=
+		jQpI86v/AvIZvZtna0kTR/EIntg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>UmoPass.podspec</key>
 		<data>
-		Zp31d/NWq/69SyB9BAuQYQxbV7g=
+		0QUlKlIEui/Z7OnXTQARWygIwqQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -85,14 +85,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QYIMe1khRGWRa9v8suDO6gve8Cn/oV71PbkcUPPMiAk=
+			JGUHE7pWqstToxwfLRWcUbAthsJQijOlBYs5N8BZ7lc=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rA46XQUnf8LdTxkBbggmC3qzeGaOkCYozeOPUeo7fGE=
+			khKBEVIO0OCTQOh0zESx9tNLEhf8bh8orVs5KA/+dEk=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -106,28 +106,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rA46XQUnf8LdTxkBbggmC3qzeGaOkCYozeOPUeo7fGE=
+			khKBEVIO0OCTQOh0zESx9tNLEhf8bh8orVs5KA/+dEk=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qSxU2XMgDGRfLMGCeqOMaG0pjmlItwdjkyLAvptxnWw=
+			I95S8O8PqHiozXg1bKp6unNHoibTANwirAIKjTdGrGM=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QYIMe1khRGWRa9v8suDO6gve8Cn/oV71PbkcUPPMiAk=
+			JGUHE7pWqstToxwfLRWcUbAthsJQijOlBYs5N8BZ7lc=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RPL8MaRexzZwps8lRxho0IHkUSvbKBAlOdw32Uh8A1w=
+			FuqKo+5g3RWtb60AvcTGodioSfQL2YHy3gk6yhfo4V4=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -141,14 +141,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RPL8MaRexzZwps8lRxho0IHkUSvbKBAlOdw32Uh8A1w=
+			FuqKo+5g3RWtb60AvcTGodioSfQL2YHy3gk6yhfo4V4=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LRCqMZJqNF50v7R8/ujJMs3S1YlQQ+uRQtFdPL1nv9w=
+			OsEOtXb5DjD3aQUvTWboVVtNVlsDDc2nSkdGkX9xtNg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -162,7 +162,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zLR4dXkipEA4jA3z9cLuSVoxZ6maVKcP/yDWNBAE1p4=
+			BV7ijI0vPV+vP5xK3JiT9qe1c4xdYos8p5IloWZJYBM=
 			</data>
 		</dict>
 	</dict>

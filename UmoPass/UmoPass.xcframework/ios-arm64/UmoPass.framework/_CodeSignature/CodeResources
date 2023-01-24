@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		KD3FwVazP57ByqnI1E+164nyZdc=
+		EFXr3lihlaup0j1pLnVhS68fV5w=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		1rogR7G5MtWqqfHDJJJ3hOYVy1s=
+		vnjkx8WhW9YG/Tu+89eKRqAJdAI=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		4m59wexfRmR5bjPhxnFYM9s8N3M=
+		No9BRGhP3yL6y2OpTBr9aE4E7oY=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		4m59wexfRmR5bjPhxnFYM9s8N3M=
+		No9BRGhP3yL6y2OpTBr9aE4E7oY=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		8hcMZwyjIuRB5O2TA3XwlLJcsv0=
+		OkkNu6rkfTE5atQWcL4TzfnHVc4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>UmoPass.podspec</key>
 		<data>
-		Zp31d/NWq/69SyB9BAuQYQxbV7g=
+		0QUlKlIEui/Z7OnXTQARWygIwqQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -65,14 +65,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QYIMe1khRGWRa9v8suDO6gve8Cn/oV71PbkcUPPMiAk=
+			JGUHE7pWqstToxwfLRWcUbAthsJQijOlBYs5N8BZ7lc=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rAP5N1gtgGqMFkR8e8PGCk+U4uFLf5TwTx9ztaD6WbE=
+			lfVJNbIxa6DI7m25EmCHJR6jXenbejCi9YR0Goiyl+4=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -86,14 +86,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rAP5N1gtgGqMFkR8e8PGCk+U4uFLf5TwTx9ztaD6WbE=
+			lfVJNbIxa6DI7m25EmCHJR6jXenbejCi9YR0Goiyl+4=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tObIyN/H5Dc4kdPvqsN2bOpH7wBgUHjk++q9Ec6Bcn4=
+			Evg+nhCTsDGSeRaYwm45oIgaqvT34gQ53/POHB+6WQ8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -107,7 +107,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zLR4dXkipEA4jA3z9cLuSVoxZ6maVKcP/yDWNBAE1p4=
+			BV7ijI0vPV+vP5xK3JiT9qe1c4xdYos8p5IloWZJYBM=
 			</data>
 		</dict>
 	</dict>

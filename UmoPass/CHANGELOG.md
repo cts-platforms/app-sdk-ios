@@ -1,5 +1,9 @@
 # UmoPass Change Log
 
+## [0.4.1] - 2023-1-24
+
+* Change CubicAuth dependency from 1.4.0 to 1.4.x
+
 ## [0.4.0] - 2022-12-15
 
 * Use CubicAuth 1.4.0 to support internationalization

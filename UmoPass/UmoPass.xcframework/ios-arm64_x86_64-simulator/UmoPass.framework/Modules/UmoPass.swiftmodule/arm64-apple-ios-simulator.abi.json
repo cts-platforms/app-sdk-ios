@@ -5450,6 +5450,57 @@
           },
           {
             "kind": "Function",
+            "name": "cacheScanPurchaseConfirmation",
+            "printedName": "cacheScanPurchaseConfirmation(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScanPurchaseConfirmation",
+                "printedName": "UmoPass.ScanPurchaseConfirmation",
+                "usr": "s:7UmoPass24ScanPurchaseConfirmationV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7UmoPass0B0C29cacheScanPurchaseConfirmationyyAA0deF0VF",
+            "mangledName": "$s7UmoPass0B0C29cacheScanPurchaseConfirmationyyAA0deF0VF",
+            "moduleName": "UmoPass",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "retrieveScanPurchaseConfirmation",
+            "printedName": "retrieveScanPurchaseConfirmation()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UmoPass.ScanPurchaseConfirmation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ScanPurchaseConfirmation",
+                    "printedName": "UmoPass.ScanPurchaseConfirmation",
+                    "usr": "s:7UmoPass24ScanPurchaseConfirmationV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7UmoPass0B0C32retrieveScanPurchaseConfirmationAA0deF0VSgyF",
+            "mangledName": "$s7UmoPass0B0C32retrieveScanPurchaseConfirmationAA0deF0VSgyF",
+            "moduleName": "UmoPass",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "redeemBenefit",
             "printedName": "redeemBenefit(code:shouldRefreshUser:completion:)",
             "children": [
@@ -6087,22 +6138,14 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "ImplicitlyUnwrappedOptional",
-                "printedName": "AVFoundation.AVCaptureSession?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "AVCaptureSession",
-                    "printedName": "AVFoundation.AVCaptureSession",
-                    "usr": "c:objc(cs)AVCaptureSession"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "AVCaptureSession",
+                "printedName": "AVFoundation.AVCaptureSession",
+                "usr": "c:objc(cs)AVCaptureSession"
               }
             ],
             "declKind": "Var",
-            "usr": "s:7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CSgvp",
-            "mangledName": "$s7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CSgvp",
+            "usr": "s:7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0Cvp",
+            "mangledName": "$s7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0Cvp",
             "moduleName": "UmoPass",
             "declAttributes": [
               "Custom",
@@ -6119,22 +6162,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "ImplicitlyUnwrappedOptional",
-                    "printedName": "AVFoundation.AVCaptureSession?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "AVCaptureSession",
-                        "printedName": "AVFoundation.AVCaptureSession",
-                        "usr": "c:objc(cs)AVCaptureSession"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "AVCaptureSession",
+                    "printedName": "AVFoundation.AVCaptureSession",
+                    "usr": "c:objc(cs)AVCaptureSession"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CSgvg",
-                "mangledName": "$s7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CSgvg",
+                "usr": "s:7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0Cvg",
+                "mangledName": "$s7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0Cvg",
                 "moduleName": "UmoPass",
                 "implicit": true,
                 "accessorKind": "get"
@@ -6151,22 +6186,14 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "ImplicitlyUnwrappedOptional",
-                    "printedName": "AVFoundation.AVCaptureSession?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "AVCaptureSession",
-                        "printedName": "AVFoundation.AVCaptureSession",
-                        "usr": "c:objc(cs)AVCaptureSession"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "AVCaptureSession",
+                    "printedName": "AVFoundation.AVCaptureSession",
+                    "usr": "c:objc(cs)AVCaptureSession"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CSgvs",
-                "mangledName": "$s7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CSgvs",
+                "usr": "s:7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0Cvs",
+                "mangledName": "$s7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0Cvs",
                 "moduleName": "UmoPass",
                 "implicit": true,
                 "accessorKind": "set"
@@ -6183,8 +6210,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CSgvM",
-                "mangledName": "$s7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CSgvM",
+                "usr": "s:7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CvM",
+                "mangledName": "$s7UmoPass11ScannerViewC14captureSessionSo09AVCaptureF0CvM",
                 "moduleName": "UmoPass",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -15223,6 +15250,562 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UmoPass",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ScanPurchaseConfirmation",
+        "printedName": "ScanPurchaseConfirmation",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "fareType",
+            "printedName": "fareType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass24ScanPurchaseConfirmationV8fareTypeSSSgvp",
+            "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV8fareTypeSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass24ScanPurchaseConfirmationV8fareTypeSSSgvg",
+                "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV8fareTypeSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "farePayment",
+            "printedName": "farePayment",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass24ScanPurchaseConfirmationV11farePaymentSSSgvp",
+            "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV11farePaymentSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass24ScanPurchaseConfirmationV11farePaymentSSSgvg",
+                "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV11farePaymentSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "timestamp",
+            "printedName": "timestamp",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass24ScanPurchaseConfirmationV9timestampSSSgvp",
+            "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV9timestampSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass24ScanPurchaseConfirmationV9timestampSSSgvg",
+                "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV9timestampSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "agency",
+            "printedName": "agency",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass24ScanPurchaseConfirmationV6agencySSSgvp",
+            "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV6agencySSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass24ScanPurchaseConfirmationV6agencySSSgvg",
+                "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV6agencySSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "vehicleInfo",
+            "printedName": "vehicleInfo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass24ScanPurchaseConfirmationV11vehicleInfoSSSgvp",
+            "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV11vehicleInfoSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass24ScanPurchaseConfirmationV11vehicleInfoSSSgvg",
+                "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV11vehicleInfoSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "routeInfo",
+            "printedName": "routeInfo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7UmoPass24ScanPurchaseConfirmationV9routeInfoSSSgvp",
+            "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV9routeInfoSSSgvp",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7UmoPass24ScanPurchaseConfirmationV9routeInfoSSSgvg",
+                "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV9routeInfoSSSgvg",
+                "moduleName": "UmoPass",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(fareType:farePayment:timestamp:agency:vehicleInfo:routeInfo:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ScanPurchaseConfirmation",
+                "printedName": "UmoPass.ScanPurchaseConfirmation",
+                "usr": "s:7UmoPass24ScanPurchaseConfirmationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7UmoPass24ScanPurchaseConfirmationV8fareType0F7Payment9timestamp6agency11vehicleInfo05routeL0ACSSSg_A5Jtcfc",
+            "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV8fareType0F7Payment9timestamp6agency11vehicleInfo05routeL0ACSSSg_A5Jtcfc",
+            "moduleName": "UmoPass",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ScanPurchaseConfirmation",
+                "printedName": "UmoPass.ScanPurchaseConfirmation",
+                "usr": "s:7UmoPass24ScanPurchaseConfirmationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7UmoPass24ScanPurchaseConfirmationV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "UmoPass",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7UmoPass24ScanPurchaseConfirmationV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV6encode2toys7Encoder_p_tKF",
+            "moduleName": "UmoPass",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:7UmoPass24ScanPurchaseConfirmationV",
+        "mangledName": "$s7UmoPass24ScanPurchaseConfirmationV",
+        "moduleName": "UmoPass",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
           }
         ]
       },
@@ -34970,6 +35553,43 @@
           },
           {
             "kind": "Var",
+            "name": "expiredQRCode",
+            "printedName": "expiredQRCode",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UmoPass.PassError.Type) -> UmoPass.PassError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PassError",
+                    "printedName": "UmoPass.PassError",
+                    "usr": "s:7UmoPass0B5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "UmoPass.PassError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PassError",
+                        "printedName": "UmoPass.PassError",
+                        "usr": "s:7UmoPass0B5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7UmoPass0B5ErrorO13expiredQRCodeyA2CmF",
+            "mangledName": "$s7UmoPass0B5ErrorO13expiredQRCodeyA2CmF",
+            "moduleName": "UmoPass"
+          },
+          {
+            "kind": "Var",
             "name": "errorDescription",
             "printedName": "errorDescription",
             "children": [
@@ -39633,7 +40253,7 @@
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Pass.swift",
       "kind": "BooleanLiteral",
-      "offset": 44678,
+      "offset": 45016,
       "length": 4,
       "value": "true"
     },
@@ -40060,14 +40680,14 @@
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/NetworkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1985,
+      "offset": 2149,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Network\/NetworkManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2873,
+      "offset": 3135,
       "length": 4,
       "value": "true"
     },
@@ -40816,35 +41436,35 @@
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Cache\/Cache.swift",
       "kind": "IntegerLiteral",
-      "offset": 1249,
+      "offset": 1310,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Cache\/Cache.swift",
       "kind": "IntegerLiteral",
-      "offset": 1254,
+      "offset": 1315,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Cache\/Cache.swift",
       "kind": "IntegerLiteral",
-      "offset": 1259,
+      "offset": 1320,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Cache\/Cache.swift",
       "kind": "IntegerLiteral",
-      "offset": 1297,
+      "offset": 1358,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/runner\/work\/app-sdk-ios-internal\/app-sdk-ios-internal\/product\/SDK\/UmoPass\/UmoPass\/Pass\/Cache\/Cache.swift",
       "kind": "StringLiteral",
-      "offset": 2022,
+      "offset": 2083,
       "length": 10,
       "value": "\"UmoPass.WrappedKey\""
     },

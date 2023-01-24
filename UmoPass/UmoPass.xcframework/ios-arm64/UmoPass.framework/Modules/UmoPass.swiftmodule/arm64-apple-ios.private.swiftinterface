@@ -187,6 +187,8 @@ extension UmoPass.Pass {
   public func parseVehicleData(code: Swift.String) -> UmoPass.VehicleData?
   public func cacheUnsyncedScanRideRequest(_ requestModel: UmoPass.ScanRideRequestModel)
   public func retrieveUnsynchedScanRideRequests() -> [UmoPass.ScanRideRequestModel]
+  public func cacheScanPurchaseConfirmation(_ scanPurchaseConfirmation: UmoPass.ScanPurchaseConfirmation)
+  public func retrieveScanPurchaseConfirmation() -> UmoPass.ScanPurchaseConfirmation?
 }
 extension UmoPass.Pass {
   public func redeemBenefit(code: Swift.String, shouldRefreshUser: Swift.Bool = true, completion: @escaping UmoPass.RedemptionCompletion)
@@ -209,7 +211,7 @@ extension UmoPass.Pass {
   public func useKeychainAccessGroup(_ useAccessGroup: Swift.Bool)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ScannerView : UIKit.UIView, AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
-  @_Concurrency.MainActor(unsafe) public var captureSession: AVFoundation.AVCaptureSession!
+  @_Concurrency.MainActor(unsafe) public var captureSession: AVFoundation.AVCaptureSession
   @_Concurrency.MainActor(unsafe) public var previewLayer: AVFoundation.AVCaptureVideoPreviewLayer?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -460,6 +462,17 @@ public protocol RedeemEntryDelegate : AnyObject {
 extension UmoPass.RedeemEntryView : UmoPass.CodeChunkDelegate {
   @_Concurrency.MainActor(unsafe) public func chunkUpdated(_ sender: UmoPass.CodeChunkView, code: Swift.String, isComplete: Swift.Bool)
   @_Concurrency.MainActor(unsafe) public func chunkBackspacedOnEmptyFirstCharacter(_ sender: UmoPass.CodeChunkView)
+}
+public struct ScanPurchaseConfirmation : Swift.Codable {
+  public let fareType: Swift.String?
+  public let farePayment: Swift.String?
+  public let timestamp: Swift.String?
+  public let agency: Swift.String?
+  public let vehicleInfo: Swift.String?
+  public let routeInfo: Swift.String?
+  public init(fareType: Swift.String?, farePayment: Swift.String?, timestamp: Swift.String?, agency: Swift.String?, vehicleInfo: Swift.String?, routeInfo: Swift.String?)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct VehicleData {
   public let vehicleId: Swift.Int
@@ -969,6 +982,7 @@ public enum PassError : Foundation.LocalizedError {
   case logoIDNotFound
   case failedToParseAgency
   case notEnoughCashBalance
+  case expiredQRCode
 }
 extension UmoPass.PassError {
   public var errorDescription: Swift.String? {
