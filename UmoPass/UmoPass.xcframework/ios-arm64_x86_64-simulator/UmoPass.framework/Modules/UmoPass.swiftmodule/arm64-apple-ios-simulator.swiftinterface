@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name UmoPass
-// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import CommonCrypto
 import CoreLocation
@@ -12,7 +11,6 @@ import Swift
 import UIKit
 @_exported import UmoPass
 import _Concurrency
-import _StringProcessing
 public struct ScanRideRequestModel : Swift.Codable, Swift.Hashable {
   public static let isoFormatter: Foundation.ISO8601DateFormatter
   public var liveEvent: Swift.Bool
@@ -69,6 +67,7 @@ extension UmoPass.Agency {
   public func countryCode() -> Swift.String
 }
 public typealias EmptyCompletion = (Swift.Result<UmoPass.EmptyResponse, Swift.Error>) -> Swift.Void
+public typealias VoidCompletion = (Swift.Result<(), Swift.Error>) -> Swift.Void
 public typealias UserCompletion = ((Swift.Result<UmoPass.User, Swift.Error>) -> Swift.Void)
 public typealias ValidityCompletion = ((Swift.Result<UmoPass.EmptyResponse, Swift.Error>) -> Swift.Void)
 public typealias AgencyListCompletion = (Swift.Result<[UmoPass.Agency], Swift.Error>) -> Swift.Void
@@ -116,6 +115,9 @@ extension Foundation.NSNotification.Name {
   public var currentAgencyWallet: UmoPass.Wallet? {
     get
   }
+  public var regionWallets: [UmoPass.RegionWallet]? {
+    get
+  }
   @objc deinit
 }
 extension UmoPass.Pass {
@@ -137,6 +139,7 @@ extension UmoPass.Pass {
   public func fetchAgencies(near location: CoreLocation.CLLocationCoordinate2D, completion: @escaping UmoPass.AgencyListCompletion)
   public func fetchAgency(publicId: Swift.String, completion: @escaping UmoPass.AgencyCompletion)
   public func selectAgency(agency: UmoPass.Agency, completion: @escaping UmoPass.EmptyCompletion)
+  public func allCachedAgencies() -> [UmoPass.Agency]?
   public func cachedAgency(publicId: Swift.String) -> UmoPass.Agency?
   public func isAgencyCurrentlySelected(_ agency: UmoPass.Agency) -> Swift.Bool
   public func selectAgencyLocally(agency: UmoPass.Agency)
@@ -161,6 +164,7 @@ extension UmoPass.Pass {
   public func updateAutoload(enabled: Swift.Bool, currencyCode: Swift.String = "USD", amount: Swift.Double, agencyPublicID: Swift.String, completion: @escaping UmoPass.EmptyCompletion)
   public func updateAutoRenewForPass(_ purchasedPass: UmoPass.PurchasedPass, enabled: Swift.Bool, completion: @escaping UmoPass.EmptyCompletion)
   public func fetchWallets(completion: @escaping UmoPass.WalletsCompletion)
+  public func refreshWallets(completion: @escaping UmoPass.VoidCompletion)
   public func localWalletForAgency(agency: UmoPass.Agency) -> UmoPass.Wallet?
 }
 extension UmoPass.Pass {
@@ -213,7 +217,7 @@ extension UmoPass.Pass {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ScannerView : UIKit.UIView, AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
   @_Concurrency.MainActor(unsafe) public var captureSession: AVFoundation.AVCaptureSession
   @_Concurrency.MainActor(unsafe) public var previewLayer: AVFoundation.AVCaptureVideoPreviewLayer?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor(unsafe) public func startCapture()
@@ -221,7 +225,7 @@ extension UmoPass.Pass {
   @_Concurrency.MainActor(unsafe) @objc public func metadataOutput(_ output: AVFoundation.AVCaptureMetadataOutput, didOutput metadataObjects: [AVFoundation.AVMetadataObject], from connection: AVFoundation.AVCaptureConnection)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class PurchasedPass : Swift.Codable {
+public class PurchasedPass : Swift.Codable {
   public enum PassType : Swift.Int, Swift.Codable {
     case calendarBased
     case timeBased
@@ -251,6 +255,8 @@ extension UmoPass.Pass {
   final public let passProductId: Swift.Int?
   final public let cost: UmoPass.Money
   final public let maxQuantity: Swift.Int?
+  final public let agencyShortName: Swift.String
+  public init(purchasedPassDTO: UmoPass.TPPassDTO)
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
@@ -307,7 +313,7 @@ public typealias AgencySelectViewClosure = ((UmoPass.Agency) -> ())
 }
 @_hasMissingDesignatedInitializers public class Wallet : Swift.Codable {
   public static let isoFormatter: Foundation.ISO8601DateFormatter
-  final public let agencyPublicId: Swift.String
+  final public let publicId: Swift.String
   final public let balance: UmoPass.Money?
   final public let passes: [UmoPass.PurchasedPass]
   final public let fareType: Swift.String?
@@ -392,7 +398,7 @@ extension UIKit.UIColor {
   public static let umoStatusGood: UIKit.UIColor
   public static let umoOrchidPurple: UIKit.UIColor
   public static let umoVioletPurple: UIKit.UIColor
-  convenience public init(hex: Swift.String, alpha: CoreFoundation.CGFloat = 1.0)
+  convenience public init(hex: Swift.String, alpha: CoreGraphics.CGFloat = 1.0)
 }
 extension UIKit.UIColor {
   public static func umoGray24(_ traits: UIKit.UITraitCollection) -> UIKit.UIColor
@@ -501,7 +507,8 @@ public struct TPAccountDTO : Swift.Codable {
 }
 public struct TPAgencyDTO : Swift.Codable {
   public let state: Swift.String, city: Swift.String, country: Swift.String, publicID: Swift.String
-  public init(name: Swift.String, shortName: Swift.String, serviceName: Swift.String, region: Swift.String?, state: Swift.String, city: Swift.String, country: Swift.String, publicID: Swift.String, centerLatitude: Swift.Double?, centerLongitude: Swift.Double?, id: Swift.Int, minPurchaseAmount: Swift.Int?, media: UmoPass.TPMedia, colors: UmoPass.TPColors, allowStoredValue: Swift.Bool?, storedValueTransactionMin: Swift.Int?, storedValueTransactionMax: Swift.Int?, storedValueButtonValues: [Swift.String]?, storedValueButtonMoneys: [UmoPass.Money]?, mobilePages: UmoPass.TPMobilePages?, mobileLogoTargetURL: Swift.String?, amexAccepted: Swift.Bool?, mcAccepted: Swift.Bool?, visaAccepted: Swift.Bool?, discAccepted: Swift.Bool?, jcbAccepted: Swift.Bool?, lowBalanceLevel: Swift.Int?, minimumAutoloadAmount: Swift.Int?, minimumTripAutoload: Swift.Int?, minimumHoursAutoload: Swift.Int?, minimumAutoloadAmountMoney: UmoPass.Money?, minPurchaseAmountMoney: UmoPass.Money?, maxPurchaseAmountMoney: UmoPass.Money?, applePayAccepted: Swift.Bool?, storedValuePayAccepted: Swift.Bool?, i18n: UmoPass.TPLanguageStrings?, poolId: Swift.String, currencyFormat: UmoPass.CurrencyFormat?, locale: Swift.String?, scanRideSupported: Swift.Bool?)
+  public let fundingSource: UmoPass.TPFundingSourceDTO?
+  public init(name: Swift.String, shortName: Swift.String, serviceName: Swift.String, region: Swift.String?, state: Swift.String, city: Swift.String, country: Swift.String, publicID: Swift.String, centerLatitude: Swift.Double?, centerLongitude: Swift.Double?, id: Swift.Int, minPurchaseAmount: Swift.Int?, media: UmoPass.TPMedia, colors: UmoPass.TPColors, allowStoredValue: Swift.Bool?, storedValueTransactionMin: Swift.Int?, storedValueTransactionMax: Swift.Int?, storedValueButtonValues: [Swift.String]?, storedValueButtonMoneys: [UmoPass.Money]?, mobilePages: UmoPass.TPMobilePages?, mobileLogoTargetURL: Swift.String?, amexAccepted: Swift.Bool?, mcAccepted: Swift.Bool?, visaAccepted: Swift.Bool?, discAccepted: Swift.Bool?, jcbAccepted: Swift.Bool?, lowBalanceLevel: Swift.Int?, minimumAutoloadAmount: Swift.Int?, minimumTripAutoload: Swift.Int?, minimumHoursAutoload: Swift.Int?, minimumAutoloadAmountMoney: UmoPass.Money?, minPurchaseAmountMoney: UmoPass.Money?, maxPurchaseAmountMoney: UmoPass.Money?, applePayAccepted: Swift.Bool?, storedValuePayAccepted: Swift.Bool?, i18n: UmoPass.TPLanguageStrings?, poolId: Swift.String, currencyFormat: UmoPass.CurrencyFormat?, locale: Swift.String?, scanRideSupported: Swift.Bool?, fundingSource: UmoPass.TPFundingSourceDTO?)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -606,6 +613,13 @@ public struct TPUserAlertPreferences : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TPFundingSourceDTO : Swift.Codable {
+  public let id: Swift.Int
+  public let cardholderName: Swift.String
+  public let type: Swift.String
+  public let expiration: Swift.String
+  public let name: Swift.String
+  public let truncatedSourceId: Swift.String?
+  public let enabled: Swift.Bool
   public init(id: Swift.Int, cardholderName: Swift.String, type: Swift.String, expiration: Swift.String, name: Swift.String, truncatedSourceId: Swift.String?, enabled: Swift.Bool)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -626,6 +640,9 @@ public enum CardType : Swift.String {
     get
   }
   public func applePayType() -> PassKit.PKPaymentNetwork
+  public var readableTitle: Swift.String {
+    get
+  }
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -714,10 +731,10 @@ public enum TransactionType : Swift.String {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class Gradient : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public class var layerClass: Swift.AnyClass {
-    @objc get
+    @_Concurrency.MainActor(unsafe) @objc get
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
@@ -775,14 +792,14 @@ public struct ScanRideResponseModel : Swift.Codable {
   @_Concurrency.MainActor(unsafe) public var originalButtonText: Swift.String?
   @_Concurrency.MainActor(unsafe) public var activityIndicator: UIKit.UIActivityIndicatorView?
   @_Concurrency.MainActor(unsafe) public func updateLoadingState(loading: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public func disableSubviewsAutoresizingMasks()
-  @_Concurrency.MainActor(unsafe) public func applyShadow(offset: CoreFoundation.CGSize = CGSize(width: 0, height: 1), radius: CoreFoundation.CGFloat = 1)
-  @_Concurrency.MainActor(unsafe) public func applyCorners(radius: CoreFoundation.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func applyShadow(offset: CoreGraphics.CGSize = CGSize(width: 0, height: 1), radius: CoreGraphics.CGFloat = 1)
+  @_Concurrency.MainActor(unsafe) public func applyCorners(radius: CoreGraphics.CGFloat)
   @_Concurrency.MainActor(unsafe) public func applyShadowPath(viewToTrace: UIKit.UIView)
 }
 extension UIKit.UIView {
@@ -861,6 +878,16 @@ extension UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) public func setBackgroundColor(color: UIKit.UIColor, forState: UIKit.UIControl.State)
   @_Concurrency.MainActor(unsafe) public func applyUmoStyle()
   @_Concurrency.MainActor(unsafe) public func applyUmoClearStyle()
+}
+public class RegionWallet : Swift.Codable {
+  final public let publicId: Swift.String
+  final public let description: Swift.String
+  final public let balance: UmoPass.Money?
+  final public let passes: [UmoPass.TPPassDTO]?
+  final public let poolId: Swift.String
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 public enum DurationUnits : Swift.String, Swift.Codable {
   case minutes
@@ -991,7 +1018,7 @@ extension UmoPass.PassError {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DeleteEmptyTextField : UIKit.UITextField {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func deleteBackward()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
