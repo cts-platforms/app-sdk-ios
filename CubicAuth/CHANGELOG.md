@@ -2,6 +2,12 @@
 
 This document contains all changes made to the _CubicAuth_ for each release along with upgrade steps.
 
+## [1.4.2]
+
+### Changed
+
+* Compile on Xcode 13.4.1
+
 ## [1.4.1]
 
 ### Changed
