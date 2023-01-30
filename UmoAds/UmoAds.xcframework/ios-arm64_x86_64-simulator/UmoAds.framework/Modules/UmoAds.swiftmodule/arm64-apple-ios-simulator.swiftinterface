@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name UmoAds
-// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import AVKit
 import AdSupport
@@ -26,7 +25,6 @@ import UIKit
 @_exported import UmoAds
 import WebKit
 import _Concurrency
-import _StringProcessing
 import os.log
 import os
 public func <- <T>(left: inout T, right: UmoAds.AKXMLMap) where T : Swift.RawRepresentable, T.RawValue : Swift.LosslessStringConvertible
@@ -195,7 +193,7 @@ extension Foundation.URLRequest {
   @_Concurrency.MainActor(unsafe) public func webView(_ webView: UmoAds.AKWebView, createWebViewWith configuration: WebKit.WKWebViewConfiguration, for navigationAction: WebKit.WKNavigationAction, windowFeatures: WebKit.WKWindowFeatures) -> UmoAds.AKWebView?
   @_Concurrency.MainActor(unsafe) public func webView(_ webView: UmoAds.AKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func webView(_ webView: UmoAds.AKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
+  @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
 }
 final public class AKURLEncodedFormEncoder {
   public enum ArrayEncoding {
@@ -487,7 +485,7 @@ extension UmoAds.Ads : UmoAds.UMOAdKitBannerAdListener {
   case mediumRectangle
   case html
   case none
-  public var size: CoreFoundation.CGSize {
+  public var size: CoreGraphics.CGSize {
     get
   }
   public init?(rawValue: Swift.Int)
@@ -565,7 +563,7 @@ public struct DataResponsePublisher<Value> : Combine.Publisher {
   public init<Serializer>(_ request: UmoAds.AKDataRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : UmoAds.DataResponseSerializerProtocol
   public func result() -> Combine.AnyPublisher<Swift.Result<Value, UmoAds.AKAFError>, Swift.Never>
   public func value() -> Combine.AnyPublisher<Value, UmoAds.AKAFError>
-  public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == Swift.Never, S.Input == UmoAds.DataResponse<Value, UmoAds.AKAFError>
+  public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == UmoAds.DataResponsePublisher<Value>.Failure, S.Input == UmoAds.DataResponsePublisher<Value>.Output
 }
 @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 extension UmoAds.DataResponsePublisher where Value == Foundation.Data? {
@@ -591,7 +589,7 @@ public struct AKDataStreamPublisher<Value> : Combine.Publisher {
   public init<Serializer>(_ request: UmoAds.DataStreamRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : UmoAds.DataStreamSerializer
   public func result() -> Combine.AnyPublisher<Swift.Result<Value, UmoAds.AKAFError>, Swift.Never>
   public func value() -> Combine.AnyPublisher<Value, UmoAds.AKAFError>
-  public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == Swift.Never, S.Input == UmoAds.DataStreamRequest.Stream<Value, UmoAds.AKAFError>
+  public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == UmoAds.AKDataStreamPublisher<Value>.Failure, S.Input == UmoAds.AKDataStreamPublisher<Value>.Output
 }
 extension UmoAds.DataStreamRequest {
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
@@ -612,7 +610,7 @@ public struct AKDownloadResponsePublisher<Value> : Combine.Publisher {
   public init<Serializer>(_ request: UmoAds.DownloadRequest, queue: Dispatch.DispatchQueue, serializer: Serializer) where Value == Serializer.SerializedObject, Serializer : UmoAds.DownloadResponseSerializerProtocol
   public func result() -> Combine.AnyPublisher<Swift.Result<Value, UmoAds.AKAFError>, Swift.Never>
   public func value() -> Combine.AnyPublisher<Value, UmoAds.AKAFError>
-  public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == Swift.Never, S.Input == UmoAds.DownloadResponse<Value, UmoAds.AKAFError>
+  public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == UmoAds.AKDownloadResponsePublisher<Value>.Failure, S.Input == UmoAds.AKDownloadResponsePublisher<Value>.Output
 }
 extension UmoAds.DownloadRequest {
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
@@ -640,16 +638,16 @@ extension UmoAds.DownloadRequest {
 @objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) open class UMOAdKitBannerView : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) open var bannerParams: UmoAds.UMOAdKitBannerParams?
   @_Concurrency.MainActor(unsafe) weak open var bannerAdListener: UmoAds.UMOAdKitBannerAdListener?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func awakeFromNib()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @objc override dynamic open func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var frame: CoreFoundation.CGRect {
-    @objc get
-    @objc set
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var frame: CoreGraphics.CGRect {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var bounds: CoreFoundation.CGRect {
-    @objc get
-    @objc set
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var bounds: CoreGraphics.CGRect {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func didMoveToWindow()
   @objc @_Concurrency.MainActor(unsafe) open func setBannerPlaceholder(bannerType: UmoAds.UMOAdKitBannerType) throws
@@ -1025,8 +1023,8 @@ extension UmoAds.AKProgressHUD {
   @_Concurrency.MainActor(unsafe) public class func showSucceed(_ status: Swift.String? = nil, interaction: Swift.Bool = true)
   @_Concurrency.MainActor(unsafe) public class func showFailed(_ status: Swift.String? = nil, interaction: Swift.Bool = true)
   @_Concurrency.MainActor(unsafe) public class func showAdded(_ status: Swift.String? = nil, interaction: Swift.Bool = true)
-  @_Concurrency.MainActor(unsafe) public class func showProgress(_ progress: CoreFoundation.CGFloat, interaction: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public class func showProgress(_ status: Swift.String?, _ progress: CoreFoundation.CGFloat, interaction: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) public class func showProgress(_ progress: CoreGraphics.CGFloat, interaction: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) public class func showProgress(_ status: Swift.String?, _ progress: CoreGraphics.CGFloat, interaction: Swift.Bool = false)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class AKProgressHUD : UIKit.UIView {
   @objc deinit
@@ -1932,7 +1930,7 @@ extension UmoAds.AlamofireExtension where ExtendedType == Security.SecCertificat
 extension Swift.Int32 : UmoAds.AlamofireExtended {
   public typealias ExtendedType = Swift.Int32
 }
-extension UmoAds.AlamofireExtension where ExtendedType == Swift.Int32 {
+extension UmoAds.AlamofireExtension where ExtendedType == Darwin.OSStatus {
   public var isSuccess: Swift.Bool {
     get
   }
@@ -2396,7 +2394,7 @@ public struct AKXMLDictionaryTransform<Key, Value> : UmoAds.AKXMLTransformType w
   public init()
   public func transformFromXML(_ value: Any?) -> [Key : Value]?
   public func transformToXML(_ value: [Key : Value]?) -> Any?
-  public typealias Object = [Key : Value]
+  public typealias Object = Swift.Dictionary<Key, Value>
   public typealias XML = Any
 }
 public enum UMOAdKitInlineBannerCreativeType : Swift.String, Swift.CaseIterable {
