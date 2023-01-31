@@ -10,6 +10,6 @@ Pod::Spec.new do |spec|
   spec.framework    = 'SystemConfiguration'
   spec.swift_version = '5.0'
   spec.ios.deployment_target = '12.0'
-  spec.dependency 'CubicAuth', '1.4.2'
+  spec.dependency 'CubicAuth', '~> 1.4'
 
 end
