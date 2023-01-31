@@ -6,6 +6,6 @@ framework module UmoPass {
 }
 
 module UmoPass.Swift {
-  header "UmoPass-Swift.h"
-  requires objc
+    header "UmoPass-Swift.h"
+    requires objc
 }

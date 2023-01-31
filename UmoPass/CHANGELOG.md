@@ -1,5 +1,9 @@
 # UmoPass Change Log
 
+## [0.4.2] - 2023-1-30
+
+* Compile on Xcode 13.4.1
+
 ## [0.4.1] - 2023-1-24
 
 * Change CubicAuth dependency from 1.4.0 to 1.4.x
