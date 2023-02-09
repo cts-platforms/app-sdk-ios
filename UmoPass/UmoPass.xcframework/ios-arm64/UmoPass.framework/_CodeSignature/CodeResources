@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HUijnzlCAwnKjkUPvp2mbfbHlME=
+		Wpa05heDm1Nxq0rPLwSsUW+WKcA=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		3Y83tQ2TNw/LZ8xU2FrMB5/HmCg=
+		o6Kp88j4n28jmChi2nkzk+LEFpg=
 		</data>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		TMLPBKaZ4u5nBSaWa0s6jiIwmEI=
+		tGA9BlqtkURr7nV/VL/00z57vwc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>UmoPass.podspec</key>
 		<data>
-		9kJfmEf/Yzl/Ck6C52lC8klP60M=
+		zz0WbmNIt4Cg7sfObYC46USgXPU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -64,14 +64,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kAvuVgYV9WpRMYxwGL+qmbcGgr3XtLHp7Rdr5Vnh/7M=
+			KmeLzSBI4Y6+p+QHlV82gxXQsgQJ8cUlux5253U6BbE=
 			</data>
 		</dict>
 		<key>Modules/UmoPass.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			K+fUbiX8XZhy8n7u85wNJcCFz2ccO2r9LYFCXktkc1M=
+			XlqAbg/Udd49Lz9YqW/oip3U4KaR+oWyAdhmF1VzF2k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -85,7 +85,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			s6cgoWJpSo1QJOK/7ddmk58zcChzwNn9hKJXhyl6CtI=
+			af/9BhkMy1o0dJ+RUgk70/wDyND/EoPSj/SA87aoZqs=
 			</data>
 		</dict>
 	</dict>

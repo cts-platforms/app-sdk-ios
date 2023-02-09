@@ -43,6 +43,7 @@ public struct Agency {
   public let maxPurchaseAmountMoney: UmoPass.Money?
   public let logoURL: Foundation.URL?
   public let logoURLDarkMode: Foundation.URL?
+  public let logoURLLarge: Foundation.URL?
   public let shortName: Swift.String
   public let location: Swift.String
   public let centerCoordinate: CoreLocation.CLLocationCoordinate2D?
@@ -253,6 +254,7 @@ public class PurchasedPass : Swift.Codable {
   final public let passType: UmoPass.PurchasedPass.PassType
   final public let passTypeDescription: Swift.String
   final public let passProductId: Swift.Int?
+  final public let stablePassProductId: Swift.String?
   final public let cost: UmoPass.Money
   final public let maxQuantity: Swift.Int?
   final public let agencyShortName: Swift.String
@@ -550,7 +552,7 @@ public struct TPColors : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct TPMedia : Swift.Codable {
-  public init(enterWarning: Swift.String?, wait: Swift.String?, contactUs: Swift.String?, mobileReaderLogo: Swift.String?, noGoSound: Swift.String?, outOfService: Swift.String?, goSound: Swift.String?, specialFareSound: Swift.String?, presentSound: Swift.String?, generalFAQ: Swift.String?, enter: Swift.String?, imageMobileLogo: Swift.String?, imageMobileLogoDark: Swift.String?, imageWebSplash1: Swift.String?, imageWebSplash2: Swift.String?, imageWebSplash3: Swift.String?, multipleDeniesSound: Swift.String?, dispMedia: Swift.String?, lowBalanceSound: Swift.String?, purchasedSound: Swift.String?, termsAndConditions: Swift.String?, passbackSound: Swift.String?, purchased: Swift.String?, removed: Swift.String?, privacyPolicy: Swift.String?, readerLogo: Swift.String?, dontEnter: Swift.String?, batchPrintLogo: Swift.String?, present: Swift.String?, purchaseCanceledSound: Swift.String?)
+  public init(enterWarning: Swift.String?, wait: Swift.String?, contactUs: Swift.String?, mobileReaderLogo: Swift.String?, noGoSound: Swift.String?, outOfService: Swift.String?, goSound: Swift.String?, specialFareSound: Swift.String?, presentSound: Swift.String?, generalFAQ: Swift.String?, enter: Swift.String?, imageMobileLogo: Swift.String?, imageMobileLogoDark: Swift.String?, imageMobileLogoLarge: Swift.String?, imageWebSplash1: Swift.String?, imageWebSplash2: Swift.String?, imageWebSplash3: Swift.String?, multipleDeniesSound: Swift.String?, dispMedia: Swift.String?, lowBalanceSound: Swift.String?, purchasedSound: Swift.String?, termsAndConditions: Swift.String?, passbackSound: Swift.String?, purchased: Swift.String?, removed: Swift.String?, privacyPolicy: Swift.String?, readerLogo: Swift.String?, dontEnter: Swift.String?, batchPrintLogo: Swift.String?, present: Swift.String?, purchaseCanceledSound: Swift.String?)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -581,8 +583,9 @@ public struct TPPassDTO : Swift.Codable {
   public let maxQuantity: Swift.Int?
   public let passId: Swift.Int
   public let passProductId: Swift.Int?
+  public let stablePassProductId: Swift.String?
   public let cost: UmoPass.Money
-  public init(tripsLeft: Swift.Int?, originalTrips: Swift.Int?, start: Swift.Int?, duration: Swift.Int?, durationUnits: Swift.String?, expiration: Swift.Int?, autoRenew: Swift.Bool, renewable: Swift.Bool?, created: Swift.Int, name: Swift.String, passDescription: Swift.String, shortDescription: Swift.String, price: Swift.Int, agency: Swift.String, passType: Swift.Int, passTypeDescription: Swift.String, passPurchaseTx: UmoPass.TPTransactionDTO, startExpDescription: Swift.String, maxQuantity: Swift.Int?, passId: Swift.Int, passProductId: Swift.Int?, cost: UmoPass.Money)
+  public init(tripsLeft: Swift.Int?, originalTrips: Swift.Int?, start: Swift.Int?, duration: Swift.Int?, durationUnits: Swift.String?, expiration: Swift.Int?, autoRenew: Swift.Bool, renewable: Swift.Bool?, created: Swift.Int, name: Swift.String, passDescription: Swift.String, shortDescription: Swift.String, price: Swift.Int, agency: Swift.String, passType: Swift.Int, passTypeDescription: Swift.String, passPurchaseTx: UmoPass.TPTransactionDTO, startExpDescription: Swift.String, maxQuantity: Swift.Int?, passId: Swift.Int, passProductId: Swift.Int?, stablePassProductId: Swift.String?, cost: UmoPass.Money)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -651,6 +654,7 @@ public enum CardType : Swift.String {
 }
 public struct PassProductModel : Swift.Codable {
   public let id: Swift.Int
+  public let stableId: Swift.String?
   public let name: Swift.String
   public let duration: Swift.Int?
   public let durationUnits: Swift.String?
@@ -903,6 +907,7 @@ public enum DurationUnits : Swift.String, Swift.Codable {
 }
 public struct PassProduct {
   public let id: Swift.Int
+  public let stableId: Swift.String?
   public let name: Swift.String
   public let duration: Swift.Int?
   public let durationUnits: UmoPass.DurationUnits?

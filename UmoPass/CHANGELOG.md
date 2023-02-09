@@ -1,5 +1,9 @@
 # UmoPass Change Log
 
+## [0.4.3] - 2023-2-9
+
+* Require non-anonymous token for specific network calls
+
 ## [0.4.2] - 2023-1-30
 
 * Compile on Xcode 13.4.1
